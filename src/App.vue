@@ -180,11 +180,10 @@
     data () {
       return {
         links: [
-        {title: 'Гороскоп', icon: 'mdi-star', url: '/horo'},
-        {title: 'Биоритмы', icon: 'mdi-trending-up', url: '/bio'},
-        {title: 'Настройки', icon: 'mdi-tools', url: '/settings'},
-        // {title: 'Login', icon: 'mdi-lock', url: '/login'},
-        // {title: 'Registration', icon: 'mdi-face', url: '/registration'}
+        {title: 'Login', icon: 'mdi-lock', url: '/login'},
+        {title: 'Registration', icon: 'mdi-star', url: '/registration'},
+        // {title: 'Logout', icon: 'mdi-star', url: '/logout'},
+        {title: 'Test', icon: 'mdi-trending-up', url: '/test'}
         ],
         right: null,
         collapseOnScroll: true,
