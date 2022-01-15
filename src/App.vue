@@ -1,60 +1,195 @@
 <template>
-  <v-app>
+
+  <!-- <div id="app"> -->
+    <!-- App.vue -->
+
+<v-app>
+
+  <v-navigation-drawer
+      app
+      temporary
+      v-model="drawer"
+  >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            MEDIFIT-GAMES
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            www.medifit.ru
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list
+        dense
+        nav
+      >
+        <v-list-item
+          v-for="link in links"
+          :key="link.title"
+          :to="link.url"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ link.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ link.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+  </v-navigation-drawer>
+  <!-- <v-app-bar  app></v-app-bar> -->
     <v-app-bar
       app
       color="primary"
+      dence
       dark
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+      <!-- <v-app-bar-nav-icon> </v-app-bar-nav-icon> -->
+        
+      <v-app-bar-nav-icon 
+          @click="drawer = !drawer"
+          class="hidden-md-and-up"
+      ></v-app-bar-nav-icon>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+
+  <!-- <v-toolbar-title> -->
+                    
+        <v-btn
+            depressed
+            color="primary"
+            router-link to=/
+            >
+            <v-icon left> mdi-home</v-icon>
+              ГЛАВНАЯ
+        </v-btn>
+      <!-- </v-toolbar-title> -->
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+      <v-toolbar-items class="hidden-sm-and-down">
+
+        <!-- <v-row
+            align="center"
+            justify="space-around"
+        > -->
+      
+        <v-btn
+          v-for="link in links"
+          :key="link.title"
+          :to="link.url"
+          color="primary"
+          depressed
+
+        >
+          <v-icon left>{{link.icon}}</v-icon>
+          {{link.title}}
+        
+        </v-btn>
+
+<!-- 
+              <v-btn icon>
+                <v-icon>mdi-heart</v-icon>  
+              </v-btn>
+
+              <v-btn icon>
+                <v-icon>mdi-magnify</v-icon>   
+              </v-btn> -->
+        <!-- </v-row> -->
+      </v-toolbar-items>
+      
+
+
+      <!-- <v-menu
+        left
+        bottom
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item
+            v-for="n in 5"
+            :key="n"
+            @click="() => {}"
+          >
+            <v-list-item-title>Option {{ n }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu> -->
     </v-app-bar>
 
-    <v-main>
-      <HelloWorld/>
-    </v-main>
-  </v-app>
+
+  <!-- Sizes your content based upon application components -->
+  <v-main>
+
+    <!-- Provides the application the proper gutter -->
+    <v-container fluid>
+      <router-view>router pages</router-view>
+    </v-container>
+  </v-main>
+
+
+  <v-footer
+    color="primary"
+    padless
+  >
+    <v-row
+      justify="center"
+      no-gutters
+    >
+        <div class="hidden-sm-and-down" >
+        <v-btn
+          v-for="link in links"
+          :key="link.title"
+          :to="link.url"
+          color="primary"
+          depressed
+        >
+          <v-icon left>{{link.icon}}</v-icon>
+          {{link.title}}
+        
+        </v-btn>
+        </div>
+      <v-col
+        class="primary lighten-2 py-4 text-center white--text"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>MEDIFIT-GAMES</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
+</v-app>
+  <!-- </div> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
-export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
-};
+  export default {
+    data () {
+      return {
+        links: [
+        {title: 'Гороскоп', icon: 'mdi-star', url: '/horo'},
+        {title: 'Биоритмы', icon: 'mdi-trending-up', url: '/bio'},
+        {title: 'Настройки', icon: 'mdi-tools', url: '/settings'},
+        // {title: 'Login', icon: 'mdi-lock', url: '/login'},
+        // {title: 'Registration', icon: 'mdi-face', url: '/registration'}
+        ],
+        right: null,
+        collapseOnScroll: true,
+        drawer: false
+      }
+    },
+  }
 </script>
