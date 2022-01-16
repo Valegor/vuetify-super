@@ -68,6 +68,15 @@
             <v-icon left> mdi-home</v-icon>
               ГЛАВНАЯ
         </v-btn>
+        <v-btn 
+            v-if="token"
+            depressed
+            color="primary"
+            @click="logout"
+            >
+            <v-icon left> mdi-home</v-icon>
+              EXIT
+        </v-btn>
       <!-- </v-toolbar-title> -->
 
       <v-spacer></v-spacer>
@@ -176,6 +185,9 @@
 </template>
 
 <script>
+
+  import axios from './axios/axios'
+
   export default {
     data () {
       return {
@@ -183,12 +195,38 @@
         {title: 'Login', icon: 'mdi-lock', url: '/login'},
         {title: 'Registration', icon: 'mdi-star', url: '/registration'},
         // {title: 'Logout', icon: 'mdi-star', url: '/logout'},
-        {title: 'Test', icon: 'mdi-trending-up', url: '/test'}
+        {title: 'Test', icon: 'mdi-trending-up', url: '/test'},
+
+//        <a v-if="token" @click.prevent="logout" href="#">Logout</a>
         ],
         right: null,
         collapseOnScroll: true,
-        drawer: false
+        drawer: false,
+        token: null
       }
     },
+            methods: {
+            getToken(){
+                this.token = localStorage.getItem('x_xsrf_token')
+                // console.log(this.token)
+            },
+
+            logout() {
+                axios.post('/logout')
+                .then( res => {
+                    localStorage.removeItem('x_xsrf_token')
+                    this.$router.push({ name: 'login' })
+                    return res
+                })
+            }
+        },
+        mounted() {
+            this.getToken
+        },
+
+        updated() {
+            this.getToken()
+            // console.log('updated')
+        }
   }
 </script>
