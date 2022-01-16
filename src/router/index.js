@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Login from '@/components/Auth/Login'
 import Registration from '@/components/Auth/Registration'
 import Test from '@/components/Test'
+import Get from '@/components/Get'
 // import { faTableTennis } from '@fortawesome/free-solid-svg-icons'
 // import Horoscop from '@/components/Astrofitness/Horoscop'
 // import Settings from '@/components/Astrofitness/Settings'
@@ -32,6 +33,11 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: Test
+    },
+    {
+      path: '/get',
+      name: 'het',
+      component: Get
     },
     // {
     //   path: '/bio',

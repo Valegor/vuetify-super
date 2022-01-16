@@ -7,10 +7,12 @@ const baseURL = 'http://localhost:8080/'
 const axios = Axios.create({
 	baseURL,
 	timeout: 10000,
-	withCredentials: true
+	// withCredentials: true
 })
 
+axios.defaults.withCredentials = true;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+// Axios.defaults.headers.common['X-CSRF-TOKEN'] = localStorage.getItem('x_xsrf_token');
 
 axios.interceptors.response.use({}, err => {
 

@@ -281,6 +281,7 @@
         // {title: 'Registration', icon: 'mdi-star', url: '/registration'},
         // {title: 'Logout', icon: 'mdi-star', url: '/logout'},
         {title: 'Test', icon: 'mdi-trending-up', url: '/test'},
+        {title: 'Get', icon: 'mdi-trending-up', url: '/get'},
 
 //        <a v-if="token" @click.prevent="logout" href="#">Logout</a>
         ],
