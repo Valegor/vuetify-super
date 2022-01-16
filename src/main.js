@@ -5,10 +5,12 @@ import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import axios from 'axios'
+// import axios from './axios/axios'
 import Vuex from 'vuex'
 import store from './store'
-import 'es6-promise/auto';
+import 'es6-promise/auto'
+
+// axios.defaults.baseURL = 'http://laravel-super.loc:8888/';
 
 Vue.use(Vuex)
 
@@ -16,7 +18,7 @@ library.add(faUserSecret)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-Vue.prototype.axios = axios
+// Vue.prototype.axios = axios
 
 Vue.config.productionTip = false
 
