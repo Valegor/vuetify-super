@@ -10,6 +10,15 @@
             <v-form v-model="valid" ref="form" lazy-validation>
               <v-text-field
                 prepend-icon="mdi-email"
+                name="name"
+                label="Name"
+                type="text"
+                v-model="name"
+                :counter="2"
+                :rules="nameRules"
+              ></v-text-field>
+              <v-text-field
+                prepend-icon="mdi-email"
                 name="email"
                 label="Email"
                 type="email"
@@ -21,17 +30,17 @@
                 name="password"
                 label="Password"
                 type="password"
-                :counter="6"
+                :counter="8"
                 v-model="password"
                 :rules="passwordRules"
               ></v-text-field>
               <v-text-field
                 prepend-icon="mdi-lock"
-                name="confirm-password"
+                name="password_confirmation"
                 label="Confirm Password"
                 type="password"
-                :counter="6"
-                v-model="confirmPassword"
+                :counter="8"
+                v-model="password_confirmation"
                 :rules="confirmPasswordRules"
               ></v-text-field>
             </v-form>
@@ -52,21 +61,27 @@
 
 <script>
   const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+  import axios from '../../axios/axios'
 
   export default {
     data () {
       return {
+        name: '',
         email: '',
         password: '',
-        confirmPassword: '',
+        password_confirmation: '',
         valid: false,
+        nameRules: [
+          v => !!v || 'Namr is required',
+          v => (v && v.length >= 2) || 'Name must be equal or more than 2 characters'
+        ],
         emailRules: [
           v => !!v || 'E-mail is required',
           v => emailRegex.test(v) || 'E-mail must be valid'
         ],
         passwordRules: [
           v => !!v || 'Password is required',
-          v => (v && v.length >= 6) || 'Password must be equal or more than 6 characters'
+          v => (v && v.length >= 8) || 'Password must be equal or more than 8 characters'
         ],
         confirmPasswordRules: [
           v => !!v || 'Password is required',
@@ -77,12 +92,35 @@
     methods: {
       onSubmit () {
         if (this.$refs.form.validate()) {
-          const user = {
-            email: this.email,
-            password: this.password
-          }
 
-          console.log(user)
+
+                    axios.get('/sanctum/csrf-cookie').then(response => {
+                    axios.post('/register', 
+                        { 
+                            name: this.name , 
+                            email: this.email, 
+                            password: this.password, 
+                            password_confirmation: this.password_confirmation  
+                        })
+                                .then( res => {
+                                    // console.log('response')
+                                    // console.log(res);
+                                    localStorage.setItem('x_xsrf_token', res.config.headers['X-XSRF-TOKEN'])
+                                    this.$router.push({ name: 'home' })
+                                    return response
+                                })
+                                .catch( err => {
+                                    // console.log('error')
+                                    console.log(err.response);
+                                })
+                })
+
+          // const user = {
+          //   email: this.email,
+          //   password: this.password
+          // }
+
+          // console.log(user)
         }
       }
     }

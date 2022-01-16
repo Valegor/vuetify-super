@@ -65,7 +65,6 @@
       onSubmit () {
         if (this.$refs.form.validate()) {
 
-
                     axios.get('sanctum/csrf-cookie').then(response => {
                     axios.post('/login', { email: this.email, password: this.password })
                     .then( r => {
@@ -76,7 +75,7 @@
                         return response
                     })
                     .catch( err => {
-                        // console.log('error')
+                        console.log('error')
                         console.log(err.response);
                     })
                 })
