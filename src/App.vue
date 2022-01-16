@@ -27,6 +27,57 @@
         dense
         nav
       >
+
+        <!-- LOGIN ITEM -->
+
+        <v-list-item
+          v-if="!token"
+          router-link to=/login
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-lock</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Login</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+
+        <!-- REGISTER ITEM -->
+
+        <v-list-item
+          v-if="!token"
+          router-link to=/registration
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-star</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Registration</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+
+        <!-- LOGOUT ITEM -->
+
+        <v-list-item
+          v-if="token"
+          @click="logout"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Logout</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+
+
+
         <v-list-item
           v-for="link in links"
           :key="link.title"
@@ -40,6 +91,8 @@
             <v-list-item-title>{{ link.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+
       </v-list>
 
   </v-navigation-drawer>
@@ -65,17 +118,8 @@
             color="primary"
             router-link to=/
             >
-            <v-icon left> mdi-home</v-icon>
+            <v-icon left>mdi-home</v-icon>
               ГЛАВНАЯ
-        </v-btn>
-        <v-btn 
-            v-if="token"
-            depressed
-            color="primary"
-            @click="logout"
-            >
-            <v-icon left> mdi-home</v-icon>
-              EXIT
         </v-btn>
       <!-- </v-toolbar-title> -->
 
@@ -101,7 +145,45 @@
         
         </v-btn>
 
-<!-- 
+        
+        <!-- LOGON BUTTON -->
+
+      <v-btn
+            v-if="!token"
+            depressed
+            color="primary"
+            router-link to=/login
+            >
+            <v-icon left>mdi-lock</v-icon>
+              Login
+      </v-btn>
+
+
+        <!-- REGISTRATION BUTTON -->
+
+        <v-btn
+            v-if="!token"
+            depressed
+            color="primary"
+            router-link to=/registration
+            >
+            <v-icon left>mdi-star</v-icon>
+              Registration
+        </v-btn>
+
+        <!-- LOGOUT BUTTON -->
+
+        <v-btn
+            v-if="token"
+            depressed
+            color="primary"
+            @click="logout"
+            >
+            <v-icon left>mdi-home</v-icon>
+              Logout
+        </v-btn>
+
+    <!-- 
               <v-btn icon>
                 <v-icon>mdi-heart</v-icon>  
               </v-btn>
@@ -171,6 +253,9 @@
           {{link.title}}
         
         </v-btn>
+
+
+    
         </div>
       <v-col
         class="primary lighten-2 py-4 text-center white--text"
@@ -192,8 +277,8 @@
     data () {
       return {
         links: [
-        {title: 'Login', icon: 'mdi-lock', url: '/login'},
-        {title: 'Registration', icon: 'mdi-star', url: '/registration'},
+        // {title: 'Login', icon: 'mdi-lock', url: '/login'},
+        // {title: 'Registration', icon: 'mdi-star', url: '/registration'},
         // {title: 'Logout', icon: 'mdi-star', url: '/logout'},
         {title: 'Test', icon: 'mdi-trending-up', url: '/test'},
 
@@ -205,7 +290,16 @@
         token: null
       }
     },
-            methods: {
+    mounted() {
+            this.getToken()
+            // console.log('mounted')
+        },
+
+        updated() {
+            this.getToken()
+            // console.log('updated')
+        },
+    methods: {
             getToken(){
                 this.token = localStorage.getItem('x_xsrf_token')
                 // console.log(this.token)
@@ -219,14 +313,6 @@
                     return res
                 })
             }
-        },
-        mounted() {
-            this.getToken
-        },
-
-        updated() {
-            this.getToken()
-            // console.log('updated')
         }
   }
 </script>

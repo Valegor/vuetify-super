@@ -68,14 +68,14 @@
                     axios.get('sanctum/csrf-cookie').then(response => {
                     axios.post('/login', { email: this.email, password: this.password })
                     .then( r => {
-                        console.log('response')
-                        console.log(r.config.headers['X-XSRF-TOKEN'])
+                        // console.log('response')
+                        // console.log(r.config.headers['X-XSRF-TOKEN'])
                         localStorage.setItem('x_xsrf_token', r.config.headers['X-XSRF-TOKEN'])
                         this.$router.push({ name: 'test' })
                         return response
                     })
                     .catch( err => {
-                        console.log('error')
+                        // console.log('error')
                         console.log(err.response);
                     })
                 })
