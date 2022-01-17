@@ -32,7 +32,10 @@ export default new Router({
     {
       path: '/test',
       name: 'test',
-      component: Test
+      component: Test,
+      meta:{
+        layout: "game-layout"
+      }
     },
     {
       path: '/get',

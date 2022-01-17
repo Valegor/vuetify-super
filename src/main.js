@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Vuex from 'vuex'
 import store from './store'
 import 'es6-promise/auto'
+import DefaultLayout from "./layouts/Default"
+import GameLayout from "./layouts/Game"
 
 // axios.defaults.baseURL = 'http://laravel-super.loc:8888/';
 
@@ -17,6 +19,8 @@ Vue.use(Vuex)
 library.add(faUserSecret)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('default-layout', DefaultLayout)
+Vue.component('game-layout', GameLayout)
 
 // Vue.prototype.axios = axios
 
