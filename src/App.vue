@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
-      <!--Динамический компонент-->
-      <component :is="layout">
-          <router-view/>
-      </component>
-  </div>
+    <div id="app">
+    <!--Динамический компонент-->
+        <component :is="layout">
+                <router-view/>
+        </component>
+    </div>
 </template>
 
 <script>

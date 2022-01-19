@@ -64,8 +64,11 @@ export default {
     data () {
     return {
         links: [
-        {title: 'Test', icon: 'mdi-trending-up', url: '/test'},
-        {title: 'Get', icon: 'mdi-trending-up', url: '/get'},
+        {title: 'Games', icon: 'mdi-gamepad-variant', url: '/games-categories'},
+        {title: 'Posts', icon: 'mdi-newspaper', url: '/posts-categories'},
+        {title: 'Cards', icon: 'mdi-cards-playing-outline', url: '/cards-categories'},
+        // {title: 'Test', icon: 'mdi-trending-up', url: '/test'},
+        // {title: 'Get', icon: 'mdi-trending-up', url: '/get'},
         ],
         token: null
     }

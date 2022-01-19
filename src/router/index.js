@@ -1,14 +1,39 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+//Main
 import Home from '@/components/Home'
+
+// Authorization
 import Login from '@/components/Auth/Login'
 import Registration from '@/components/Auth/Registration'
+
+//Blog
+import Post from '@/components/Blog/Post'
+import Posts from '@/components/Blog/Posts'
+import PostsCategories from '@/components/Blog/PostsCategories'
+import PostsCategory from '@/components/Blog/PostsCategory'
+
+//Game
+import Card from '@/components/Game/Card'
+import Cards from '@/components/Game/Cards'
+import CardsCategory from '@/components/Game/CardsCategory'
+import CardsCategories from '@/components/Game/CardsCategories'
+import Game from '@/components/Game/Game'
+import Games from '@/components/Game/Games'
+import GameCategory from '@/components/Game/GameCategory'
+import GameCategories from '@/components/Game/GameCategories'
+import Records from '@/components/Game/Records'
+
+//Static
+import About from '@/components/Static/About'
+import Author from '@/components/Static/Author'
+import Feedback from '@/components/Static/Feedback'
+
+//Test
 import Test from '@/components/Test'
 import Get from '@/components/Get'
-// import { faTableTennis } from '@fortawesome/free-solid-svg-icons'
-// import Horoscop from '@/components/Astrofitness/Horoscop'
-// import Settings from '@/components/Astrofitness/Settings'
-// import Biorhythm from '@/components/Astrofitness/Biorhythm'
+
 
 Vue.use(Router)
 
@@ -39,32 +64,89 @@ export default new Router({
     },
     {
       path: '/get',
-      name: 'het',
+      name: 'get',
       component: Get
     },
-    // {
-    //   path: '/bio',
-    //   name: 'bio',
-    //   component: Biorhythm
-    // },
-    // {
-    //   path: '/horo',
-    //   name: 'horo',
-    //   component: Horoscop
-    // },
-    // {
-    //   path: '/settings',
-    //   name: 'settings',
-    //   component: Settings
-    // }
+    {
+      path: '/post/:id',
+      name: 'post',
+      component: Post
+    },
+    {
+      path: '/posts',
+      name: 'posts',
+      component: Posts
+    },
+    {
+      path: '/posts-categories',
+      name: 'post.categories',
+      component: PostsCategories
+    },
+    {
+      path: '/posts-category/:id',
+      name: 'post.category',
+      component: PostsCategory
+    },
+    {
+      path: '/card/:id',
+      name: 'card',
+      component: Card
+    },
+    {
+      path: '/cards',
+      name: 'cards',
+      component: Cards
+    },
+    {
+      path: '/cards-category/:id',
+      name: 'cards.category',
+      component: CardsCategory
+    },
+    {
+      path: '/cards-categories',
+      name: 'cards.categories',
+      component: CardsCategories
+    },
+    {
+      path: '/games-categories',
+      name: 'games.categories',
+      component: GameCategories
+    },    
+    {
+      path: '/games-category/:id',
+      name: 'games.category',
+      component: GameCategory
+    },
+    {
+      path: '/game/:id',
+      name: 'game',
+      component: Game
+    },
+    {
+      path: '/games',
+      name: 'games',
+      component: Games
+    },
+    {
+      path: '/records',
+      name: 'records',
+      component: Records
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
+    },
+    {
+      path: '/author',
+      name: 'author',
+      component: Author
+    },
+    {
+      path: '/feedback',
+      name: 'feedback',
+      component: Feedback
+    },
   ],
   mode: 'history'
 })
-
-// const routes = []
-
-// const router = new VueRouter({
-//   routes
-// })
-
-// export default router
