@@ -2,7 +2,9 @@
     <div id="app">
     <!--Динамический компонент-->
         <component :is="layout">
+            <keep-alive include="GameCategories">
                 <router-view/>
+            </keep-alive>
         </component>
     </div>
 </template>

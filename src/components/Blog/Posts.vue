@@ -13,10 +13,12 @@
 
     }),
     methods: {
-
+        test(){
+            console.log('tests')
+        }
     },
     created () {
-
+        this.test()
     }, 
     updated (){
 

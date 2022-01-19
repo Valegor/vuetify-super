@@ -1,3 +1,4 @@
+
 <template>
 
 <div>
@@ -41,6 +42,7 @@
 
     export default {
     data: () => ({
+        name: 'GameCategories',
         categories: ''
     }),
     methods: {
@@ -54,21 +56,20 @@
                     this.categories = response.data.data;
                 })
                 .catch(function(e){
-                    console.log('error')
+                    // console.log('error')
                     this.error = e;
                 });
 
-            // this.cat = this.category[0];
-
-
-
         }
+    },
+    created() {
+        this.getGameCategory()
     },
     updated (){
         // this.getGameCategory()
     },
     mounted() {
-        this.getGameCategory()
+        // this.getGameCategory()
     }
 
     }
