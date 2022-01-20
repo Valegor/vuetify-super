@@ -2,7 +2,7 @@
     <div id="app">
     <!--Динамический компонент-->
         <component :is="layout">
-            <keep-alive include="GameCategories">
+            <keep-alive include="PostsCategories,GameCategories,CardsCategories">
                 <router-view/>
             </keep-alive>
         </component>

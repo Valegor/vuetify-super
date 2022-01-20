@@ -13,6 +13,8 @@ import DefaultLayout from "./layouts/Default"
 import GameLayout from "./layouts/Game"
 
 import GameCategories from './components/Game/GameCategories'
+import PostsCategories from '@/components/Blog/PostsCategories'
+import CardsCategories from '@/components/Game/CardsCategories'
 
 // axios.defaults.baseURL = 'http://laravel-super.loc:8888/';
 
@@ -23,7 +25,9 @@ library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('default-layout', DefaultLayout)
 Vue.component('game-layout', GameLayout)
-Vue.component('GameCategories', GameCategories);
+Vue.component('GameCategories', GameCategories)
+Vue.component('PostsCategories', PostsCategories)
+Vue.component('CardsCategories', CardsCategories)
 
 // Vue.prototype.axios = axios
 
