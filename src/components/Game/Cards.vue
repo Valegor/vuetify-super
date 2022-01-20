@@ -17,13 +17,13 @@
     </v-list-item> 
   </v-card>
 
-
     <pagination 
         :data="cards" 
         @pagination-change-page="getResults"
-        :limit=1
+        :limit=2
+        size="small"
+        align="center"
     ></pagination>
-
  </div> 
 
 </template>
