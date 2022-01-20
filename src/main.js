@@ -18,6 +18,7 @@ import GameLayout from "./layouts/Game"
 import GameCategories from './components/Game/GameCategories'
 import PostsCategories from '@/components/Blog/PostsCategories'
 import CardsCategories from '@/components/Game/CardsCategories'
+import Cards from '@/components/Game/Cards'
 
 // axios.defaults.baseURL = 'http://laravel-super.loc:8888/';
 
@@ -31,6 +32,7 @@ Vue.component('game-layout', GameLayout)
 Vue.component('GameCategories', GameCategories)
 Vue.component('PostsCategories', PostsCategories)
 Vue.component('CardsCategories', CardsCategories)
+Vue.component('Cards', Cards)
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 
