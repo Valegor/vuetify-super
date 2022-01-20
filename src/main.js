@@ -29,6 +29,8 @@ Vue.component('GameCategories', GameCategories)
 Vue.component('PostsCategories', PostsCategories)
 Vue.component('CardsCategories', CardsCategories)
 
+Vue.component('pagination', require('laravel-vue-pagination'));
+
 // Vue.prototype.axios = axios
 
 Vue.config.productionTip = false
