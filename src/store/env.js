@@ -1,6 +1,6 @@
 export default {
   state: {
-    serverUrl: 'http://laravel-super.loc:8888',
+    serverUrl: 'http://yii2super:8888/',
   },
   mutations: {},
   actions: {},

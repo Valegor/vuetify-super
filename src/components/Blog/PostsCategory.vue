@@ -24,7 +24,7 @@
     class="mx-auto mb-4"
     max-width="400"
     tile
-    :to="'/api/post/' + post.id"
+    :to="'/post/' + post.id"
   >
     <v-list-item>
         <v-list-item-content>
@@ -59,7 +59,7 @@
 
             console.log(this.cat_id)
 
-            console.log(this.$store.getters.serverUrl)
+            // console.log(this.$store.getters.serverUrl)
 
             
             await axios
