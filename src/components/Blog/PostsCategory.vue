@@ -1,26 +1,10 @@
-
 <template>
 
 <div>
 
-<v-card
-    class="mx-auto mb-4 indigo lighten-4"
-    max-width="400"
-    tile
->
-    <v-list-item>
-    <v-list-item-content>
-        <v-list-item-title
-        class="h5"
-        >
-        {{ this.category }}
-        </v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
-  </v-card>
 
-  <v-card
-    v-for="post in categories" :key="post.id"
+<v-card
+    v-for="post in posts.data" :key="post.id"
     class="mx-auto mb-4"
     max-width="400"
     tile
@@ -37,14 +21,27 @@
 
     <v-img
       :src="serverUrl + post.img"
-      max-height="125"
+      max-height="225"
       contain
     ></v-img>
 
     <br>
-  </v-card>
 
- </div> 
+  </v-card>
+  
+  
+
+  <br>
+
+<pagination 
+    :data="posts" 
+    @pagination-change-page="getResults"
+    :limit=2
+    size="small"
+    align="center"
+></pagination>
+
+</div> 
 
 </template>
 
@@ -53,54 +50,39 @@
     import axios from '@/axios/axios'
 
     export default {
-    data: () => ({
-        name: 'PostCategories',
-        categories: '',
-        cat_id: '',
-        category: '',
-        serverUrl: ''
-    }),
-    methods: {
-        async getPostCategory(){
-
-
-            this.cat_id = this.$route.params.id
-
-            console.log(this.cat_id)
-
-            // console.log(this.$store.getters.serverUrl)
-
-            
-            await axios
-                .get('/api/post-category/' + this.cat_id 
-                //{
-                // params: {
-                //         id: this.cat_id
-                //     }
-                // }
-                )
-                .then(response => {
-                    this.categories = response.data.data;
-                })
-                .catch(function(e){
-                    // console.log('error')
-                    this.error = e;
-                });
-
-                this.category = this.categories[0].category
-
-                this.serverUrl = this.$store.getters.serverUrl;
+    data () {
+        return {
+            posts: {},
+            category: '',
+            page: 1,
+            cat_id: '',
+            show: false,
+            serverUrl: '',
 
         }
     },
+    methods: {
+        getResults(page = this.page) {
+
+            this.cat_id = this.$route.params.id
+
+			axios.get('/api/post-category/' + this.cat_id + '?page=' + page)
+				.then(response => {
+					this.posts = response.data;
+				});
+        
+            
+            this.serverUrl = this.$store.getters.serverUrl;
+		}
+    },
     created() {
-        this.getPostCategory()
+
     },
     updated (){
-        // this.getGameCategory()
+
     },
     mounted() {
-        // this.getGameCategory()
+        this.getResults()
     }
 
     }

@@ -64,7 +64,7 @@
 
             // console.log(this.cat_id)
 
-			axios.get('/api/card-category/' + + this.cat_id + '?page=' + page)
+			axios.get('/api/card-category/' + this.cat_id + '?page=' + page)
 				.then(response => {
 					this.cards = response.data;
 				});
