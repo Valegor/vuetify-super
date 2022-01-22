@@ -1,4 +1,3 @@
-
 <template v-slot:post.body="{{post.body}}">
 
 <div>
