@@ -19,19 +19,35 @@
     </v-list-item>
   </v-card>
 
-  <v-card
+   <v-card
     v-for="category in categories" :key="category.id"
     class="mx-auto mb-4"
     max-width="400"
     tile
     :to="'/games-category/' + category.id"
   >
+
     <v-list-item>
         <v-list-item-content>
-            <v-list-item-title>{{ category.category }}</v-list-item-title>
+            <v-list-item-title><h3>{{ category.category }}</h3></v-list-item-title>
         </v-list-item-content>
     </v-list-item> 
+
+    <v-img
+      :src="serverUrl + category.img"
+      max-height="150"
+      contain
+    ></v-img>
+
+
+
+      <v-spacer></v-spacer>
+
+
+    <br>
+
   </v-card>
+
 
  </div> 
 
@@ -43,7 +59,9 @@
     export default {
     data: () => ({
         name: 'GameCategories',
-        categories: ''
+        categories: '',
+        show: false,
+        serverUrl: ''
     }),
     methods: {
         async getGameCategory(){
@@ -59,6 +77,8 @@
                     // console.log('error')
                     this.error = e;
                 });
+
+            this.serverUrl = this.$store.getters.serverUrl;
 
         }
     },

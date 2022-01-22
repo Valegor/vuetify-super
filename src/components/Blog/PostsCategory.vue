@@ -34,6 +34,14 @@
             </v-list-item-subtitle>
         </v-list-item-content>
     </v-list-item> 
+
+    <v-img
+      :src="serverUrl + post.img"
+      max-height="125"
+      contain
+    ></v-img>
+
+    <br>
   </v-card>
 
  </div> 
@@ -49,7 +57,8 @@
         name: 'PostCategories',
         categories: '',
         cat_id: '',
-        category: ''
+        category: '',
+        serverUrl: ''
     }),
     methods: {
         async getPostCategory(){
@@ -79,6 +88,8 @@
                 });
 
                 this.category = this.categories[0].category
+
+                this.serverUrl = this.$store.getters.serverUrl;
 
         }
     },

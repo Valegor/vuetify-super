@@ -26,12 +26,25 @@
     tile
     :to="'/posts-category/' + category.id"
   >
+
     <v-list-item>
         <v-list-item-content>
-            <v-list-item-title>{{ category.name }}</v-list-item-title>
+            <v-list-item-title><h3>{{ category.name }}</h3></v-list-item-title>
         </v-list-item-content>
     </v-list-item> 
+
+    <v-img
+      :src="serverUrl + category.img"
+      max-height="150"
+      contain
+    ></v-img>
+
+      <v-spacer></v-spacer>
+
+    <br>
+
   </v-card>
+
 
  </div> 
 
@@ -43,7 +56,9 @@
     export default {
     data: () => ({
         name: 'PostCategories',
-        categories: ''
+        categories: '',
+        show: false,
+        serverUrl: ''
     }),
     methods: {
         async getPostCategoryes(){
@@ -59,6 +74,8 @@
                     // console.log('error')
                     this.error = e;
                 });
+
+                this.serverUrl = this.$store.getters.serverUrl;
 
         }
     },

@@ -15,7 +15,7 @@
     ></v-img>
 
     <v-card-title>
-      {{ card.name }}
+      {{  }}
     </v-card-title>
 
     <hr>
