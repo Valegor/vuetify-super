@@ -25,6 +25,10 @@ import GameCategory from '@/components/Game/GameCategory'
 import GameCategories from '@/components/Game/GameCategories'
 import Records from '@/components/Game/Records'
 
+import Start from '@/components/Game/Play/Start'
+import Quest from '@/components/Game/Play/Quest'
+import Finish from '@/components/Game/Play/Finish'
+
 //Static
 import About from '@/components/Static/About'
 import Author from '@/components/Static/Author'
@@ -146,6 +150,21 @@ export default new Router({
       path: '/feedback',
       name: 'feedback',
       component: Feedback
+    },
+    {
+      path: '/start',
+      name: 'start',
+      component: Start
+    },
+    {
+      path: '/quest',
+      name: 'quest',
+      component: Quest
+    },
+    {
+      path: '/finish',
+      name: 'finish',
+      component: Finish
     },
   ],
   mode: 'history'
