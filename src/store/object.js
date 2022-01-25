@@ -1,6 +1,9 @@
 export default {
     state: {
-      object: {},
+      object: {
+        1: 'test1',
+        2: 'test2'
+      },
     },
     mutations: {
       SET_OBJECT: (state, payload) => {

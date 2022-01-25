@@ -1,31 +1,33 @@
-import game from '@/data/game'
+// import game from '@/data/game'
+
+// let game = {}
 
 
 
 function countBlocks() {
-    return Object.keys(game.game.blocks).length
+    return Object.keys(this.game.blocks).length
 }
 
 function countLocus(blockNumber) {
-    return Object.keys(game.game.blocks[blockNumber - 1].locuses).length
+    return Object.keys(this.game.blocks[blockNumber - 1].locuses).length
 }
 
 function countCards(blockNumber, locusNumber) {
-    return Object.keys(game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards).length
+    return Object.keys(this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards).length
 }
 
 function blocksName(blockNumber) {
-    return game.game.blocks[blockNumber - 1].name
+    return this.game.blocks[blockNumber - 1].name
 }
 
 function blockNotes(blockNumber) {
-    return game.game.blocks[blockNumber - 1].notes
+    return this.game.blocks[blockNumber - 1].notes
 }
 
 function answer (blockNumber, locusNumber, cardNumber){
 
-    let locus = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1]
-    let card = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards[cardNumber - 1]
+    let locus = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1]
+    let card = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards[cardNumber - 1]
     
     let notes = card.takenotes
 
@@ -59,7 +61,7 @@ function totalScore(){
         for (let j = 1; j <=  locusCount; j++) { // выведет 0, затем 1, затем 2
             
                         locus_points: 0,
-            total += game.game.blocks[i-1].locuses[j-1].locus_points
+            total += this.game.blocks[i-1].locuses[j-1].locus_points
         
         }
 
@@ -73,8 +75,8 @@ function getBlockInfo(blockNumber){
 
     let result = {}
 
-    result.points = game.game.blocks[blockNumber - 1].name; 
-    result.notes = game.game.blocks[blockNumber - 1].notes;
+    result.points = this.game.blocks[blockNumber - 1].name; 
+    result.notes = this.game.blocks[blockNumber - 1].notes;
 
     return result
 }
@@ -84,43 +86,43 @@ function getLocusInfo(blockNumber, locusNumber){
 
     let result = {}
 
-    result.locus_name = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_name
-    result.locus_notes = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_notes
-    result.locus_category = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_category
-    result.locus_backimg = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_backimg
-    result.locus_card_code = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_code
-    result.locus_card_name = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_name
-    result.locus_card_image1 = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_image1
-    result.locus_card_image2 = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_image2
-    result.locus_points = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_points
-    result.locus_type = game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_type
+    result.locus_name = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_name
+    result.locus_notes = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_notes
+    result.locus_category = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_category
+    result.locus_backimg = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_backimg
+    result.locus_card_code = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_code
+    result.locus_card_name = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_name
+    result.locus_card_image1 = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_image1
+    result.locus_card_image2 = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_card_image2
+    result.locus_points = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_points
+    result.locus_type = this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].locus_type
 
     return result
 
 }
 
 function getLocusCards(blockNumber, locusNumber){
-    return game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards
+    return this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards
 }
 
 function getLocusCard(blockNumber, locusNumber, cardNumber){
-    return game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards[cardNumber - 1]
+    return this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards[cardNumber - 1]
 }
 
 function gameInfo(){
 
     let result = {}
 
-        result.game_title = game.game.title.program_name;
-        result.game_notes = game.game.title.notes; 
-        result.author_name = game.game.author.name; 
-        result.author_email = game.game.author.email; 
-        result.game_tags = game.game.tags; 
+        result.game_title = this.game.title.program_name;
+        result.game_notes = this.game.title.notes; 
+        result.author_name = this.game.author.name; 
+        result.author_email = this.game.author.email; 
+        result.game_tags = this.game.tags; 
         result.blocks_count = this.countBlocks();
         result.total_score = this.totalScore();
 
-        // result.game_tags = game.game.tags; 
-        // result.game_tags = game.game.tags; 
+        // result.game_tags = this.game.tags; 
+        // result.game_tags = this.game.tags; 
 
     return result
 
@@ -164,7 +166,7 @@ function getCards(blockNumber, locusNumber){
 
     for (let i = 1; i <=  cardCount; i++) {  
         
-        result.push(game.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards[i - 1])
+        result.push(this.game.blocks[blockNumber - 1].locuses[locusNumber - 1].cards[i - 1])
     }
 
     return result

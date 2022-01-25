@@ -1,13 +1,13 @@
 export default {
     state: {
-        game_id: '15',
-        total: 10,
-        block: 1,
-        blocks: 1,
-        locus: 1,
-        locuses: 1,
-        card: 1,
-        cards: 1
+        game_id: '',
+        total: 0,
+        block: 0,
+        blocks: 0,
+        locus: 0,
+        locuses: 0,
+        card: 0,
+        cards: 0
     },
     mutations: {
         SET_GAME_ID: (state, payload) => {

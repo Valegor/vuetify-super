@@ -14,7 +14,7 @@
     ></v-img>
 
     <v-card-title>
-      {{ game.title }}
+      {{ game.name }}
     </v-card-title>
 
     <v-card-subtitle>
@@ -26,6 +26,7 @@
         <v-btn
         color="success"
         dark
+        v-on:click="start"
         >
         Lets Play
         </v-btn>
@@ -111,6 +112,7 @@
 <script>
 
     import axios from '@/axios/axios'
+   
 
     export default {
     data: () => ({
@@ -119,7 +121,8 @@
         cards: '',
         show: false,
         imageUrl: '',
-        serverUrl: ''
+        serverUrl: '',
+        object: {}
 
     }),
     methods: {
@@ -138,7 +141,6 @@
                 });
 
                 this.imageUrl = this.$store.getters.serverUrl + this.game.img
-
         },
         async getGameCards(){
 
@@ -154,25 +156,35 @@
                     this.error = e;
                 });
 
-                this.serverUrl = this.$store.getters.serverUrl;
-
+                this.serverUrl = this.$store.getters.serverUrl
         },
-        test(){
-          this.$store.commit('SET_TOTAL', 1000)
-          console.log(this.$store.getters.TOTAL);
-        }
+        start(){
 
+            this.object =  JSON.parse(this.game.object)
+            console.log(this.object.author.email)
+
+            console.log(Object.keys(this.object.blocks).length)
+
+            // console.log(this.object.blocks)
+            // this.$store.commit('SET_OBJECT', this.object)
+            // this.$store.commit('SET_GAME_ID', this.game.id)
+            // this.$store.commit('SET_TOTAL', 0)
+            // this.$store.commit('SET_BLOCK', 1)
+            // this.$store.commit('SET_BLOCKS', this.countBlocks())
+
+
+          // this.$router.push({name:'start'}); 
+
+        }
     },
     created() {
         this.getGame()
         this.getGameCards()
-        this.test()
     },
     updated (){
 
     },
     mounted() {
-
     }
 
     }
