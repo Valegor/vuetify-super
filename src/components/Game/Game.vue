@@ -36,7 +36,7 @@
         color="orange lighten-2"
         text
       >
-        Read More
+        Read More!
       </v-btn>
 
       <v-spacer></v-spacer>
@@ -156,12 +156,17 @@
 
                 this.serverUrl = this.$store.getters.serverUrl;
 
+        },
+        test(){
+          this.$store.commit('SET_TOTAL', 1000)
+          console.log(this.$store.getters.TOTAL);
         }
 
     },
     created() {
         this.getGame()
         this.getGameCards()
+        this.test()
     },
     updated (){
 
