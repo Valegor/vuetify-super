@@ -7,6 +7,13 @@ import object from './object'
 
 Vue.use(Vuex)
 
+export const store = new Vuex.Store({
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {},
+})
+
 export default new Vuex.Store({
   modules: {
     env,

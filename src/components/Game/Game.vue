@@ -122,8 +122,11 @@
         show: false,
         imageUrl: '',
         serverUrl: '',
-        object: {}
-
+        object: {},
+        user_name: '',
+        user_email: '',
+        user_score: 0,
+        user: {}
     }),
     methods: {
         async getGame(){
@@ -157,16 +160,22 @@
                 });
 
                 this.serverUrl = this.$store.getters.serverUrl
+
+
         },
         start(){
 
+            this.getUser()
+
+            this.user_email = this.$store.getters.USER_EMAIL
+
             this.object =  JSON.parse(this.game.object)
-            console.log(this.object.author.email)
+            // console.log(this.object.author.email)
 
             console.log(Object.keys(this.object.blocks).length)
 
             // console.log(this.object.blocks)
-            // this.$store.commit('SET_OBJECT', this.object)
+            this.$store.commit('SET_OBJECT', this.object)
             // this.$store.commit('SET_GAME_ID', this.game.id)
             // this.$store.commit('SET_TOTAL', 0)
             // this.$store.commit('SET_BLOCK', 1)
@@ -175,14 +184,36 @@
 
           // this.$router.push({name:'start'}); 
 
+        },
+        async getUser(){
+
+            this.user_email = this.$store.getters.USER_EMAIL
+
+            await axios
+                .get("/api/user/" + this.user_email)
+                .then(response => {
+                    this.user = response.data[0];
+                })
+                .catch(function(e){
+                    // console.log('error')
+                    this.error = e;
+                });
+
+                this.$store.commit('SET_USER_ID', this.user.id)
+                this.$store.commit('SET_USER_NAME', this.user.name)
+                this.$store.commit('SET_USER_EMAIL', this.user.email)
+                this.$store.commit('SET_USER_SCORE', this.user.score)
+
+                // console.log(this.user.name)
         }
     },
     created() {
         this.getGame()
         this.getGameCards()
+        // this.getUser()
     },
     updated (){
-
+        // this.getUser()
     },
     mounted() {
     }

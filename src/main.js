@@ -9,8 +9,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import axios from './axios/axios'
-import Vuex from 'vuex'
-import store from './store'
+// import Vuex from 'vuex'
+import store from './store/index'
 import 'es6-promise/auto'
 import DefaultLayout from "./layouts/Default"
 import GameLayout from "./layouts/Game"
@@ -23,7 +23,7 @@ import Store from '@/components/Store'
 
 // axios.defaults.baseURL = 'http://laravel-super.loc:8888/';
 
-Vue.use(Vuex)
+// Vue.use(Vuex)
 
 library.add(faUserSecret)
 
@@ -41,6 +41,7 @@ Vue.component('pagination', require('laravel-vue-pagination'));
 // Vue.prototype.axios = axios
 
 Vue.config.productionTip = false
+
 
 new Vue({
   vuetify,

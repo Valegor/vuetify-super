@@ -44,7 +44,6 @@
 <script>
   const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
   import axios from '../../axios/axios'
-
   export default {
     data () {
       return {
@@ -64,13 +63,13 @@
     methods: {
       onSubmit () {
         if (this.$refs.form.validate()) {
-
                     axios.get('sanctum/csrf-cookie').then(response => {
                     axios.post('/login', { email: this.email, password: this.password })
                     .then( r => {
                         // console.log('response')
                         // console.log(r.config.headers['X-XSRF-TOKEN'])
                         localStorage.setItem('x_xsrf_token', r.config.headers['X-XSRF-TOKEN'])
+                        this.$store.commit('SET_USER_EMAIL', this.email)
                         this.$router.push({ name: 'test' })
                         return response
                     })
@@ -79,12 +78,10 @@
                         console.log(err.response);
                     })
                 })
-
           // const user = {
           //   email: this.email,
           //   password: this.password
           // }
-
           // console.log(user)
         }
       }
