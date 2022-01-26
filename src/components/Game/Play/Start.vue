@@ -13,12 +13,27 @@
     export default {
     data: () => ({
         game: {},
-        json_game: ''
+        json_game: '',
+        block: 1,
+        blocks: 1,
+        locus: 1,
+        locuses: 1,
+        card: 1,
+        cards: 1,
+        user_score: 0,
+        game_score: 0,
+        step_score: 0,
+        block_title: '',
+        block_subtitle: '',
+        locus_title: '',
+        locus_subtitle: '',
+        question: '',
     }),
     methods: {
         start(){
-            this.json_game = JSON.stringify(this.game)
-            console.log(this.json_game)
+            // this.json_game = JSON.stringify(this.game)
+            // console.log(this.json_game)
+            console.log(this.$store.getters.OBJECT)
         }
     },
     created () {

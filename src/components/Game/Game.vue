@@ -126,7 +126,7 @@
         user_name: '',
         user_email: '',
         user_score: 0,
-        user: {}
+        user: {},
     }),
     methods: {
         async getGame(){
@@ -165,7 +165,7 @@
         },
         start(){
 
-            this.getUser()
+            // this.getUser() // НЕ ЗАБЫТЬ ВКЛЮЧИТЬ
 
             this.user_email = this.$store.getters.USER_EMAIL
 
@@ -182,7 +182,7 @@
             // this.$store.commit('SET_BLOCKS', this.countBlocks())
 
 
-          // this.$router.push({name:'start'}); 
+            this.$router.push({name:'start'}); 
 
         },
         async getUser(){
