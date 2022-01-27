@@ -172,7 +172,7 @@
             this.object =  JSON.parse(this.game.object)
             // console.log(this.object.author.email)
 
-            console.log(Object.keys(this.object.blocks).length)
+            // console.log(Object.keys(this.object.blocks).length)
 
             // console.log(this.object.blocks)
             this.$store.commit('SET_OBJECT', this.object)
