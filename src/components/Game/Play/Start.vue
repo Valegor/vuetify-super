@@ -6,7 +6,7 @@
         <hr>
         <v-row justify="center">
             <v-btn
-            @click="step"
+            @click="answer"
             >click
         </v-btn>
         </v-row>
@@ -33,6 +33,7 @@
         locus_tek_title: '',
         locus_tek_subtitle: '',
         finish: false,
+        card_count: 0,
     }),
     methods: {
         start(){
@@ -49,8 +50,17 @@
             this.locus_tek_title = this.tekLocusTitle()
             this.locus_tek_subtitle  = this.tekLocusSubTitle()
             this.finish = false
+            this.cards = this.getCards()
             // console.log(this.locus_tek_subtitle)
             this.stepInfo()
+        },
+        answer(card_number){
+            console.log('answer')
+
+            // this.card_count = Object.keys(this.cards).length
+            // console.log('Card count: ' + this.card_count)
+            
+            this.step()
         },
         step(){
 
@@ -78,6 +88,28 @@
         stepInfo(){
             console.log('block: ' + this.block_tek + ' from ' + this.blocks_count)
             console.log('locus: ' + this.locus_tek  + ' from ' + this.locuses_count)
+
+            this.block_tek_title = this.tekBlockName()
+            this.block_tek_subtitle = this.tekBlockSubtitle()
+            this.locus_tek_title = this.tekLocusTitle()
+            this.locus_tek_subtitle  = this.tekLocusSubTitle()
+            this.cards_tek_locus = this.getLocusCards()
+            this.cards = this.getCards()
+
+            // console.log(this.block_tek_title)
+            // console.log(this.block_tek_subtitle)
+            // console.log(this.locus_tek_title)
+            // console.log(this.locus_tek_subtitle)
+            // console.log(this.cards_tek_locus)
+            // console.log(this.cards)
+        },
+        getCards(){
+            let result = []
+            let cardCount = Object.keys(this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].cards).length
+                for (let i = 1; i <=  cardCount; i++) {  
+                result.push(this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].cards[i - 1])
+            }
+        return result
         },
         blockCount(){
             return Object.keys(this.game.blocks).length
