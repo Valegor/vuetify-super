@@ -3,6 +3,13 @@
         <v-row justify="center">
             Start
         </v-row>
+        <hr>
+        <v-row justify="center">
+            <v-btn
+            @click="step"
+            >click
+        </v-btn>
+        </v-row>
     </v-container>
 </template>
 
@@ -42,9 +49,35 @@
             this.locus_tek_title = this.tekLocusTitle()
             this.locus_tek_subtitle  = this.tekLocusSubTitle()
             this.finish = false
+            // console.log(this.locus_tek_subtitle)
+            this.stepInfo()
+        },
+        step(){
 
-            console.log(this.locus_tek_subtitle)
+            if(this.locus_tek < this.locuses_count){
+                this.locus_tek++
+                this.stepInfo()
+                return 1
+            }
 
+            if((this.locus_tek == this.locuses_count) && (this.block_tek < this.blocks_count)){
+                this.block_tek ++
+                this.locus_tek = 1
+                this.locuses_count = this.countLocus()
+                this.stepInfo()
+                return 1          
+            }
+
+            if((this.locus_tek == this.locuses_count) && (this.block_tek == this.blocks_count)){
+                this.finish = true
+                console.log('finish')
+                return 1          
+            }
+
+        },
+        stepInfo(){
+            console.log('block: ' + this.block_tek + ' from ' + this.blocks_count)
+            console.log('locus: ' + this.locus_tek  + ' from ' + this.locuses_count)
         },
         blockCount(){
             return Object.keys(this.game.blocks).length
