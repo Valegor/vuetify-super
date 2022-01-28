@@ -34,6 +34,7 @@
         locus_tek_subtitle: '',
         finish: false,
         card_count: 0,
+        answer_number: 1,
     }),
     methods: {
         start(){
@@ -54,11 +55,25 @@
             // console.log(this.locus_tek_subtitle)
             this.stepInfo()
         },
-        answer(card_number){
+        answer(){
+
+            if(this.finish == true){
+                console.log('stop answer')
+                return 0
+            }
             console.log('answer')
 
-            // this.card_count = Object.keys(this.cards).length
-            // console.log('Card count: ' + this.card_count)
+            if (this.answer_number > Object.keys(this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].cards).length) {
+                console.log('incorrect answer number')
+                this.step()
+                return 0
+            }
+
+            this.game_score = this.game_score + this.cards[this.answer_number - 1].point
+            console.log('Game score: ' + this.game_score)
+
+            this.card_count = Object.keys(this.cards).length
+            console.log('Card count: ' + this.card_count)
             
             this.step()
         },
