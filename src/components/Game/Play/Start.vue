@@ -1,16 +1,71 @@
 <template>
-    <v-container>
-        <v-row justify="center">
-            Start
-        </v-row>
+<div>
+<v-card
+    class="mx-auto"
+    max-width="344"
+  >
+        <v-card-title>
+        BLOCK {{ block_tek }} FROM {{ blocks_count }}: <br>
+        {{ block_tek_title }}
+        </v-card-title>
         <hr>
-        <v-row justify="center">
-            <v-btn
-            @click="answer"
-            >click
-        </v-btn>
-        </v-row>
-    </v-container>
+        <v-card-subtitle>
+        <b>Block subtitle:</b> {{ locus_tek_subtitle }} <br>     
+        </v-card-subtitle>
+    <hr>
+        <v-card-title>
+        QUESTION: {{ locus_tek_title }}
+        </v-card-title>
+    <hr>
+        <v-card-subtitle>
+        QESTION {{ locus_tek }} FROM {{ locuses_count }}: <br>
+        {{ locus_tek_title }}    
+        </v-card-subtitle>
+ </v-card>
+
+ 
+
+    <hr>
+   
+ <v-row justify="center">
+    <v-btn
+      color="primary"
+      dark
+      @click="answer"
+    >
+      Open Dialog
+    </v-btn>
+
+<v-dialog
+      v-model="dialog"
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title class="text-h5">
+          {{ estimation_answer }}: {{ game_score }}
+        </v-card-title>
+
+        <v-card-text>
+          {{ estimation_subtitle }}
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog = false"
+          >
+            OK
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
+ 
+  </div>
+
 </template>
 
 <script>
@@ -18,8 +73,9 @@
     // import * as lib from '@/library/gameFunctions'
 
     export default {
-    data: () => ({
+    data: () => ({       
         game: {},
+        dialog: false,
         block_tek: 1,
         blocks_count: 1,
         locus_tek: 1,
@@ -35,6 +91,9 @@
         finish: false,
         card_count: 0,
         answer_number: 1,
+        estimation_answer: '',
+        estimation_subtitle: '',
+        estimation_game: '',
     }),
     methods: {
         start(){
@@ -72,9 +131,20 @@
             this.game_score = this.game_score + this.cards[this.answer_number - 1].point
             console.log('Game score: ' + this.game_score)
 
-            this.card_count = Object.keys(this.cards).length
-            console.log('Card count: ' + this.card_count)
-            
+            if(this.game_score > 0){
+                this.estimation_answer = 'Правильно'
+            } else {
+                this.estimation_answer = 'Вы ошиблись'
+            }
+
+            this.estimation_subtitle = this.cards[this.answer_number - 1].takenotes
+
+            console.log('Estimation subtitle: ' + this.estimation_subtitle)
+
+            // this.card_count = Object.keys(this.cards).length
+            // console.log('Card count: ' + this.card_count)
+            this.dialog = true
+
             this.step()
         },
         step(){
@@ -96,6 +166,7 @@
             if((this.locus_tek == this.locuses_count) && (this.block_tek == this.blocks_count)){
                 this.finish = true
                 console.log('finish')
+                this.game_score
                 return 1          
             }
 
