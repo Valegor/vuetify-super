@@ -181,4 +181,18 @@ export {
             getBlockInfo, getLocusInfo,
             getLocusCards, getLocusCard, gameInfo,
             getBlocks, getLocuses, getCards 
+
         };
+
+
+
+//  <v-radio-group v-model="ans" class="radio-container d-flex">
+//   <v-radio
+//     class="radio-item"
+//     color="primary"
+//     v-for="card of cards"
+//     :key="card.id"
+//     :value="card.id"
+//     :label="card.name"
+//   ></v-radio>
+// </v-radio-group>

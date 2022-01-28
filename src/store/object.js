@@ -29,15 +29,16 @@ export default {
                             locus_points: 10,
                             locus_type: "тип 1",
                             cards: [
-                                {
-                                    category: "бонус",
+                                {                           
+                                    category: "бонус",
                                     code: "C_BONUS_003",
                                     name: "монеты",
                                     image1: "C_BONUS_003",
                                     image2: "C_BONUS_003",
                                     notes: "",
                                     point: 10,
-                                    takenotes: "положили карту 1"
+                                    takenotes: "положили карту 1",
+                          
                                 },
                                 {
                                     category: "бонус",
@@ -47,7 +48,8 @@ export default {
                                     image2: "C_BONUS_001",
                                     notes: "",
                                     point: -70,
-                                    takenotes: "положили карту 18"
+                                    takenotes: "положили карту 18",
+                          
                                 },
                                 {
                                     category: "бонус",
@@ -57,7 +59,8 @@ export default {
                                     image2: "C_BONUS_005",
                                     notes: "",
                                     point: -50,
-                                    takenotes: "положили карту 6"
+                                    takenotes: "положили карту 6",
+       
                                 }
                             ]
                 },
@@ -81,7 +84,8 @@ export default {
                                     image2: "C_SPA004",
                                     notes: "Дл любителей парилки. Но не может заменить сауну.",
                                     point: -20,
-                                    takenotes: "положили карту 10"
+                                    takenotes: "положили карту 10" ,
+                   
                                 },
                                 {
                                     category: "виды восстановления",
@@ -91,7 +95,8 @@ export default {
                                     image2: "C_SPA001",
                                     notes: "Восстанавливает после тренировок, улучшает здоровье",
                                     point: 50,
-                                    takenotes: "положили карту 12"
+                                    takenotes: "положили карту 12",
+    
                                 }
                             ]
                  }
@@ -121,7 +126,8 @@ export default {
                                     image2: "C_DIET005",
                                     notes: "Нужно есть много и часто. Причем спортивное питание. Спортсмены от такой диеты становятся сильнее, Но нельзя толстеть.",
                                     point: -20,
-                                    takenotes: "положили карту 10"
+                                    takenotes: "положили карту 10",
+    
                                 },
                                 {
                                     category: "виды диет",
@@ -131,7 +137,8 @@ export default {
                                     image2: "C_DIET004",
                                     notes: "Нужно есть много и часто, но не толстеть. Чтобы были силы, но только на спорт.",
                                     point: 50,
-                                    takenotes: "положили карту 15"
+                                    takenotes: "положили карту 15",
+     
                                 },
                                 {
                                     category: "виды диет",
@@ -141,7 +148,8 @@ export default {
                                     image2: "C_DIET006",
                                     notes: "Нужно есть много и часто. Но при этом не толстеть и лучше играть.",
                                     point: 50,
-                                    takenotes: "положили карту 16"
+                                    takenotes: "положили карту 16",
+     
                                 }
                             ]
                 },
@@ -165,7 +173,8 @@ export default {
                                     image2: "C_SPORT001",
                                     notes: "",
                                     point: 20,
-                                    takenotes: "положили карту 11"
+                                    takenotes: "положили карту 11",
+   
                                 },
                                 {
                                     category: "виды спорта",
@@ -175,7 +184,8 @@ export default {
                                     image2: "C_SPORT005",
                                     notes: "",
                                     point: -20,
-                                    takenotes: "положили карту 10"
+                                    takenotes: "положили карту 10",
+
                                 }
                             ]
                 },
@@ -199,7 +209,8 @@ export default {
                                     image2: "C_FIT011",
                                     notes: "Прекрасный вид соревнований для подготовленных атлетов. Новичков и случайно зашедших калечит.",
                                     point: 10,
-                                    takenotes: "положили карту 11"
+                                    takenotes: "положили карту 11",
+ 
                                 },
                                 {
                                       category: "виды фитнеса",
@@ -209,7 +220,8 @@ export default {
                                       image2: "C_FIT011",
                                       notes: "Прекрасный вид соревнований для подготовленных атлетов. Новичков и случайно зашедших калечит.",
                                       point: 10,
-                                      takenotes: "положили карту 11"
+                                      takenotes: "положили карту 11",
+   
                                   }
                             ]
                  }
@@ -239,7 +251,8 @@ export default {
                                     image2: "C_EX_G011_1",
                                     notes: "Для  подготовленных. Укрепляет пресс.",
                                     point: 60,
-                                    takenotes: "положили карту 16"
+                                    takenotes: "положили карту 16",
+ 
                                 },
                                 {
                                     category: "гимнастика",
@@ -249,7 +262,8 @@ export default {
                                     image2: "C_EX_G014",
                                     notes: "Для опытных. Работают интенсивно мышцы ног, рук, туловища.",
                                     point: 40,
-                                    takenotes: "положили карту 11"
+                                    takenotes: "положили карту 11",
+        id: 2
                                 }
                             ]
                 },
@@ -273,7 +287,8 @@ export default {
                                     image2: "C_ROAD_MZ009",
                                     notes: "На данном маршруте Аватар становится красивым, выносливым и сильным. Закладывает прочный фундамент долгой жизни и успехов в построении карьеры.",
                                     point: 20,
-                                    takenotes: "положили карту 11"
+                                    takenotes: "положили карту 11",
+  
                                 },
                                 {
                                     category: "маршрут здоровья",
@@ -283,7 +298,8 @@ export default {
                                     image2: "C_ROAD_MZ002",
                                     notes: "На данном переходе улучшается функция легких. Если не решить проблему — может пострадать сердце Аватара.",
                                     point: -10,
-                                    takenotes: "положили карту 10"
+                                    takenotes: "положили карту 10",
+  
                                 },
                                 {
                                       category: "маршрут здоровья",
@@ -293,7 +309,8 @@ export default {
                                       image2: "C_ROAD_MZ002",
                                       notes: "На данном переходе улучшается функция легких. Если не решить проблему — может пострадать сердце Аватара.",
                                       point: -10,
-                                      takenotes: "положили карту 10"
+                                      takenotes: "положили карту 10",
+
                                   }
                             ]
                 },
@@ -317,7 +334,8 @@ export default {
                                     image2: "C_TKM_LIN010",
                                     notes: "",
                                     point: 20,
-                                    takenotes: "положили карту 12"
+                                    takenotes: "положили карту 12",
+
                                 },
                                 {
                                     category: "линии ТКМ",
@@ -327,7 +345,8 @@ export default {
                                     image2: "C_TKM_LIN014",
                                     notes: "",
                                     point: 40,
-                                    takenotes: "положили карту 13"
+                                    takenotes: "положили карту 13",
+
                                 }
                             ]
                 },
@@ -351,7 +370,7 @@ export default {
                                     image2: "C_ORG_0RG010",
                                     notes: "",
                                     point: 10,
-                                    takenotes: "положили карту 14"
+                                    takenotes: "положили карту 14",
                                 }
                             ]
                  }

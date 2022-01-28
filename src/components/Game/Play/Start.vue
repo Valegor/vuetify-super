@@ -23,7 +23,27 @@
         </v-card-subtitle>
  </v-card>
 
- 
+      <v-row>
+         <v-col
+          cols="12"
+          sm="6"
+          md="4"
+        >
+          <v-subheader>Answers</v-subheader>
+            <v-radio-group v-model="ans" class="radio-container d-flex">
+                <v-radio
+                    class="radio-item"
+                    color="primary"
+                    v-for="card of cards"
+                    :key="(cards.indexOf(card) + 1)"
+                    :value="(cards.indexOf(card) + 1)"
+                    :label="card.name"
+                ></v-radio>
+            </v-radio-group>
+
+          </v-radio-group>
+        </v-col>
+      </v-row>
 
     <hr>
    
@@ -76,6 +96,7 @@
     data: () => ({       
         game: {},
         dialog: false,
+        ans: 1,
         block_tek: 1,
         blocks_count: 1,
         locus_tek: 1,
@@ -94,6 +115,7 @@
         estimation_answer: '',
         estimation_subtitle: '',
         estimation_game: '',
+        cards: [],
     }),
     methods: {
         start(){
@@ -120,15 +142,16 @@
                 console.log('stop answer')
                 return 0
             }
-            console.log('answer')
 
-            if (this.answer_number > Object.keys(this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].cards).length) {
+            console.log('Ans: ' + this.ans)
+
+            if (this.ans > Object.keys(this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].cards).length) {
                 console.log('incorrect answer number')
                 this.step()
                 return 0
             }
 
-            this.game_score = this.game_score + this.cards[this.answer_number - 1].point
+            this.game_score = this.game_score + this.cards[this.ans - 1].point
             console.log('Game score: ' + this.game_score)
 
             if(this.game_score > 0){
@@ -137,13 +160,15 @@
                 this.estimation_answer = 'Вы ошиблись'
             }
 
-            this.estimation_subtitle = this.cards[this.answer_number - 1].takenotes
+            this.estimation_subtitle = this.cards[this.ans - 1].takenotes
 
             console.log('Estimation subtitle: ' + this.estimation_subtitle)
 
             // this.card_count = Object.keys(this.cards).length
             // console.log('Card count: ' + this.card_count)
             this.dialog = true
+
+            this.ans = 1
 
             this.step()
         },
