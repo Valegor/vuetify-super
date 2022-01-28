@@ -7,7 +7,9 @@ export default {
         locus: 0,
         locuses: 0,
         card: 0,
-        cards: 0
+        cards: 0,
+        wright: 0,
+        wrong: 0
     },
     mutations: {
         SET_GAME_ID: (state, payload) => {
@@ -33,6 +35,12 @@ export default {
         },  
         SET_CARDS: (state, payload) => {
             state.cards = payload;
+        },
+        SET_WRIGHT: (state, payload) => {
+            state.wright = payload;
+        },  
+        SET_WRONG: (state, payload) => {
+            state.wrong = payload;
         },      
     },
     actions: {},
@@ -61,5 +69,11 @@ export default {
         CARDS (state) {
             return state.cards
         }, 
+        WRIGHT (state) {
+            return state.wright
+        },
+        WRONG (state) {
+            return state.wrong
+        },
     }
 }

@@ -116,6 +116,8 @@
         estimation_subtitle: '',
         estimation_game: '',
         cards: [],
+        wright: 0,
+        wrong: 0,
     }),
     methods: {
         start(){
@@ -133,8 +135,18 @@
             this.locus_tek_subtitle  = this.tekLocusSubTitle()
             this.finish = false
             this.cards = this.getCards()
+            this.wright = 0
+            this.wrong = 0
             // console.log(this.locus_tek_subtitle)
             this.stepInfo()
+        },
+        engGame(){
+
+            this.$store.commit('SET_WRIGHT', this.wright)
+            this.$store.commit('SET_WRONG', this.wrong)
+            this.$store.commit('SET_TOTAL', this.game_score)
+
+            this.$router.push({name:'finish'}); 
         },
         answer(){
 
@@ -156,8 +168,10 @@
 
             if(this.game_score > 0){
                 this.estimation_answer = 'Правильно'
+                this.wright++
             } else {
                 this.estimation_answer = 'Вы ошиблись'
+                this.wrong++
             }
 
             this.estimation_subtitle = this.cards[this.ans - 1].takenotes
@@ -191,8 +205,8 @@
             if((this.locus_tek == this.locuses_count) && (this.block_tek == this.blocks_count)){
                 this.finish = true
                 console.log('finish')
-                this.game_score
-                return 1          
+                this.engGame()
+                return 1         
             }
 
         },

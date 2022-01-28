@@ -182,7 +182,7 @@
             // this.$store.commit('SET_BLOCKS', this.countBlocks())
 
 
-            this.$router.push({name:'start'}); 
+            this.$router.push({name:'start'})
 
         },
         async getUser(){
