@@ -165,7 +165,7 @@
         },
         start(){
 
-            // this.getUser() // НЕ ЗАБЫТЬ ВКЛЮЧИТЬ
+            this.getUser() // НЕ ЗАБЫТЬ ВКЛЮЧИТЬ
 
             this.user_email = this.$store.getters.USER_EMAIL
 
@@ -208,14 +208,16 @@
         }
     },
     created() {
-        this.getGame()
-        this.getGameCards()
+        // this.getGame()
+        // this.getGameCards()
         // this.getUser()
     },
     updated (){
         // this.getUser()
     },
     mounted() {
+        this.getGame()
+        this.getGameCards()
     }
 
     }

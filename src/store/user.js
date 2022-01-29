@@ -3,7 +3,7 @@ export default {
       user_id: '1',
       user_name: 'Valegor',
       user_email: 'medifit2000@yandex.ru',
-      user_score: '999'
+      user_score: '1000'
     },
     mutations: {
       SET_USER_ID: (state, payload) => {

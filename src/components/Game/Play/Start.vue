@@ -279,7 +279,6 @@
 
     },
     mounted() {
-        console.log('mounted')
         this.start()
     }
 
