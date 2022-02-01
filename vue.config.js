@@ -30,6 +30,7 @@ module.exports = {
   ],
   devServer: {
       proxy: 'http://laravel-super.loc:8888/',
+      // proxy: 'http://laravel-super.loc/',
       disableHostCheck: true
     }
 }

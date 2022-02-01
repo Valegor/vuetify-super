@@ -34,6 +34,23 @@ import About from '@/components/Static/About'
 import Author from '@/components/Static/Author'
 import Feedback from '@/components/Static/Feedback'
 
+//Answer-Index
+import Answer from '@/components/Answers/Answer'
+import Template from '@/components/Answers/Template'
+import TemplateCategory from '@/components/Answers/TemplateCategory'
+
+//Answer-Comments
+import CommentCreate from '@/components/Answers/Comments/CommentCreate'
+import CommentUpdate from '@/components/Answers/Comments/CommentUpdate'
+import MyComments from '@/components/Answers/Comments/MyComments'
+
+//Answer-Create
+import AnswerCreate from '@/components/Answers/Create/AnswerCreate'
+import AnswerUpdate from '@/components/Answers/Create/AnswerUpdate'
+import StartCreate from '@/components/Answers/Create/StartCreate'
+import MyAnswers from '@/components/Answers/Create/MyAnswers'
+
+
 //Test
 import Test from '@/components/Test'
 import Get from '@/components/Get'
@@ -165,6 +182,56 @@ export default new Router({
       path: '/finish',
       name: 'finish',
       component: Finish
+    },
+    {
+      path: '/answer',
+      name: 'answer',
+      component: Answer
+    },
+    {
+      path: '/template',
+      name: 'template',
+      component: Template
+    },
+    {
+      path: '/template-category',
+      name: 'template-category',
+      component: TemplateCategory
+    },
+    {
+      path: '/comment-create',
+      name: 'comment-create',
+      component: CommentCreate
+    },
+    {
+      path: '/comment-update',
+      name: 'comment-update',
+      component: CommentUpdate
+    },
+    {
+      path: '/mycomments',
+      name: 'mycomments-my',
+      component: MyComments
+    },
+    {
+      path: '/answer-create',
+      name: 'answer-create',
+      component: AnswerCreate
+    },
+    {
+      path: '/answer-update',
+      name: 'answer-update',
+      component: AnswerUpdate
+    },
+    {
+      path: '/start-answer',
+      name: 'start-answer',
+      component: StartCreate
+    },
+    {
+      path: '/myanswers',
+      name: 'myanswers',
+      component: MyAnswers
     },
   ],
   mode: 'history'
