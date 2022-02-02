@@ -89,7 +89,7 @@
 					this.posts = response.data;
 				});
         
-            console.log(this.posts)
+            // console.log(this.posts)
             
             this.serverUrl = this.$store.getters.serverUrl;
 		}

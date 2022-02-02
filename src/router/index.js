@@ -186,7 +186,7 @@ export default new Router({
       component: Finish
     },
     {
-      path: '/answer',
+      path: '/answer/:id',
       name: 'answer',
       component: Answer
     },
