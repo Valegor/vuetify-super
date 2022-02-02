@@ -22,11 +22,10 @@
         </v-list-item-content>
     </v-list-item> 
 
-  </v-card>
-  
-  
+</v-card>
 
-  <br>
+
+<br>
 
 <pagination 
     :data="posts" 

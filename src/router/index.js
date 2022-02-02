@@ -211,7 +211,7 @@ export default new Router({
       component: TemplateCategory
     },
     {
-      path: '/comment-create',
+      path: '/comment-create/:id',
       name: 'comment-create',
       component: CommentCreate
     },
