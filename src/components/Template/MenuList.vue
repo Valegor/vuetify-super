@@ -83,7 +83,7 @@ export default {
         {title: 'Games', icon: 'mdi-gamepad-variant', url: '/games-categories'},
         {title: 'Posts', icon: 'mdi-newspaper', url: '/posts-categories'},
         {title: 'Cards', icon: 'mdi-cards-playing-outline', url: '/cards-categories'},
-        {title: 'Templates', icon: 'mdi-checkbox-multiple-blank-outline', url: '/template-category'},
+        {title: 'Templates', icon: 'mdi-checkbox-multiple-blank-outline', url: '/template-categories'},
         {title: 'New Answer', icon: 'mdi-border-color', url: '/start-answer'},
         ],
         token: null

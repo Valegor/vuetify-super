@@ -36,7 +36,9 @@ import Feedback from '@/components/Static/Feedback'
 
 //Answer-Index
 import Answer from '@/components/Answers/Answer'
+import TemplateAnswers from '@/components/Answers/TemplateAnswers'
 import Template from '@/components/Answers/Template'
+import TemplateCategories from '@/components/Answers/TemplateCategories'
 import TemplateCategory from '@/components/Answers/TemplateCategory'
 
 //Answer-Comments
@@ -189,12 +191,22 @@ export default new Router({
       component: Answer
     },
     {
-      path: '/template',
+      path: '/template-answers/:id',
+      name: 'template-answers',
+      component: TemplateAnswers
+    },
+    {
+      path: '/template/:id',
       name: 'template',
       component: Template
     },
     {
-      path: '/template-category',
+      path: '/template-categories',
+      name: 'template-categories',
+      component: TemplateCategories
+    },
+    {
+      path: '/template-category/:id',
       name: 'template-category',
       component: TemplateCategory
     },
@@ -204,12 +216,12 @@ export default new Router({
       component: CommentCreate
     },
     {
-      path: '/comment-update',
+      path: '/comment-update/:id',
       name: 'comment-update',
       component: CommentUpdate
     },
     {
-      path: '/mycomments',
+      path: '/mycomments/:id',
       name: 'mycomments-my',
       component: MyComments
     },
@@ -219,7 +231,7 @@ export default new Router({
       component: AnswerCreate
     },
     {
-      path: '/answer-update',
+      path: '/answer-update/:id',
       name: 'answer-update',
       component: AnswerUpdate
     },
@@ -229,7 +241,7 @@ export default new Router({
       component: StartCreate
     },
     {
-      path: '/myanswers',
+      path: '/myanswers/:id',
       name: 'myanswers',
       component: MyAnswers
     },
