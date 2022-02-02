@@ -226,7 +226,7 @@ export default new Router({
       component: MyComments
     },
     {
-      path: '/answer-create',
+      path: '/answer-create/:id',
       name: 'answer-create',
       component: AnswerCreate
     },
