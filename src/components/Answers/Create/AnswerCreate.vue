@@ -29,10 +29,6 @@
             console.log('start create template')
             this.exist()
         },
-        redirect(){
-
-        
-        },
         createAnswer(){
 
             axios.post('/api/answer-create', {                
@@ -65,12 +61,6 @@
 
             console.log('create')
             this.getAuthor()
-
-        },
-        edit(){
-
-            console.log('edit')
-
 
         },
         getAuthor(){
@@ -122,12 +112,13 @@
 
             axios.post('/api/answer-check', { author_email: this.author_email, template_id: this.template_id })
                     .then( response => {
+                        
                         this.exist_answer = response.data
 
-                        console.log(this.exist_answer)
+                        console.log('Exist Answer ID: ' + this.exist_answer)
 
-                        if(this.exist_answer == 1){
-                            this.edit()
+                        if(this.exist_answer > 0){
+                            this.$router.push( '/answer-update-passport/' + `${this.exist_answer}`)
                         } else { this.create() }
 
                         return response

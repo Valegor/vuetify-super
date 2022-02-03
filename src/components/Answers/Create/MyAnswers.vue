@@ -8,7 +8,7 @@
     class="mx-auto mb-4"
     max-width="400"
     tile
-    :to="'/answer-update/' + answer.id"
+    :to="'/answer-update-passport/' + answer.id"
   >
     <v-list-item>
         <v-list-item-content>
