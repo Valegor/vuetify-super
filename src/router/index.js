@@ -49,6 +49,8 @@ import MyComments from '@/components/Answers/Comments/MyComments'
 //Answer-Create
 import AnswerCreate from '@/components/Answers/Create/AnswerCreate'
 import AnswerUpdate from '@/components/Answers/Create/AnswerUpdate'
+import AnswerUpdatePassport from '@/components/Answers/Create/AnswerUpdatePassport'
+import AnswerUpdateObject from '@/components/Answers/Create/AnswerUpdateObject'
 import StartCreate from '@/components/Answers/Create/StartCreate'
 import MyAnswers from '@/components/Answers/Create/MyAnswers'
 
@@ -234,6 +236,16 @@ export default new Router({
       path: '/answer-update/:id',
       name: 'answer-update',
       component: AnswerUpdate
+    },
+    {
+      path: '/answer-update-passport/:id',
+      name: 'answer-update-passport',
+      component: AnswerUpdatePassport
+    },
+    {
+      path: '/answer-update-object/:id',
+      name: 'answer-update-object',
+      component: AnswerUpdateObject
     },
     {
       path: '/start-answer',

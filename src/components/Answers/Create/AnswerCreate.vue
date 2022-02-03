@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row justify="center">
-            ANSWER-CREATE
+            PLEESE WAIT
         </v-row>
     </v-container>
 </template>
@@ -29,6 +29,10 @@
             console.log('start create template')
             this.exist()
         },
+        redirect(){
+
+        
+        },
         createAnswer(){
 
             axios.post('/api/answer-create', {                
@@ -47,6 +51,8 @@
                         
                         this.id = response.data.data.id
                         console.log('Created Answer ID: ' + this.id)
+
+                        this.$router.push( '/answer-update-object/' + `${this.id}`)
 
                         // return response
                     })
