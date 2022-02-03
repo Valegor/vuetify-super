@@ -3,6 +3,17 @@
         <v-row justify="center">
             PLEESE WAIT
         </v-row>
+        <v-row justify="center">
+            <div class="text-center">
+                <v-progress-circular
+                :size="70"
+                :width="7"
+                indeterminate
+                color="primary"
+                ></v-progress-circular>
+            </div>  
+        </v-row>
+
     </v-container>
 </template>
 
