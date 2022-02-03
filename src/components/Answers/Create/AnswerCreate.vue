@@ -12,15 +12,16 @@
 
     export default {
     data: () => ({
+        id: '',
         exist_answer: '',
         author_email: '',
         template_id: '',
         author_id: '',
         author_name: '',
         aviable: 0,
-        title: '',
-        subtitle: '',
-        notes: '',
+        title: 'title here',
+        subtitle: 'subtitle here',
+        notes: 'notes here',
         object: {}
     }),
     methods: {
@@ -28,25 +29,36 @@
             console.log('start create template')
             this.exist()
         },
+        createAnswer(){
+
+            axios.post('/api/answer-create', {                
+                title: this.title,
+                template_id: this.template_id,  
+                subtitle: this.subtitle,
+                notes: this.notes,
+                author_id: this.author_id,
+                author_name: this.author_name,
+                author_email: this.author_email,
+                aviable: this.aviable,
+                object: this.object,               
+                })
+                    .then( response => {
+                        console.log(response)
+                        
+                        this.id = response.data.data.id
+                        console.log('Created Answer ID: ' + this.id)
+
+                        // return response
+                    })
+                    .catch( err => {
+                        // console.log('error')
+                        console.log(err.response);
+                }) 
+        },
         create(){
 
             console.log('create')
             this.getAuthor()
-            this.getObject()
-
-            // axios.post('/api/answer-create', {                
-            //     author_email: this.author_email,
-            //     template_id: this.template_id,                 
-            //     })
-            //         .then( response => {
-            //             console.log(response)
-            //             // return response
-            //         })
-            //         .catch( err => {
-            //             // console.log('error')
-            //             console.log(err.response);
-            //     }) 
-
 
         },
         edit(){
@@ -64,6 +76,10 @@
                     this.author_id = response.data[0].id;
 
                     console.log('Author id: ' + this.author_id)
+                    console.log('Author name: ' + this.author_name)
+
+                this.getObject()
+
                 })
                 .catch(function(e){
                     // console.log('error')
@@ -80,6 +96,8 @@
                 .then(response => {
 
                     this.object = response.data[0].object;
+
+                this.createAnswer()    
 
                     // console.log('Object: ' + this.object)
                 })
