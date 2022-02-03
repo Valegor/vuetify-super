@@ -68,7 +68,7 @@ export default {
         {title: 'Posts', icon: 'mdi-newspaper', url: '/posts-categories'},
         {title: 'Cards', icon: 'mdi-cards-playing-outline', url: '/cards-categories'},
         {title: 'Templates', icon: 'mdi-checkbox-multiple-blank-outline', url: '/template-categories'},
-        {title: 'New Answer', icon: 'mdi-border-color', url: '/start-answer'},
+        {title: 'My Answers', icon: 'mdi-border-color', url: '/myanswers'},
         // {title: 'Get', icon: 'mdi-trending-up', url: '/get'},
         ],
         token: null

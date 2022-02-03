@@ -241,7 +241,7 @@ export default new Router({
       component: StartCreate
     },
     {
-      path: '/myanswers/:id',
+      path: '/myanswers',
       name: 'myanswers',
       component: MyAnswers
     },

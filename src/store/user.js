@@ -1,9 +1,9 @@
 export default {
     state: {
-      user_id: '1',
-      user_name: 'Valegor',
-      user_email: 'medifit2000@yandex.ru',
-      user_score: '1000'
+      user_id: '',
+      user_name: '',
+      user_email: 'hello@yandex.ru',
+      user_score: ''
     },
     mutations: {
       SET_USER_ID: (state, payload) => {
