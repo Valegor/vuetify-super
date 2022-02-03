@@ -15,6 +15,13 @@
         exist_answer: '',
         author_email: '',
         template_id: '',
+        author_id: '',
+        author_name: '',
+        aviable: 0,
+        title: '',
+        subtitle: '',
+        notes: '',
+        object: {}
     }),
     methods: {
         start(){
@@ -24,6 +31,21 @@
         create(){
 
             console.log('create')
+            this.getAuthor()
+            this.getObject()
+
+            // axios.post('/api/answer-create', {                
+            //     author_email: this.author_email,
+            //     template_id: this.template_id,                 
+            //     })
+            //         .then( response => {
+            //             console.log(response)
+            //             // return response
+            //         })
+            //         .catch( err => {
+            //             // console.log('error')
+            //             console.log(err.response);
+            //     }) 
 
 
         },
@@ -31,6 +53,40 @@
 
             console.log('edit')
 
+
+        },
+        getAuthor(){
+
+            axios
+                .get('/api/user/' + this.author_email)
+                .then(response => {
+                    this.author_name = response.data[0].name;
+                    this.author_id = response.data[0].id;
+
+                    console.log('Author id: ' + this.author_id)
+                })
+                .catch(function(e){
+                    // console.log('error')
+                    this.error = e;
+                });
+
+        },
+        getObject(){
+
+            this.template_id = this.$route.params.id
+
+            axios
+                .get('/api/template/' + this.template_id)
+                .then(response => {
+
+                    this.object = response.data[0].object;
+
+                    // console.log('Object: ' + this.object)
+                })
+                .catch(function(e){
+                    // console.log('error')
+                    this.error = e;
+                });
 
         },
         exist(){
