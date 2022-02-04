@@ -16,6 +16,7 @@ import PostsCategory from '@/components/Blog/PostsCategory'
 
 //Game
 import Card from '@/components/Game/Card'
+import CardCode from '@/components/Game/CardCode'
 import Cards from '@/components/Game/Cards'
 import CardsCategory from '@/components/Game/CardsCategory'
 import CardsCategories from '@/components/Game/CardsCategories'
@@ -117,6 +118,11 @@ export default new Router({
       path: '/card/:id',
       name: 'card',
       component: Card
+    },
+    {
+      path: '/card-code/:code',
+      name: 'card-code',
+      component: CardCode
     },
     {
       path: '/cards',

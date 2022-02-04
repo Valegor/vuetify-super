@@ -1,5 +1,5 @@
 
-<template v-slot:game.notes="{{game.notes}}">
+<template>
 
 <div>
 
@@ -17,12 +17,21 @@
  </v-card>
     <br>
     <v-card
-        v-for="locus in locuses" :key="locus.locus_name"
+        v-for="locus in locuses" :key="(block_tek + '@' + locuses.indexOf(locus) + 1)"
         class="mx-auto mb-4"
         max-width="344"
         tile
+    > 
+
+    <v-img
+      :src="serverUrl + locus.locus_card_image1"
+      max-height="225"
+      contain
+    ></v-img>
+
+    <v-list-item
+    :to="'/card-code/' + locus.locus_card_code"
     >
-    <v-list-item>
         <v-list-item-content>
             <v-list-item-title>{{ locus.locus_name }}</v-list-item-title>
         </v-list-item-content>
@@ -63,6 +72,7 @@
     export default {
     data: () => ({
         id: '',
+        serverUrl: '',
         game: {},
         cards: '',
         show: false,
@@ -82,6 +92,7 @@
     }),
     methods: {
         start(){
+            this.serverUrl = this.$store.getters.serverUrl
             this.getBlock(1)
         },
         stepUp(){
@@ -131,6 +142,17 @@
         },
         getBlockLocuses(){
             this.locuses = this.game.blocks[this.block_tek - 1].locuses
+            this.locuses.forEach(function(locus) {
+                if(locus.locus_card_code == ""){
+                    locus.locus_card_code = "C_COLOR_GRAY"
+                }
+                if(locus.locus_card_name == ""){
+                    locus.locus_card_name = "КАРТА СЕРОГО ЦВЕТА"
+                }
+                if(locus.locus_card_image1 == ""){
+                    locus.locus_card_image1 = "cards/C_COLOR_GRAY_.jpg"
+                }
+            })
         },
         blockCount(){
             return Object.keys(this.game.blocks).length

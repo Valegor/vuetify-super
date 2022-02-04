@@ -36,7 +36,7 @@ object = {
                         locus_backimg: "back_img_cat_2",
                         locus_card_code: "",
                         locus_card_name: "",
-                        locus_card_image1: "",
+                        locus_card_image1: "cards/C_SPA007.jpg",
                         locus_card_image2: "",
                         locus_points: 15,
                         locus_type: "тип 1",
