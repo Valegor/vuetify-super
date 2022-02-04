@@ -151,9 +151,11 @@
 
     }, 
     updated (){
-
+      // console.log('updated')
+      // this.start()
     },
     mounted() {
+        console.log('mounted')
         this.start()
     }
     }
