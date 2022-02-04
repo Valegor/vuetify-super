@@ -15,7 +15,19 @@
         <b>Block subtitle:</b> {{ block_tek_subtitle }} <br>     
         </v-card-subtitle>
  </v-card>
-
+    <br>
+    <v-card
+        v-for="locus in locuses" :key="locus.locus_name"
+        class="mx-auto mb-4"
+        max-width="344"
+        tile
+    >
+    <v-list-item>
+        <v-list-item-content>
+            <v-list-item-title>{{ locus.locus_name }}</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item> 
+</v-card>
 
 <br>
 <v-card
@@ -65,7 +77,8 @@
         block_tek_title: '',
         block_tek_subtitle: '',
         locus_tek_title: '',
-        locus_tek_subtitle: '',                        
+        locus_tek_subtitle: '', 
+        locuses: {},                       
     }),
     methods: {
         start(){
@@ -91,6 +104,7 @@
             this.block_tek_title = this.tekBlockName()
             this.block_tek_subtitle = this.tekBlockSubtitle()
             this.locuses_count = this.countLocus()
+            this.getBlockLocuses()
         },
         getLocus(locus_id){
             this.locus_tek = locus_id
@@ -114,6 +128,9 @@
                     // console.log('error')
                     this.error = e;
                 });
+        },
+        getBlockLocuses(){
+            this.locuses = this.game.blocks[this.block_tek - 1].locuses
         },
         blockCount(){
             return Object.keys(this.game.blocks).length
