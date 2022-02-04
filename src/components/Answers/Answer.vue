@@ -9,14 +9,14 @@
   >
 
     <v-card-title>
-      {{ game.title }}
+      {{ object.title }}
     </v-card-title>
 
     <v-card-subtitle>
-      <b>Description:</b> {{ game.subtitle  }} <br>
-      <b>Author:</b> {{ game.author }} <br>
-      <b>Category:</b> {{ game.template_name }} <br>
-      <b>Date:</b> {{ game.date }} <br>
+      <b>Description:</b> {{ object.subtitle  }} <br>
+      <b>Author:</b> {{ object.author }} <br>
+      <b>Category:</b> {{ object.template_name }} <br>
+      <b>Date:</b> {{ object.date }} <br>
     </v-card-subtitle>
 
     <v-card-actions>
@@ -44,7 +44,7 @@
         <v-divider></v-divider>
 
         <v-card-text>
-            <div v-html="game.notes"></div>
+            <div v-html="object.notes"></div>
         </v-card-text>
 
       </div>
@@ -98,7 +98,7 @@
 
     export default {
     data: () => ({
-        game: '',
+        game: {},
         comments: '',
         game_id: '',
         cards: '',
@@ -110,6 +110,15 @@
         user_email: '',
         user_score: 0,
         user: {},
+        block_tek: 1,
+        blocks_count: 1,
+        locus_tek: 1,
+        locuses_count: 1,
+        cards_tek_locus: [],
+        block_tek_title: '',
+        block_tek_subtitle: '',
+        locus_tek_title: '',
+        locus_tek_subtitle: '',                        
     }),
     methods: {
         async getGame(){
@@ -119,7 +128,7 @@
             await axios
                 .get('/api/answer/' + this.game_id)
                 .then(response => {
-                    this.game = response.data[0];
+                    this.object = response.data[0];
                     // console.log(this.game)
                 })
                 .catch(function(e){

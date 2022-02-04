@@ -2,24 +2,57 @@
 
 <div>
 
+<div
+v-for="answer in answers.data" :key="answer.id"
+>
+<v-card
+    class="mx-auto mb-4"
+    max-width="400"
+    tile
+  >
+    <v-list-item>
+        <v-list-item-content>
+            <v-list-item-title><h3>{{ answer.title }}</h3></v-list-item-title>
+            <v-list-item-subtitle>
+                <h5>{{ answer.subtitle }}</h5>
+            </v-list-item-subtitle>
+        </v-list-item-content>
+    </v-list-item>    
+</v-card>
 
 <v-card
-    v-for="answer in answers.data" :key="answer.id"
+    class="mx-auto mb-4"
+    max-width="400"
+    tile
+    :to="'/answer-cards/' + answer.id"
+>
+    <v-list-item>
+        <v-list-item-content>
+            <v-list-item-subtitle>
+                SHOW ANSWERS CARDS
+            </v-list-item-subtitle>
+        </v-list-item-content>
+    </v-list-item>      
+</v-card>
+
+<v-card
     class="mx-auto mb-4"
     max-width="400"
     tile
     :to="'/answer-update-passport/' + answer.id"
-  >
+>
     <v-list-item>
         <v-list-item-content>
-            <v-list-item-title>{{ answer.title }}</v-list-item-title>
             <v-list-item-subtitle>
-                {{ answer.subtitle }}
+                EDIT ANSWERS
             </v-list-item-subtitle>
         </v-list-item-content>
-    </v-list-item> 
-
+    </v-list-item>      
 </v-card>
+
+<hr>
+
+</div>
 
 
 <br>

@@ -36,6 +36,7 @@ import Feedback from '@/components/Static/Feedback'
 
 //Answer-Index
 import Answer from '@/components/Answers/Answer'
+import AnswerCards from '@/components/Answers/AnswerCards'
 import TemplateAnswers from '@/components/Answers/TemplateAnswers'
 import Template from '@/components/Answers/Template'
 import TemplateCategories from '@/components/Answers/TemplateCategories'
@@ -191,6 +192,11 @@ export default new Router({
       path: '/answer/:id',
       name: 'answer',
       component: Answer
+    },
+    {
+      path: '/answer-cards/:id',
+      name: 'answer-cards',
+      component: AnswerCards
     },
     {
       path: '/template-answers/:id',
