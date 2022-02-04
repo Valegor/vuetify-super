@@ -17,7 +17,7 @@
  </v-card>
     <br>
     <v-card
-        v-for="locus in locuses" :key="(block_tek + '@' + locuses.indexOf(locus) + 1)"
+        v-for="locus in locuses" :key="(locuses.indexOf(locus) + 1)"
         class="mx-auto mb-4"
         max-width="344"
         tile
@@ -40,7 +40,7 @@
     <v-btn
         color="primary"
         dark
-        @click="loadCardCategory(locus.locus_category)"
+        @click="loadCardCategory(locus.locus_category, locus.locus_points)"
         >
         Select Card
     </v-btn>
@@ -76,16 +76,26 @@
       max-width="290"
     >
       <v-card>
-        <v-card-title class="text-h5">
-          Change Saved
-        </v-card-title>
+
+
+            <v-radio-group v-model="ans" class="radio-container d-flex">
+                <v-radio
+                    class="radio-item"
+                    color="primary"
+                    v-for="card of cards"
+                    :key="(cards.indexOf(card) + 1)"
+                    :value="(cards.indexOf(card) + 1)"
+                    :label="card.name"
+                ></v-radio>
+            </v-radio-group>
+
         <v-card-actions>
           <v-spacer></v-spacer>
 
           <v-btn
             color="green darken-1"
             text
-            @click="dialog = false"
+            @click="answer"
           >
             OK
           </v-btn>
@@ -105,9 +115,11 @@
     export default {
     data: () => ({
         id: '',
+        game_id: '',
         serverUrl: '',
         game: {},
         cards: {},
+        ans: '',
         show: false,
         imageUrl: '',
         serverUrl: '',
@@ -122,15 +134,23 @@
         locus_tek_title: '',
         locus_tek_subtitle: '', 
         locuses: {}, 
-        dialog: false,                      
+        dialog: false,  
+        count: 0,                    
     }),
     methods: {
         start(){
             this.serverUrl = this.$store.getters.serverUrl
             this.getBlock(1)
         },
-        loadCardCategory(category){
+        answer(){
+            console.log('Answer: ' + this.ans)
+
+
+            this.dialog = false
+        },
+        loadCardCategory(category, index){
             console.log('Load category: ' + category)
+            console.log('Load index: ' + index)
 
             axios
                 .get("/api/card-category-name/"  + category)
@@ -192,7 +212,7 @@
         },
         getBlockLocuses(){
             this.locuses = this.game.blocks[this.block_tek - 1].locuses
-            this.locuses.forEach(function(locus) {
+            this.locuses.forEach(function(locus, index) {
                 if(locus.locus_card_code == ""){
                     locus.locus_card_code = "C_COLOR_GRAY"
                 }
@@ -202,6 +222,10 @@
                 if(locus.locus_card_image1 == ""){
                     locus.locus_card_image1 = "cards/C_COLOR_GRAY_.jpg"
                 }
+                // console.log('Index: ', index)
+                // console.log('Locus Ponts: ', locus.locus_points )
+                locus.locus_points  = index
+                
             })
         },
         blockCount(){
