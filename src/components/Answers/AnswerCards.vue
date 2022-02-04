@@ -3,8 +3,41 @@
 
 <div>
 
-SHOW-ANSWER-CARDS <br>
-{{id}}
+<v-card
+    class="mx-auto"
+    max-width="344"
+  >
+        <v-card-title>
+        {{ block_tek_title }}
+        </v-card-title>
+        <hr>
+        <v-card-subtitle>
+        <b>Block subtitle:</b> {{ block_tek_subtitle }} <br>     
+        </v-card-subtitle>
+ </v-card>
+
+
+<br>
+<v-card
+    class="mx-auto"
+    max-width="344"
+  >
+        <v-btn
+        color="success"
+        dark
+        v-on:click="stepDown"
+        >
+        Back
+        </v-btn>
+
+        <v-btn
+        color="success"
+        dark
+        v-on:click="stepUp"
+        >
+        Fwd
+        </v-btn>
+</v-card>
 
  </div> 
 
@@ -35,11 +68,39 @@ SHOW-ANSWER-CARDS <br>
         locus_tek_subtitle: '',                        
     }),
     methods: {
-        async getGame(){
+        start(){
+            this.getBlock(1)
+        },
+        stepUp(){
+            console.log('step up')
+            if (this.block_tek < this.blocks_count){
+                this.block_tek = this.block_tek + 1
+                this.getBlock(this.block_tek)
+            }
+        },
+        stepDown(){
+            console.log('step down')
+            if (this.block_tek > 1){
+            this.block_tek = this.block_tek - 1
+            this.getBlock(this.block_tek)
+            }
+        },
+        getBlock(block_id){
+            this.block_tek = block_id
+            this.blocks_count = this.blockCount()
+            this.block_tek_title = this.tekBlockName()
+            this.block_tek_subtitle = this.tekBlockSubtitle()
+            this.locuses_count = this.countLocus()
+        },
+        getLocus(locus_id){
+            this.locus_tek = locus_id
+            this.block_tek_subtitle = this.tekBlockSubtitle()
+        },
+        getGame(){
 
             this.game_id = this.$route.params.id
     
-            await axios
+            axios
                 .get('/api/answer/' + this.game_id)
                 .then(response => {
                     this.object = response.data[0];
@@ -47,32 +108,37 @@ SHOW-ANSWER-CARDS <br>
                     this.id = this.object.id
                     this.game = JSON.parse(this.object.object)
                     console.log('Game ID' + this.id)
+                    this.start()
                 })
                 .catch(function(e){
                     // console.log('error')
                     this.error = e;
                 });
-        },       
-        async getComments(){
-
-            this.answer_id = this.$route.params.id
-
-            await axios
-                .get('/api/comment-answer/' + this.answer_id)
-                .then(response => {
-                    this.comments = response.data;
-                })
-                .catch(function(e){
-                    // console.log('error')
-                    this.error = e;
-                });
-
-        }
-
+        },
+        blockCount(){
+            return Object.keys(this.game.blocks).length
+        },
+        countLocus() {
+            return Object.keys(this.game.blocks[this.block_tek - 1].locuses).length
+        },
+        getLocusCards(){
+            return this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].cards
+        },
+        tekBlockName() {
+            return this.game.blocks[this.block_tek  - 1].name
+        },
+        tekBlockSubtitle() {
+            return this.game.blocks[this.block_tek - 1].notes
+        },
+        tekLocusTitle(){
+            return this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].locus_name
+        },
+        tekLocusSubTitle(){
+            return this.game.blocks[this.block_tek - 1].locuses[this.locus_tek - 1].locus_notes
+        },
     },
     created() {
-        this.getGame()
-        this.getComments()
+        // this.getGame()
         // this.getGameCards()
         // this.getUser()
     },
@@ -81,9 +147,24 @@ SHOW-ANSWER-CARDS <br>
     },
     mounted() {
         this.getGame()
-        this.getComments()
     }
 
     }
+
+//DATA-ARRAY
+//unic-id
+//block-number
+//block-title
+//block-subtitle
+//locus-number
+//locus-title
+//locus-subtitle
+//img
+//card-name
+//card-code    
 
 </script>
+
+
+
+
