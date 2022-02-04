@@ -2,10 +2,12 @@
 <div>
     <v-form
     ref="form"
+    @submit.prevent="submit"
   >
 
 <v-container fluid>
-        <v-textarea
+        <v-textarea 
+          name="input-7-7"
           filled
           auto-grow
           v-model="title"
@@ -16,14 +18,15 @@
   </v-container>
 
   <v-container fluid>
-    <v-textarea
-      name="input-7-1"
-      filled
-      rows="3"
-      label="Subtitle"
-      v-model="subtitle"
-      auto-grow
-    ></v-textarea>
+        <v-textarea
+          name="input-7-7-7"
+          filled
+          auto-grow
+          v-model="subtitle"
+          label="Subitle"
+          rows="1"
+          row-height="20"
+        ></v-textarea>
 </v-container>
 
 
@@ -34,7 +37,6 @@
       label="Notes"
       v-model="notes"
       auto-grow
-      value=""
     ></v-textarea>
 </v-container>
 
@@ -44,7 +46,7 @@
     <v-btn
       color="success"
       class="mr-4"
-      @click="onSubmit"
+      type="submit"
     >
       Save
     </v-btn>
@@ -56,6 +58,30 @@
 </v-container>
 
   </v-form>
+
+
+  <v-dialog
+      v-model="dialog"
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title class="text-h5">
+          Change Saved
+        </v-card-title>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog = false"
+          >
+            OK
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
 </div>
 </template>
 
@@ -70,17 +96,38 @@
         title: '',
         subtitle: '',
         notes: '',
+        dialog: false,
     }),
     methods: {
         start(){
             console.log('start')
             this.getAnswer()
         },
-        onSubmit(){
+        submit(){
+            console.log('submit')
+            console.log('Title: ' + this.title) 
 
+            axios.post('/api/answer-update-passport', {  
+                id: this.id,                           
+                title: this.title,
+                subtitle: this.subtitle,  
+                notes: this.notes,              
+                })
+                    .then( response => {
+                        console.log(response)
+                        this.dialog = true
+                        // console.log('Updated Answer ID: ' + this.id)
+
+                        // this.$router.push( '/answer-update-object/' + `${this.id}`)
+                    })
+                    .catch( err => {
+                        // console.log('error')
+                        console.log(err.response);
+                }) 
         },
         editObject(){
-
+            console.log('object')
+            this.$router.push( '/answer-update-object/' + `${this.id}`)
         },
         getAnswer(){
             
@@ -93,6 +140,7 @@
                     this.title = this.answer.title
                     this.subtitle = this.answer.subtitle
                     this.notes = this.answer.notes
+                    console.log('Subtitle: ' + this.subtitle)
                 })
                 .catch(function(e){
                     this.error = e;

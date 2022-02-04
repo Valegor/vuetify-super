@@ -40,8 +40,6 @@
                     :label="card.name"
                 ></v-radio>
             </v-radio-group>
-
-          </v-radio-group>
         </v-col>
       </v-row>
 
