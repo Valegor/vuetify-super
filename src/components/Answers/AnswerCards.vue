@@ -36,6 +36,16 @@
             <v-list-item-title>{{ locus.locus_name }}</v-list-item-title>
         </v-list-item-content>
     </v-list-item> 
+
+    <v-btn
+        color="primary"
+        dark
+        @click="loadCardCategory(locus.locus_category)"
+        >
+        Select Card
+    </v-btn>
+
+
 </v-card>
 
 <br>
@@ -60,6 +70,29 @@
         </v-btn>
 </v-card>
 
+
+<v-dialog
+      v-model="dialog"
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title class="text-h5">
+          Change Saved
+        </v-card-title>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog = false"
+          >
+            OK
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+</v-dialog>
+
  </div> 
 
 </template>
@@ -74,7 +107,7 @@
         id: '',
         serverUrl: '',
         game: {},
-        cards: '',
+        cards: {},
         show: false,
         imageUrl: '',
         serverUrl: '',
@@ -88,12 +121,29 @@
         block_tek_subtitle: '',
         locus_tek_title: '',
         locus_tek_subtitle: '', 
-        locuses: {},                       
+        locuses: {}, 
+        dialog: false,                      
     }),
     methods: {
         start(){
             this.serverUrl = this.$store.getters.serverUrl
             this.getBlock(1)
+        },
+        loadCardCategory(category){
+            console.log('Load category: ' + category)
+
+            axios
+                .get("/api/card-category-name/"  + category)
+                .then(response => {
+                    this.cards = response.data
+                    this.dialog = true
+            })
+                .catch(function(e){
+                    // console.log('error')
+                    this.error = e;
+            });
+
+
         },
         stepUp(){
             console.log('step up')
