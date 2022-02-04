@@ -135,7 +135,12 @@
         locus_tek_subtitle: '', 
         locuses: {}, 
         dialog: false,  
-        count: 0,                    
+        count: 0,  
+        tek_block: 0,
+        tek_index: 0,
+        tek_locus_card_code: '',
+        tek_locus_card_name: '',
+        tek_locus_card_image1: '',              
     }),
     methods: {
         start(){
@@ -143,14 +148,42 @@
             this.getBlock(1)
         },
         answer(){
-            console.log('Answer: ' + this.ans)
+            // console.log('Answer: ' + this.ans)
+            this.tek_locus_card_code = this.cards[this.ans - 1].code
+            this.tek_locus_card_name = this.cards[this.ans - 1].name
+            this.tek_locus_card_image1 = this.cards[this.ans - 1].img1
 
+            this.game.blocks[this.tek_block].locuses[this.tek_locus].locus_card_code = this.tek_locus_card_code
+            this.game.blocks[this.tek_block].locuses[this.tek_locus].locus_card_name = this.tek_locus_card_name
+            this.game.blocks[this.tek_block].locuses[this.tek_locus].locus_card_image1 = this.tek_locus_card_image1
+            
+            this.ans = 1
+
+            this.saveObject()
 
             this.dialog = false
         },
+        saveObject(){
+            axios.post('/api/answer-update-object', {  
+                id: this.id,                           
+                object: JSON.stringify(this.game),           
+                })
+                    .then( response => {
+                        console.log(response)
+                        // console.log('Updated Answer ID: ' + this.id)
+
+                        // this.$router.push( '/answer-update-object/' + `${this.id}`)
+                    })
+                    .catch( err => {
+                        // console.log('error')
+                        console.log(err.response);
+                }) 
+        },
         loadCardCategory(category, index){
-            console.log('Load category: ' + category)
-            console.log('Load index: ' + index)
+            this.tek_locus = index
+            this.tek_block = this.block_tek - 1
+            console.log('Block: ' + this.tek_block)
+            console.log('Locus: ' + this.tek_locus)
 
             axios
                 .get("/api/card-category-name/"  + category)
