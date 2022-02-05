@@ -52,7 +52,7 @@
     </v-btn>
 
       <v-btn @click="editObject">
-        Edit Object
+        EDIT CARDS
       </v-btn>
 
 </v-container>
@@ -127,7 +127,7 @@
         },
         editObject(){
             console.log('object')
-            this.$router.push( '/answer-update-object/' + `${this.id}`)
+            this.$router.push( '/answer-cards/' + `${this.id}`)
         },
         getAnswer(){
             

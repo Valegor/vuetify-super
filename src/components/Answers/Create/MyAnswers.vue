@@ -29,7 +29,7 @@ v-for="answer in answers.data" :key="answer.id"
     <v-list-item>
         <v-list-item-content>
             <v-list-item-subtitle>
-                SHOW ANSWERS CARDS
+                EDIT ANSWERS CARDS
             </v-list-item-subtitle>
         </v-list-item-content>
     </v-list-item>      
@@ -44,7 +44,7 @@ v-for="answer in answers.data" :key="answer.id"
     <v-list-item>
         <v-list-item-content>
             <v-list-item-subtitle>
-                EDIT ANSWERS
+                EDIT ANSWERS PASSPORT
             </v-list-item-subtitle>
         </v-list-item-content>
     </v-list-item>      

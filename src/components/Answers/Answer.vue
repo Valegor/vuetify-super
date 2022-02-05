@@ -50,7 +50,20 @@
       </div>
     </v-expand-transition>
 
-
+  <v-card
+    class="mx-auto"
+    max-width="344"
+    tile
+    :to="'/show-answer-cards/' + object.id"
+  >
+    <v-list-item>
+        <v-list-item-content>
+            <v-list-item-subtitle>
+                SHOW CARDS
+            </v-list-item-subtitle>
+        </v-list-item-content>
+    </v-list-item>      
+  </v-card>
 
   </v-card>
 
@@ -60,7 +73,7 @@
         <v-btn
         color="success"
         dark
-        @click.prevent="$router.push( '/comment-create/' + `${game.id}` )"
+        @click.prevent="$router.push( '/comment-create/' + `${object.id}` )"
         >
         Create Comment
     </v-btn>

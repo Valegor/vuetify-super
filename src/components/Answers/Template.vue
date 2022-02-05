@@ -64,7 +64,6 @@
     </v-expand-transition>
   </v-card>
 
-
  </div> 
 
 </template>
