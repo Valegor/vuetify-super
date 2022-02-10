@@ -189,6 +189,14 @@
                 .get("/api/card-category-name/"  + category)
                 .then(response => {
                     this.cards = response.data
+                    this.cards.push(
+                        {
+                            id: this.cards.length + 1,
+                            code: 'C_COLOR_GRAY',
+                            name: 'NO ANSWERS',
+                            img1: 'cards/C_COLOR_GRAY_.jpg',
+                        }
+                    )
                     this.dialog = true
             })
                 .catch(function(e){
