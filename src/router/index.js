@@ -34,6 +34,8 @@ import Finish from '@/components/Game/Play/Finish'
 import About from '@/components/Static/About'
 import Author from '@/components/Static/Author'
 import Feedback from '@/components/Static/Feedback'
+import Projects from '@/components/Static/Projects'
+import Rules from '@/components/Static/Rules'
 
 //Answer-Index
 import Answer from '@/components/Answers/Answer'
@@ -179,6 +181,16 @@ export default new Router({
       path: '/feedback',
       name: 'feedback',
       component: Feedback
+    },
+    {
+      path: '/rules',
+      name: 'rules',
+      component: Rules
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: Projects
     },
     {
       path: '/start',
