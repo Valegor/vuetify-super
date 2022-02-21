@@ -59,7 +59,7 @@
                         this.id = response.data.data.id
                         console.log('Created Answer ID: ' + this.id)
 
-                        this.$router.push( '/answer-update-object/' + `${this.id}`)
+                        this.$router.push('/myanswers/')
 
                         // return response
                     })
@@ -129,7 +129,7 @@
                         console.log('Exist Answer ID: ' + this.exist_answer)
 
                         if(this.exist_answer > 0){
-                            this.$router.push( '/answer-update-passport/' + `${this.exist_answer}`)
+                            this.$router.push( '/myanswers')
                         } else { this.create() }
 
                         return response

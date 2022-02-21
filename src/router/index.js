@@ -62,6 +62,7 @@ import MyAnswers from '@/components/Answers/Create/MyAnswers'
 
 //Test
 import Test from '@/components/Test'
+import Convert from '@/components/Convert'
 import Get from '@/components/Get'
 
 
@@ -286,6 +287,11 @@ export default new Router({
       path: '/myanswers',
       name: 'myanswers',
       component: MyAnswers
+    },
+    {
+      path: '/convert',
+      name: 'convert',
+      component: Convert
     },
   ],
   mode: 'history'

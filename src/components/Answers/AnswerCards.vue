@@ -118,6 +118,7 @@
         game_id: '',
         serverUrl: '',
         game: {},
+        game2: '',
         cards: {},
         ans: '',
         show: false,
@@ -144,6 +145,7 @@
     }),
     methods: {
         start(){
+            console.log('start')
             this.serverUrl = this.$store.getters.serverUrl
             this.getBlock(1)
         },
@@ -223,6 +225,7 @@
         getBlock(block_id){
             this.block_tek = block_id
             this.blocks_count = this.blockCount()
+            console.log('Block Count = ' + this.blocks_count)
             this.block_tek_title = this.tekBlockName()
             this.block_tek_subtitle = this.tekBlockSubtitle()
             this.locuses_count = this.countLocus()
@@ -235,6 +238,8 @@
         getGame(){
 
             this.game_id = this.$route.params.id
+
+            // console.log('Game ID: ' + this.game_id)
     
             axios
                 .get('/api/answer/' + this.game_id)
@@ -242,14 +247,29 @@
                     this.object = response.data[0];
 
                     this.id = this.object.id
+
+                    
                     this.game = JSON.parse(this.object.object)
-                    console.log('Game ID' + this.id)
+                    
+                    console.log('Game ID = ' + this.id)
+
+
+
+                    // console.log(this.game) 
+                    
+                    console.log(Object.keys(this.game.blocks).length)
+
                     this.start()
+
+                    
                 })
                 .catch(function(e){
-                    // console.log('error')
+                    console.log('error')
                     this.error = e;
                 });
+
+
+
         },
         getBlockLocuses(){
             this.locuses = this.game.blocks[this.block_tek - 1].locuses
