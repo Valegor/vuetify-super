@@ -54,19 +54,21 @@
     max-width="344"
   >
         <v-btn
+        v-if="block_tek > 1"
         color="success"
         dark
         v-on:click="stepDown"
         >
-        Back
+        НАЗАД
         </v-btn>
 
         <v-btn
+        v-if="block_tek < blocks_count"
         color="success"
         dark
         v-on:click="stepUp"
         >
-        Fwd
+        ВПЕРЕД
         </v-btn>
 </v-card>
 
