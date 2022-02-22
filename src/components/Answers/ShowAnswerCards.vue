@@ -21,12 +21,13 @@
         max-width="344"
         tile
     > 
-
+    <div v-if="!locus.locus_card_image1.includes(gray)">
     <v-img
       :src="serverUrl + locus.locus_card_image1"
       max-height="225"
       contain
     ></v-img>
+    
 
     <v-list-item
     :to="'/card-code/' + locus.locus_card_code"
@@ -36,28 +37,33 @@
         </v-list-item-content>
     </v-list-item> 
 
+    </div>
+
 </v-card>
 
 <br>
 <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="500"
   >
         <v-btn
-        color="success"
-        dark
-        v-on:click="stepDown"
-        >
-        Back
+            v-if="block_tek > 1"
+            color="success"
+            dark
+            v-on:click="stepDown"
+            >
+            НАЗАД
         </v-btn>
 
         <v-btn
-        color="success"
-        dark
-        v-on:click="stepUp"
-        >
-        Fwd
+            v-if="block_tek < blocks_count"
+            color="success"
+            dark
+            v-on:click="stepUp"
+            >
+            ВПЕРЕД
         </v-btn>
+
 </v-card>
 
  </div> 
@@ -72,6 +78,7 @@
     export default {
     data: () => ({
         id: '',
+        gray: 'GRAY',
         game_id: '',
         serverUrl: '',
         game: {},
