@@ -71,841 +71,25 @@
         convert_game(){
           console.log('converted')
 
-          this.id = 5
+          this.id = 18
 
-          // this.object = 
-
- this.object = {
+this.object =  {
     title: {
-        program_name: "",
-        notes: "",
+        program_name: "Квест по составлению программы тренировок с использованием различных видов упражнений.",
+        notes: "Данная игра поможет вам узнать какие группы мышц прорабатываются при выполнении определенных упражнений.",
     },
     author: {
-        name: "",
-        email: ""
+        name: "Валерий Горбунов",
+        email: "medifit2000@yandex.ru"
     },
     tags: [
-           
+           "фитнес", "спорт"
     ],
     blocks:[
         {
-            name: "Условия игры",
-            notes: "В данном разделе указываются основные цели игры и проблемы, которые должен решить Аватар",
+            name: "Базовые упражнения",
+            notes: "Укажите базовые упражнения (воздействующие на основные группы мышц)",
             locuses: [
-        {
-                    locus_name: "Основная проблема",
-                    locus_notes: "Основные проблемы, которые требуют незамедлительного решения",
-                    locus_category: "проблема",
-                    locus_backimg: "C_PROBLEM_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Проблема",
-                    locus_notes: "Проблемы, которые желательно решить в процессе игры",
-                    locus_category: "проблема",
-                    locus_backimg: "C_PROBLEM_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Проблема",
-                    locus_notes: "Проблемы, которые желательно решить в процессе игры",
-                    locus_category: "проблема",
-                    locus_backimg: "C_PROBLEM_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Проблема",
-                    locus_notes: "Проблемы, которые желательно решить в процессе игры",
-                    locus_category: "проблема",
-                    locus_backimg: "C_PROBLEM_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Проблема",
-                    locus_notes: "Проблемы, которые желательно решить в процессе игры",
-                    locus_category: "проблема",
-                    locus_backimg: "C_PROBLEM_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Проблема",
-                    locus_notes: "Проблемы, которые желательно решить в процессе игры",
-                    locus_category: "проблема",
-                    locus_backimg: "C_PROBLEM_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-         }
-            ]
-        },
-        {
-            name: "Маршрут достижения цели",
-            notes: "В данном разделе мы определяем станции маршрута — станцию прибытия, отправную точку и точку, где находится Аватар",
-            locuses: [
-        {
-                    locus_name: "Станция отправления",
-                    locus_notes: "Станция, с которой Вы начали путешествие по маршруту здоровья",
-                    locus_category: "маршрут здоровья",
-                    locus_backimg: "C_FREAK001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Станция назначения",
-                    locus_notes: "Станция, на которую Вы следуете маршрутом здоровья",
-                    locus_category: "маршрут здоровья",
-                    locus_backimg: "C_FREAK001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-         }
-            ]
-        },
-        {
-            name: "Тестирование",
-            notes: "В данном разделе определяются основные показатели, которые необходимо отслеживать при прохождении игры",
-            locuses: [
-        {
-                    locus_name: "Показатель здоровья",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель здоровья",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель здоровья",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель здоровья",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель здоровья",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель физического развития",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель физического развития",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель физического развития",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель физического развития",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Показатель физического развития",
-                    locus_notes: "Показатели, которые важно отслеживать во время путешествия по маршруту здоровья",
-                    locus_category: "показатели",
-                    locus_backimg: "C_TEST001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-         }
-            ]
-        },
-        {
-            name: "Ресурсы",
-            notes: "Ресурсы, необходимые для успешного достижения цели и решения Ваших проблем",
-            locuses: [
-        {
-                    locus_name: "Материальные ресурсы",
-                    locus_notes: "Материальные ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Материальные ресурсы",
-                    locus_notes: "Материальные ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Материальные ресурсы",
-                    locus_notes: "Материальные ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Материальные ресурсы",
-                    locus_notes: "Материальные ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Материальные ресурсы",
-                    locus_notes: "Материальные ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Психологические ресурсы",
-                    locus_notes: "Психологические ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Психологические ресурсы",
-                    locus_notes: "Психологические ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Психологические ресурсы",
-                    locus_notes: "Психологические ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Психологические ресурсы",
-                    locus_notes: "Психологические ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Психологические ресурсы",
-                    locus_notes: "Психологические ресурсы необходимые для успешного достижения цели и решения Ваших проблем и достижения целей",
-                    locus_category: "ресурс",
-                    locus_backimg: "C_RESOURCE_001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-         }
-            ]
-        },
-        {
-            name: "Двигательная активность",
-            notes: "В данном разделе мы описываем необходимую двигательную активность Аватара",
-            locuses: [
-        {
-                    locus_name: "Количество аэробных тренировок в неделю",
-                    locus_notes: "Укажите количество аэробных тренировок в неделю",
-                    locus_category: "цифры",
-                    locus_backimg: "C_COLOR_YELLOW_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Количество силовых тренировок в неделю",
-                    locus_notes: "Укажите количество силовых тренировок в неделю",
-                    locus_category: "цифры",
-                    locus_backimg: "C_COLOR_YELLOW_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды фитнеса",
-                    locus_notes: "Виды фитнеса, которые предпочтительны в программе тренировок Аватара",
-                    locus_category: "виды фитнеса",
-                    locus_backimg: "C_FIT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды фитнеса",
-                    locus_notes: "Виды фитнеса, которые предпочтительны в программе тренировок Аватара",
-                    locus_category: "виды фитнеса",
-                    locus_backimg: "C_FIT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды фитнеса",
-                    locus_notes: "Виды фитнеса, которые предпочтительны в программе тренировок Аватара",
-                    locus_category: "виды фитнеса",
-                    locus_backimg: "C_FIT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды фитнеса",
-                    locus_notes: "Виды фитнеса, которые предпочтительны в программе тренировок Аватара",
-                    locus_category: "виды фитнеса",
-                    locus_backimg: "C_FIT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды фитнеса",
-                    locus_notes: "Виды фитнеса, которые предпочтительны в программе тренировок Аватара",
-                    locus_category: "виды фитнеса",
-                    locus_backimg: "C_FIT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды спорта",
-                    locus_notes: "Виды спорта, которые наиболее эффективны в программе тренировок Аватара",
-                    locus_category: "виды спорта",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды спорта",
-                    locus_notes: "Виды спорта, которые наиболее эффективны в программе тренировок Аватара",
-                    locus_category: "виды спорта",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды спорта",
-                    locus_notes: "Виды спорта, которые наиболее эффективны в программе тренировок Аватара",
-                    locus_category: "виды спорта",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды спорта",
-                    locus_notes: "Виды спорта, которые наиболее эффективны в программе тренировок Аватара",
-                    locus_category: "виды спорта",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды спорта",
-                    locus_notes: "Виды спорта, которые наиболее эффективны в программе тренировок Аватара",
-                    locus_category: "виды спорта",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-         }
-            ]
-        },
-        {
-            name: "Программа тренировок",
-            notes: "В данном разделе дается описание программы тренировок",
-            locuses: [
-        {
-                    locus_name: "Направление тренировки",
-                    locus_notes: "В данном разделе описываются основные эффекты тренировочного занятия",
-                    locus_category: "детализация направлений мезоцикла",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Гимнастика",
-                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
-                    locus_category: "гимнастика",
-                    locus_backimg: "C_EX_G001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Свободные веса",
-                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
-                    locus_category: "свободные веса",
-                    locus_backimg: "C_EX_W001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Свободные веса",
-                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
-                    locus_category: "свободные веса",
-                    locus_backimg: "C_EX_W001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Свободные веса",
-                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
-                    locus_category: "свободные веса",
-                    locus_backimg: "C_EX_W001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Свободные веса",
-                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
-                    locus_category: "свободные веса",
-                    locus_backimg: "C_EX_W001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Свободные веса",
-                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
-                    locus_category: "свободные веса",
-                    locus_backimg: "C_EX_W001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Свободные веса",
-                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
-                    locus_category: "свободные веса",
-                    locus_backimg: "C_EX_W001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Свободные веса",
-                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
-                    locus_category: "свободные веса",
-                    locus_backimg: "C_EX_W001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
         {
                     locus_name: "Тренажеры",
                     locus_notes: "Упражнения, выполняемые с применением тренажеров",
@@ -913,511 +97,937 @@
                     locus_backimg: "C_EX_T001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T002",
+                            name: "жим платформы ногами",
+                            image1: "C_EX_T002",
+                            image2: "C_EX_T002_1",
+                            notes: "Для  подготовленных. Укрепляет ноги и попу. Повышает артериальное давление.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T017",
+                            name: "сведение рук в тренажере",
+                            image1: "C_EX_T017",
+                            image2: "C_EX_T017_1",
+                            notes: "Для начинающих. Укрепляет грудь.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Тренажеры",
-                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
-                    locus_category: "тренажеры",
-                    locus_backimg: "C_EX_T001_",
+                    locus_name: "Гимнастика",
+                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
+                    locus_category: "гимнастика",
+                    locus_backimg: "C_EX_G001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G009",
+                            name: "подъем на мыски",
+                            image1: "C_EX_G009",
+                            image2: "C_EX_G009_1",
+                            notes: "Для начинающих. Тренирует голени.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G007",
+                            name: "отжимания с колен",
+                            image1: "C_EX_G007",
+                            image2: "C_EX_G007_1",
+                            notes: "Для начинающих. Легкий вариант отжиманий. Укрепляет грудь и руки.",
+                            point: 20,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Тренажеры",
-                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
-                    locus_category: "тренажеры",
-                    locus_backimg: "C_EX_T001_",
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
-                    ]
-        },
-        {
-                    locus_name: "Тренажеры",
-                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
-                    locus_category: "тренажеры",
-                    locus_backimg: "C_EX_T001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Тренажеры",
-                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
-                    locus_category: "тренажеры",
-                    locus_backimg: "C_EX_T001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Тренажеры",
-                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
-                    locus_category: "тренажеры",
-                    locus_backimg: "C_EX_T001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Растяжка",
-                    locus_notes: "Упражнения, выполняемые для растяжки мышц",
-                    locus_category: "растяжка",
-                    locus_backimg: "C_EX_S001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Растяжка",
-                    locus_notes: "Упражнения, выполняемые для растяжки мышц",
-                    locus_category: "растяжка",
-                    locus_backimg: "C_EX_S001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Растяжка",
-                    locus_notes: "Упражнения, выполняемые для растяжки мышц",
-                    locus_category: "растяжка",
-                    locus_backimg: "C_EX_S001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Растяжка",
-                    locus_notes: "Упражнения, выполняемые для растяжки мышц",
-                    locus_category: "растяжка",
-                    locus_backimg: "C_EX_S001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Растяжка",
-                    locus_notes: "Упражнения, выполняемые для растяжки мышц",
-                    locus_category: "растяжка",
-                    locus_backimg: "C_EX_S001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W016",
+                            name: "сгибание рук с гантелями попеременно",
+                            image1: "C_EX_W016",
+                            image2: "C_EX_W016_1",
+                            notes: "Для  подготовленных. Укрепляет руки.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W004",
+                            name: "сгибание рук — скамья Скотта",
+                            image1: "C_EX_W004",
+                            image2: "C_EX_W004_1",
+                            notes: "Для  подготовленных. Укрепляет бицепс.",
+                            point: -10,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W018",
+                            name: "становая тяга",
+                            image1: "C_EX_W018",
+                            image2: "C_EX_W018_1",
+                            notes: "Для опытных. Профессиональное силовое упражнение.",
+                            point: 60,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
          }
             ]
         },
         {
-            name: "Диета",
-            notes: "В данном разделе описываются основные требования к питанию Аватара на пути к достижению поставленной цели",
+            name: "Грудные мышцы",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
             locuses: [
         {
-                    locus_name: "Виды диет",
-                    locus_notes: "Основные принципы питания, необходимые для достижения поставленной цели",
-                    locus_category: "виды диет",
-                    locus_backimg: "C_DIET001_",
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T011",
+                            name: "разгибание ног в тренажере",
+                            image1: "C_EX_T011",
+                            image2: "C_EX_T011_1",
+                            notes: "Для начинающих. Укрепляет ноги.",
+                            point: -10,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T017",
+                            name: "сведение рук в тренажере",
+                            image1: "C_EX_T017",
+                            image2: "C_EX_T017_1",
+                            notes: "Для начинающих. Укрепляет грудь.",
+                            point: 40,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T016",
+                            name: "тяга вертикального блока",
+                            image1: "C_EX_T016",
+                            image2: "C_EX_T016_1",
+                            notes: "Для начинающих. Укрепляет спину и руки.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        }
+                    ]
+        },
+        {
+                    locus_name: "Гимнастика",
+                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
+                    locus_category: "гимнастика",
+                    locus_backimg: "C_EX_G001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G005",
+                            name: "отжимания от пола",
+                            image1: "C_EX_G005",
+                            image2: "C_EX_G005_1",
+                            notes: "Для  подготовленных. Работают много мышц. Грудь и руки особенно.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G012",
+                            name: "присед на одной ноге",
+                            image1: "C_EX_G012",
+                            image2: "C_EX_G012_1",
+                            notes: "Для опытных. Сильно укрепляет ноги и попу.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        }
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W009",
+                            name: "приседания со штангой на груди",
+                            image1: "C_EX_W009",
+                            image2: "C_EX_W009_1",
+                            notes: "Для опытных. Профессиональное силовое упражнение.",
+                            point: -40,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W006",
+                            name: "жим штанги лежа",
+                            image1: "C_EX_W006",
+                            image2: "C_EX_W006_1",
+                            notes: "Для опытных. Профессиональное силовое упражнение.",
+                            point: 50,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
          }
             ]
         },
         {
-            name: "Восстановление",
-            notes: "В данном разделе описываются основные процедуры, позволяющие восстановиться после тренировок и ускорить процесс достижения целей",
+            name: "Дельтовидные мышцы",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
             locuses: [
         {
-                    locus_name: "Виды восстановления",
-                    locus_notes: "Процедуры, помогающие восстановиться после тренировок и быстрее достичь поставленной цели",
-                    locus_category: "виды восстановления",
-                    locus_backimg: "C_SPA001_",
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды восстановления",
-                    locus_notes: "Процедуры, помогающие восстановиться после тренировок и быстрее достичь поставленной цели",
-                    locus_category: "виды восстановления",
-                    locus_backimg: "C_SPA001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды восстановления",
-                    locus_notes: "Процедуры, помогающие восстановиться после тренировок и быстрее достичь поставленной цели",
-                    locus_category: "виды восстановления",
-                    locus_backimg: "C_SPA001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Виды восстановления",
-                    locus_notes: "Процедуры, помогающие восстановиться после тренировок и быстрее достичь поставленной цели",
-                    locus_category: "виды восстановления",
-                    locus_backimg: "C_SPA001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W016",
+                            name: "сгибание рук с гантелями попеременно",
+                            image1: "C_EX_W016",
+                            image2: "C_EX_W016_1",
+                            notes: "Для  подготовленных. Укрепляет руки.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W010",
+                            name: "разведение рук с гантелями стоя",
+                            image1: "C_EX_W010",
+                            image2: "C_EX_W010_1",
+                            notes: "Для  подготовленных. Укрепляет плечи.",
+                            point: 40,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W016",
+                            name: "сгибание рук с гантелями попеременно",
+                            image1: "C_EX_W016",
+                            image2: "C_EX_W016_1",
+                            notes: "Для  подготовленных. Укрепляет руки.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
          }
             ]
         },
         {
-            name: "Углубленный подход к тренировочным занятиям",
-            notes: "В данном разделе определяются углубленные аспекты составления тренировочных программ требующие специальных знаний",
+            name: "Мышцы спины",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
             locuses: [
         {
-                    locus_name: "Направления мезоцикла",
-                    locus_notes: "В данном разделе указываются основные направления мезоцикла, определяющие глобальную цель тренировочной программы",
-                    locus_category: "направления мезоцикла",
-                    locus_backimg: "C_SPORT001_",
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T016",
+                            name: "тяга вертикального блока",
+                            image1: "C_EX_T016",
+                            image2: "C_EX_T016_1",
+                            notes: "Для начинающих. Укрепляет спину и руки.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T014",
+                            name: "сгибание рук на бицепс в тренажере",
+                            image1: "C_EX_T014",
+                            image2: "C_EX_T014_1",
+                            notes: "Для начинающих. Укрепляет руки.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Направления мезоцикла",
-                    locus_notes: "В данном разделе указываются основные направления мезоцикла, определяющие глобальную цель тренировочной программы",
-                    locus_category: "направления мезоцикла",
-                    locus_backimg: "C_SPORT001_",
+                    locus_name: "Гимнастика",
+                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
+                    locus_category: "гимнастика",
+                    locus_backimg: "C_EX_G001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G003",
+                            name: "лодочка",
+                            image1: "C_EX_G003",
+                            image2: "C_EX_G003_1",
+                            notes: "Для начинающих. Укрепляет мышцы поясницы.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G015",
+                            name: "скручивания на коврике",
+                            image1: "C_EX_G015",
+                            image2: "C_EX_G015_1",
+                            notes: "Для начинающих. Укрепляет пресс.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G014",
+                            name: "ролик для пресса",
+                            image1: "C_EX_G014",
+                            image2: "C_EX_G014",
+                            notes: "Для опытных. Работают интенсивно мышцы ног, рук, туловища.",
+                            point: 30,
+                            takenotes: "возможен и такой вариант"
+                        }
                     ]
         },
         {
-                    locus_name: "Виды мезоциклов",
-                    locus_notes: "В данном разделе дается детализация принципов построения и режимов выполнения тренировочной программы",
-                    locus_category: "виды мезоциклов",
-                    locus_backimg: "C_SPORT001_",
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W006",
+                            name: "жим штанги лежа",
+                            image1: "C_EX_W006",
+                            image2: "C_EX_W006_1",
+                            notes: "Для опытных. Профессиональное силовое упражнение.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W018",
+                            name: "становая тяга",
+                            image1: "C_EX_W018",
+                            image2: "C_EX_W018_1",
+                            notes: "Для опытных. Профессиональное силовое упражнение.",
+                            point: 50,
+                            takenotes: "это правильный ответ"
+                        }
+                    ]
+         }
+            ]
+        },
+        {
+            name: "Бицепс плеча",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
+            locuses: [
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T014",
+                            name: "сгибание рук на бицепс в тренажере",
+                            image1: "C_EX_T014",
+                            image2: "C_EX_T014_1",
+                            notes: "Для начинающих. Укрепляет руки.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T013",
+                            name: "сгибание ног в тренажере",
+                            image1: "C_EX_T013",
+                            image2: "C_EX_T013_1",
+                            notes: "Для начинающих. Укрепляет ноги.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Виды мезоциклов",
-                    locus_notes: "В данном разделе дается детализация принципов построения и режимов выполнения тренировочной программы",
-                    locus_category: "виды мезоциклов",
-                    locus_backimg: "C_SPORT001_",
+                    locus_name: "Гимнастика",
+                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
+                    locus_category: "гимнастика",
+                    locus_backimg: "C_EX_G001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G009",
+                            name: "подъем на мыски",
+                            image1: "C_EX_G009",
+                            image2: "C_EX_G009_1",
+                            notes: "Для начинающих. Тренирует голени.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G007",
+                            name: "отжимания с колен",
+                            image1: "C_EX_G007",
+                            image2: "C_EX_G007_1",
+                            notes: "Для начинающих. Легкий вариант отжиманий. Укрепляет грудь и руки.",
+                            point: 20,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Виды мезоциклов",
-                    locus_notes: "В данном разделе дается детализация принципов построения и режимов выполнения тренировочной программы",
-                    locus_category: "виды мезоциклов",
-                    locus_backimg: "C_SPORT001_",
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W004",
+                            name: "сгибание рук — скамья Скотта",
+                            image1: "C_EX_W004",
+                            image2: "C_EX_W004_1",
+                            notes: "Для  подготовленных. Укрепляет бицепс.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W001",
+                            name: "выпады со штангой",
+                            image1: "C_EX_W001",
+                            image2: "C_EX_W001-1",
+                            notes: "Для опытных. Профессиональное силовое упражнение.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        }
+                    ]
+         }
+            ]
+        },
+        {
+            name: "Трицепс плеча",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
+            locuses: [
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T005",
+                            name: "Кроссовер — сведение ног",
+                            image1: "C_EX_T005",
+                            image2: "C_EX_T005_1",
+                            notes: "Для  подготовленных. Укрепляет ноги и спину.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T007",
+                            name: "отжимания на параллельных брусьях",
+                            image1: "C_EX_T007",
+                            image2: "C_EX_T007_1",
+                            notes: "Для  подготовленных. Укрепляет руки и плечи.",
+                            point: 40,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Мышечно-сухожильные линии",
-                    locus_notes: "В данном разделе определяется, какие мышечно-сухожильные линии будут прорабатываться, это определяет акцент выбора упражнений в тренировочной программе",
-                    locus_category: "мышечно сухожильные линии",
-                    locus_backimg: "",
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W017",
+                            name: "сгибание рук с гантелями хват снизу",
+                            image1: "C_EX_W017",
+                            image2: "C_EX_W017_1",
+                            notes: "Для  подготовленных. Укрепляет руки. Акцент на предплечья.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W020",
+                            name: "французский жим",
+                            image1: "C_EX_W020",
+                            image2: "C_EX_W020-1",
+                            notes: "Для  подготовленных. Укрепляет руки. Особенно трицепс.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        }
+                    ]
+         }
+            ]
+        },
+        {
+            name: "Мышцы брюшного пресса",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
+            locuses: [
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T008",
+                            name: "подтягивания",
+                            image1: "C_EX_T008",
+                            image2: "C_EX_T008_1",
+                            notes: "Для  подготовленных. Укрепляет спину, плечи, руки.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T011",
+                            name: "разгибание ног в тренажере",
+                            image1: "C_EX_T011",
+                            image2: "C_EX_T011_1",
+                            notes: "Для начинающих. Укрепляет ноги.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T015",
+                            name: "скручивания на наклонной скамье",
+                            image1: "C_EX_T015",
+                            image2: "C_EX_T015_1",
+                            notes: "Для начинающих. Укрепляет пресс.",
+                            point: 50,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Мышечно-сухожильные линии",
-                    locus_notes: "В данном разделе определяется, какие мышечно-сухожильные линии будут прорабатываться, это определяет акцент выбора упражнений в тренировочной программе",
-                    locus_category: "мышечно сухожильные линии",
-                    locus_backimg: "",
+                    locus_name: "Гимнастика",
+                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
+                    locus_category: "гимнастика",
+                    locus_backimg: "C_EX_G001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G010",
+                            name: "подъем на мысок одной ноги",
+                            image1: "C_EX_G010",
+                            image2: "C_EX_G010_1",
+                            notes: "Для  подготовленных. Усиленно тренирует голени.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G014",
+                            name: "ролик для пресса",
+                            image1: "C_EX_G014",
+                            image2: "C_EX_G014",
+                            notes: "Для опытных. Работают интенсивно мышцы ног, рук, туловища.",
+                            point: 60,
+                            takenotes: "это правильный ответ"
+                        }
+                    ]
+         }
+            ]
+        },
+        {
+            name: "Ягодичные мышцы",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
+            locuses: [
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T002",
+                            name: "жим платформы ногами",
+                            image1: "C_EX_T002",
+                            image2: "C_EX_T002_1",
+                            notes: "Для  подготовленных. Укрепляет ноги и попу. Повышает артериальное давление.",
+                            point: 50,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T008",
+                            name: "подтягивания",
+                            image1: "C_EX_T008",
+                            image2: "C_EX_T008_1",
+                            notes: "Для  подготовленных. Укрепляет спину, плечи, руки.",
+                            point: -40,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T017",
+                            name: "сведение рук в тренажере",
+                            image1: "C_EX_T017",
+                            image2: "C_EX_T017_1",
+                            notes: "Для начинающих. Укрепляет грудь.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Мышечно-сухожильные линии",
-                    locus_notes: "В данном разделе определяется, какие мышечно-сухожильные линии будут прорабатываться, это определяет акцент выбора упражнений в тренировочной программе",
-                    locus_category: "мышечно сухожильные линии",
-                    locus_backimg: "",
+                    locus_name: "Гимнастика",
+                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
+                    locus_category: "гимнастика",
+                    locus_backimg: "C_EX_G001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G004",
+                            name: "отведение ноги лежа",
+                            image1: "C_EX_G004",
+                            image2: "C_EX_G004_1",
+                            notes: "Для начинающих. Укрепляет попу.",
+                            point: 40,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G015",
+                            name: "скручивания на коврике",
+                            image1: "C_EX_G015",
+                            image2: "C_EX_G015_1",
+                            notes: "Для начинающих. Укрепляет пресс.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
         },
         {
-                    locus_name: "Мышечно-сухожильные линии",
-                    locus_notes: "В данном разделе определяется, какие мышечно-сухожильные линии будут прорабатываться, это определяет акцент выбора упражнений в тренировочной программе",
-                    locus_category: "мышечно сухожильные линии",
-                    locus_backimg: "",
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W021",
+                            name: "сгибание рук хаммер с гантелями",
+                            image1: "C_EX_W021",
+                            image2: "C_EX_W021_1",
+                            notes: "Для  подготовленных. Укрепляет трицепс.",
+                            point: -40,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W017",
+                            name: "сгибание рук с гантелями хват снизу",
+                            image1: "C_EX_W017",
+                            image2: "C_EX_W017_1",
+                            notes: "Для  подготовленных. Укрепляет руки. Акцент на предплечья.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "свободные веса",
+                            code: "C_EX_W018",
+                            name: "становая тяга",
+                            image1: "C_EX_W018",
+                            image2: "C_EX_W018_1",
+                            notes: "Для опытных. Профессиональное силовое упражнение.",
+                            point: 50,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
+         }
+            ]
         },
         {
-                    locus_name: "Линии Традиционной Китайской Медицины",
-                    locus_notes: "В данном разделе определяется, какие мышцы будут задействованы в программе. Мышцы ассоциируются с выбранной линией, описанной в Традиционной Китайской Медицине",
-                    locus_category: "линии ТКМ",
-                    locus_backimg: "C_SPORT001_",
+            name: "Мышцы голеней",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
+            locuses: [
+        {
+                    locus_name: "Гимнастика",
+                    locus_notes: "Упражнения, выполняемые без применения утяжелителей и тренажеров",
+                    locus_category: "гимнастика",
+                    locus_backimg: "C_EX_G001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G008",
+                            name: "подъем попы лежа на спине",
+                            image1: "C_EX_G008",
+                            image2: "C_EX_G008_1",
+                            notes: "Для начинающих. Укрепляет мышцы туловища, ног и попу.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "гимнастика",
+                            code: "C_EX_G010",
+                            name: "подъем на мысок одной ноги",
+                            image1: "C_EX_G010",
+                            image2: "C_EX_G010_1",
+                            notes: "Для  подготовленных. Усиленно тренирует голени.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        }
                     ]
+         }
+            ]
         },
         {
-                    locus_name: "Линии Традиционной Китайской Медицины",
-                    locus_notes: "В данном разделе определяется, какие мышцы будут задействованы в программе. Мышцы ассоциируются с выбранной линией, описанной в Традиционной Китайской Медицине",
-                    locus_category: "линии ТКМ",
-                    locus_backimg: "C_SPORT001_",
+            name: "Бицепс бедра",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
+            locuses: [
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T009",
+                            name: "разведение ног в тренажере",
+                            image1: "C_EX_T009",
+                            image2: "C_EX_T009_1",
+                            notes: "Для начинающих. Укрепляет попу.",
+                            point: -20,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T013",
+                            name: "сгибание ног в тренажере",
+                            image1: "C_EX_T013",
+                            image2: "C_EX_T013_1",
+                            notes: "Для начинающих. Укрепляет ноги.",
+                            point: 30,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T016",
+                            name: "тяга вертикального блока",
+                            image1: "C_EX_T016",
+                            image2: "C_EX_T016_1",
+                            notes: "Для начинающих. Укрепляет спину и руки.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
+         }
+            ]
         },
         {
-                    locus_name: "Линии Традиционной Китайской Медицины",
-                    locus_notes: "В данном разделе определяется, какие мышцы будут задействованы в программе. Мышцы ассоциируются с выбранной линией, описанной в Традиционной Китайской Медицине",
-                    locus_category: "линии ТКМ",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
+            name: "Четырехглавую мышцу бедра",
+            notes: "Укажите упражнения, воздействующие на указанные мышцы",
+            locuses: [
         {
-                    locus_name: "Линии Традиционной Китайской Медицины",
-                    locus_notes: "В данном разделе определяется, какие мышцы будут задействованы в программе. Мышцы ассоциируются с выбранной линией, описанной в Традиционной Китайской Медицине",
-                    locus_category: "линии ТКМ",
-                    locus_backimg: "C_SPORT001_",
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
                     locus_card_code: "C_COLOR_GRAY",
                     locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
                     locus_card_image2: "C_COLOR_GRAY",
                     locus_points: 0,
                     locus_type: "",
                     cards: [
-                    ]
-        },
-        {
-                    locus_name: "Линии Традиционной Китайской Медицины",
-                    locus_notes: "В данном разделе определяется, какие мышцы будут задействованы в программе. Мышцы ассоциируются с выбранной линией, описанной в Традиционной Китайской Медицине",
-                    locus_category: "линии ТКМ",
-                    locus_backimg: "C_SPORT001_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Органы",
-                    locus_notes: "В данном разделе указываются органы, которые должны быть ассоциированы с тренируемыми мышцами. Это определяет выбор упражнений тренировочной программы",
-                    locus_category: "органы",
-                    locus_backimg: "C_COLOR_YELLOW_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Органы",
-                    locus_notes: "В данном разделе указываются органы, которые должны быть ассоциированы с тренируемыми мышцами. Это определяет выбор упражнений тренировочной программы",
-                    locus_category: "органы",
-                    locus_backimg: "C_COLOR_YELLOW_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Органы",
-                    locus_notes: "В данном разделе указываются органы, которые должны быть ассоциированы с тренируемыми мышцами. Это определяет выбор упражнений тренировочной программы",
-                    locus_category: "органы",
-                    locus_backimg: "C_COLOR_YELLOW_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Органы",
-                    locus_notes: "В данном разделе указываются органы, которые должны быть ассоциированы с тренируемыми мышцами. Это определяет выбор упражнений тренировочной программы",
-                    locus_category: "органы",
-                    locus_backimg: "C_COLOR_YELLOW_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
-                    ]
-        },
-        {
-                    locus_name: "Органы",
-                    locus_notes: "В данном разделе указываются органы, которые должны быть ассоциированы с тренируемыми мышцами. Это определяет выбор упражнений тренировочной программы",
-                    locus_category: "органы",
-                    locus_backimg: "C_COLOR_YELLOW_",
-                    locus_card_code: "C_COLOR_GRAY",
-                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
-                    locus_card_image1: "C_COLOR_GRAY_",
-                    locus_card_image2: "C_COLOR_GRAY",
-                    locus_points: 0,
-                    locus_type: "",
-                    cards: [
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T008",
+                            name: "подтягивания",
+                            image1: "C_EX_T008",
+                            image2: "C_EX_T008_1",
+                            notes: "Для  подготовленных. Укрепляет спину, плечи, руки.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T011",
+                            name: "разгибание ног в тренажере",
+                            image1: "C_EX_T011",
+                            image2: "C_EX_T011_1",
+                            notes: "Для начинающих. Укрепляет ноги.",
+                            point: 40,
+                            takenotes: "это правильный ответ"
+                        },
+                        {
+                            category: "тренажеры",
+                            code: "C_EX_T015",
+                            name: "скручивания на наклонной скамье",
+                            image1: "C_EX_T015",
+                            image2: "C_EX_T015_1",
+                            notes: "Для начинающих. Укрепляет пресс.",
+                            point: -30,
+                            takenotes: "это неправильный ответ"
+                        }
                     ]
          }
             ]
         }
     ]
 }
+
+          // this.object = 
 
           console.log('Blocks Count: ' + Object.keys(this.object.blocks).length)
 

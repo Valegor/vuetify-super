@@ -23,13 +23,16 @@
         </v-card-subtitle>
  </v-card>
 
-      <v-row>
+      <v-row 
+      justify="center"
+      max-width="344"
+      >
          <v-col
           cols="12"
           sm="6"
           md="4"
         >
-          <v-subheader>Answers</v-subheader>
+          <v-subheader>Варианты ответов: </v-subheader>
             <v-radio-group v-model="ans" class="radio-container d-flex">
                 <v-radio
                     class="radio-item"
@@ -51,7 +54,7 @@
       dark
       @click="answer"
     >
-      Open Dialog
+      Ответить
     </v-btn>
 
 <v-dialog
@@ -165,10 +168,10 @@
             console.log('Game score: ' + this.game_score)
 
             if(this.game_score > 0){
-                this.estimation_answer = 'Правильно'
+                this.estimation_answer = 'Общий счет'
                 this.wright++
             } else {
-                this.estimation_answer = 'Вы ошиблись'
+                this.estimation_answer = 'Вы проигрываете: '
                 this.wrong++
             }
 
