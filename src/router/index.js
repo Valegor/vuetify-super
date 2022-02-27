@@ -45,6 +45,8 @@ import TemplateAnswers from '@/components/Answers/TemplateAnswers'
 import Template from '@/components/Answers/Template'
 import TemplateCategories from '@/components/Answers/TemplateCategories'
 import TemplateCategory from '@/components/Answers/TemplateCategory'
+import AdminAnswerCards from '@/components/Admin/AdminAnswerCards'
+import AdminAnswers from '@/components/Admin/AdminAnswers'
 
 //Answer-Comments
 import CommentCreate from '@/components/Answers/Comments/CommentCreate'
@@ -84,6 +86,16 @@ export default new Router({
       path: '/registration',
       name: 'reg',
       component: Registration
+    },
+    {
+      path: '/admin-answers',
+      name: 'admin-answers',
+      component: AdminAnswers
+    },
+    {
+      path: '/admin-answer-cards/:id',
+      name: 'admin-answer-cards',
+      component: AdminAnswerCards
     },
     {
       path: '/test',
