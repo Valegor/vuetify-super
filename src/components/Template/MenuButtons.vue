@@ -69,6 +69,7 @@ export default {
         {title: 'Cards', icon: 'mdi-cards-playing-outline', url: '/cards-categories'},
         {title: 'Templates', icon: 'mdi-checkbox-multiple-blank-outline', url: '/template-categories'},
         {title: 'My Answers', icon: 'mdi-border-color', url: '/myanswers'},
+        {title: 'Create Order', icon: 'mdi-border-color', url: '/orders'},
         {title: 'Admin', icon: 'mdi-border-color', url: '/admin-answers'},
         // {title: 'Get', icon: 'mdi-trending-up', url: '/get'},
         ],
