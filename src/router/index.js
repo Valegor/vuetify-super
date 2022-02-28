@@ -29,6 +29,7 @@ import Records from '@/components/Game/Records'
 import Start from '@/components/Game/Play/Start'
 import Quest from '@/components/Game/Play/Quest'
 import Finish from '@/components/Game/Play/Finish'
+import Orders from '@/components/Orders'
 
 //Static
 import About from '@/components/Static/About'
@@ -109,6 +110,11 @@ export default new Router({
       path: '/get',
       name: 'get',
       component: Get
+    },
+    {
+      path: '/orders',
+      name: 'orders',
+      component: Orders
     },
     {
       path: '/post/:id',
