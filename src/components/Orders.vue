@@ -26,7 +26,7 @@
           label="E-mail"
           rows="1"
           row-height="20"
-          disabled="true"
+          disabled
         ></v-textarea>
 </v-container>  
 

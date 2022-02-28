@@ -82,7 +82,7 @@
                         // console.log(r.config.headers['X-XSRF-TOKEN'])
                         localStorage.setItem('x_xsrf_token', r.config.headers['X-XSRF-TOKEN'])
                         this.$store.commit('SET_USER_EMAIL', this.email)
-                        this.$router.push({ name: 'test' })
+                        this.$router.push({ name: 'home' })
                         return response
                     })
                     .catch( err => {
@@ -100,6 +100,7 @@
     },
     mounted() {
       console.log('login mounted')
+        // localStorage.removeItem('x_xsrf_token')
         this.delCookie(this.session_cookie)
         this.delCookie(this.tocken_cookie)
     }

@@ -50,12 +50,6 @@
 Игра проходит очно или в онлайн-формате (Zoom). 
 
 <hr>
-Записаться на игру можно заполнив форму.<hr>
-
-
-<router-link to="/orders" exact>ПОДАТЬ ЗАЯВКУ НА ИГРУ</router-link>
-
-<hr>
 
 На данном сайте вы можете:
 
@@ -80,7 +74,6 @@
 <router-link to="/registration" exact>регистрацию на сайте,</router-link>
 
 
-
 вы сможете:
 
 <ul>
@@ -94,6 +87,9 @@
     <router-link to="/template-categories" exact>создать свои ответы на шаблоны</router-link>   
   </li>
 
+  <li>
+    <router-link to="/orders" exact>подать заявку на игру</router-link>
+  </li>
 </ul>
 
 
