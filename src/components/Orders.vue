@@ -26,12 +26,13 @@
           label="E-mail"
           rows="1"
           row-height="20"
+          disabled="true"
         ></v-textarea>
 </v-container>  
 
   <v-container fluid>
         <v-textarea
-          name="input-phone"
+           
           filled
           auto-grow
           v-model="phone"
@@ -40,6 +41,24 @@
           row-height="20"
         ></v-textarea>
 </v-container>
+
+  <v-container fluid>
+    <v-row align="center">
+      <v-col
+        class="d-flex"
+        cols="12"
+        sm="6"
+      >
+        <v-select
+          :items="items"
+          name="input-perfect-connect"
+          label="Предпочтительный способ связи:"
+          v-model="perfect_connect"
+        ></v-select>
+      </v-col>
+
+    </v-row>
+  </v-container>
 
 <v-container fluid>
         <v-textarea 
@@ -59,7 +78,7 @@
           filled
           auto-grow
           v-model="problem"
-          label="Text"
+          label="Problem"
           rows="7"
           row-height="20"
         ></v-textarea>
@@ -84,17 +103,6 @@
     max-width="400"
     tile
   >
-    <v-list-item>
-        <v-list-item-content>
-            <v-list-item-title>Внимание!</v-list-item-title>
-            <v-list-item-subtitle>
-                Ваш комментарий будет проверен модератором.
-            </v-list-item-subtitle>
-            <v-list-item-subtitle>
-                Рассмотрен будет только первый оставленный комментарий!
-            </v-list-item-subtitle>
-        </v-list-item-content>
-    </v-list-item> 
 
 </v-card>
 
@@ -104,7 +112,7 @@
     >
       <v-card>
         <v-card-title class="text-h6">
-            Спасибо<br>
+            Ваша заявка будет рассмотрена в ближайшее время.<br>
         </v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -125,8 +133,8 @@
 
 <script>
 
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     import axios from '@/axios/axios'
-    import router from '@/router/index'
 
     export default {
     data: () => ({
@@ -134,10 +142,11 @@
         status: 0,
         name: '',
         email: '',        
-        phone: '7777777',
-        perfect_connect: '',
-        goals: 'goals77',
-        problem: 'problem77',
+        phone: '',
+        perfect_connect: 'Телефон',
+        goals: 'В процессе игры я хочу достичь следующих целей: ',
+        problem: 'В процессе игры я хочу уделить внимание следующим проблемам: ',
+        items: ['Телефон', 'E-mail', 'WhatsApp', 'Viber'],
         user: {},
         dialog: false,
     }),
@@ -148,7 +157,7 @@
         },
         close(){
           this.dialog = false
-          this.$router.push('/template-categories')
+          this.$router.push('/')
         },
         getUser(){
             axios
@@ -166,19 +175,19 @@
         submit(){
             console.log('submit')
 
-            axios.post('/api/comment-create', {  
-                parent_id: this.parent_id,
-                template_id: this.template_id,
-                text: this.text,                           
-                author_id: this.author_id,                           
-                author_name: this.author_name,                           
-                author_email: this.author_email,                           
-                aviable: this.aviable,                           
+            axios.post('/api/order-create', {  
+                status: this.status,
+                name: this.name,
+                email: this.email,                           
+                phone: this.phone,                           
+                perfect_connect: this.perfect_connect,                           
+                goals: this.goals,                           
+                problem: this.problem,    
                 })
                     .then( response => {
                         console.log(response)
                         this.dialog = true
-                        setTimeout(() => { this.$router.push('/template-categories')}, 3000)
+                        setTimeout(() => { this.$router.push('/')}, 3000)
                         
                         // console.log('Updated Answer ID: ' + this.id)
 

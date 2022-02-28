@@ -50,6 +50,8 @@
         email: '',
         password: '',
         valid: false,
+        session_cookie: 'laravel_session',
+        tocken_cookie: 'XSRF-TOKEN',
         emailRules: [
           v => !!v || 'E-mail is required',
           v => emailRegex.test(v) || 'E-mail must be valid'
@@ -61,8 +63,18 @@
       }
     },
     methods: {
-      onSubmit () {
+    setCookie(c_name,value,expire) {
+          var date=new Date()
+          date.setSeconds(date.getSeconds()+expire)
+          document.cookie=c_name+ "="+escape(value)+"; expires="+date.toGMTString()
+          console.log(document.cookie)
+    },
+    delCookie(c_name){
+      this.setCookie(c_name, "", -1)
+    },
+    onSubmit () {
         if (this.$refs.form.validate()) {
+     
                     axios.get('sanctum/csrf-cookie').then(response => {
                     axios.post('/login', { email: this.email, password: this.password })
                     .then( r => {
@@ -85,6 +97,11 @@
           // console.log(user)
         }
       }
+    },
+    mounted() {
+      console.log('login mounted')
+        this.delCookie(this.session_cookie)
+        this.delCookie(this.tocken_cookie)
     }
   }
 </script>

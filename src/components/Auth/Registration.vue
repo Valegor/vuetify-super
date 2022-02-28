@@ -93,7 +93,7 @@
       onSubmit () {
         if (this.$refs.form.validate()) {
 
-
+                    document.cookie = "name=<laravel_session>; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
                     axios.get('/sanctum/csrf-cookie').then(response => {
                     axios.post('/register', 
                         { 
