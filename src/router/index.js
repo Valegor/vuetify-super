@@ -71,6 +71,7 @@ import Get from '@/components/Get'
 
 
 Vue.use(Router)
+import store from '@/store/index'
 
 export default new Router({
   routes: [
@@ -92,7 +93,15 @@ export default new Router({
     {
       path: '/admin-answers',
       name: 'admin-answers',
-      component: AdminAnswers
+      component: AdminAnswers,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/private-policy',
@@ -102,7 +111,15 @@ export default new Router({
     {
       path: '/admin-answer-cards/:id',
       name: 'admin-answer-cards',
-      component: AdminAnswerCards
+      component: AdminAnswerCards,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/test',
@@ -120,7 +137,15 @@ export default new Router({
     {
       path: '/orders',
       name: 'orders',
-      component: Orders
+      component: Orders,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/post/:id',
@@ -205,7 +230,15 @@ export default new Router({
     {
       path: '/feedback',
       name: 'feedback',
-      component: Feedback
+      component: Feedback,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/rules',
@@ -220,7 +253,15 @@ export default new Router({
     {
       path: '/start',
       name: 'start',
-      component: Start
+      component: Start,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/quest',
@@ -280,27 +321,67 @@ export default new Router({
     {
       path: '/mycomments/:id',
       name: 'mycomments-my',
-      component: MyComments
+      component: MyComments,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/answer-create/:id',
       name: 'answer-create',
-      component: AnswerCreate
+      component: AnswerCreate,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/answer-update/:id',
       name: 'answer-update',
-      component: AnswerUpdate
+      component: AnswerUpdate,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/answer-update-passport/:id',
       name: 'answer-update-passport',
-      component: AnswerUpdatePassport
+      component: AnswerUpdatePassport,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/answer-update-object/:id',
       name: 'answer-update-object',
-      component: AnswerUpdateObject
+      component: AnswerUpdateObject,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/start-answer',
@@ -310,12 +391,28 @@ export default new Router({
     {
       path: '/myanswers',
       name: 'myanswers',
-      component: MyAnswers
+      component: MyAnswers,
+      beforeEnter: (from, to, next) => {
+        console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
     {
       path: '/convert',
       name: 'convert',
-      component: Convert
+      component: Convert,
+      beforeEnter: (from, to, next) => {
+        // console.log(store.getters.USER_EMAIL)
+        if(store.getters.USER_EMAIL) {
+          next()
+        } else {
+          next('/login')    
+        } 
+      }
     },
   ],
   mode: 'history'

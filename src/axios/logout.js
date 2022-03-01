@@ -1,5 +1,6 @@
 import axios from "./axios"
 import router from "../router/"
+import store from "../store/index"
 
 const logouts = () => {
 
@@ -8,6 +9,10 @@ const logouts = () => {
 
     axios.post('/logout')
     .then( res => {
+        console.log('Logout before: ' + store.getters.USER_EMAIL)
+        store.commit('SET_USER_EMAIL', '')
+        localStorage.removeItem('user_email')
+        console.log('Logout after: ' + store.getters.USER_EMAIL)
         localStorage.removeItem('x_xsrf_token')
         router.push({ name: 'login' })
         return res

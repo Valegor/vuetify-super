@@ -81,7 +81,10 @@
                         // console.log('response')
                         // console.log(r.config.headers['X-XSRF-TOKEN'])
                         localStorage.setItem('x_xsrf_token', r.config.headers['X-XSRF-TOKEN'])
+                        console.log('Login before: ' + this.$store.getters.USER_EMAIL)
                         this.$store.commit('SET_USER_EMAIL', this.email)
+                        localStorage.setItem('user_email', this.email)
+                        console.log('Login after: ' + this.$store.getters.USER_EMAIL)
                         this.$router.push({ name: 'home' })
                         return response
                     })

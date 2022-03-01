@@ -2,6 +2,9 @@
 
 <div>
 
+
+<div v-if="answers.data">    
+
 <div
 v-for="answer in answers.data" :key="answer.id"
 >
@@ -57,6 +60,11 @@ v-for="answer in answers.data" :key="answer.id"
 
 <br>
 
+</div>
+<div v-else>
+    У Вас нет незакрытых ответов на шаблоны
+</div>
+
 </div> 
 
 </template>
@@ -96,6 +104,7 @@ v-for="answer in answers.data" :key="answer.id"
 
     },
     mounted() {
+        console.log('mounted')
         this.getResults()
     }
 
