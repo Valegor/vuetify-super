@@ -37,6 +37,7 @@ import Author from '@/components/Static/Author'
 import Feedback from '@/components/Static/Feedback'
 import Projects from '@/components/Static/Projects'
 import Rules from '@/components/Static/Rules'
+import PrivatePolicy from '@/components/Static/PrivatePolicy'
 
 //Answer-Index
 import Answer from '@/components/Answers/Answer'
@@ -92,6 +93,11 @@ export default new Router({
       path: '/admin-answers',
       name: 'admin-answers',
       component: AdminAnswers
+    },
+    {
+      path: '/private-policy',
+      name: 'private-policy',
+      component: PrivatePolicy
     },
     {
       path: '/admin-answer-cards/:id',
