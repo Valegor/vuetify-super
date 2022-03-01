@@ -3,7 +3,8 @@
 <div>
 
 
-<div v-if="answers.data">    
+<div v-if="answerLenght > 0"> 
+      
 
 <div
 v-for="answer in answers.data" :key="answer.id"
@@ -82,7 +83,7 @@ v-for="answer in answers.data" :key="answer.id"
             cat_id: '',
             show: false,
             serverUrl: '',
-
+            answerLenght: 0,
         }
     },
     methods: {
@@ -93,6 +94,8 @@ v-for="answer in answers.data" :key="answer.id"
 			axios.get('/api/answers-email/' + this.user_email)
 				.then(response => {
 					this.answers = response;
+                    this.answerLenght = Object.keys(this.answers.data).length
+
 				});
         
 		}
