@@ -42,11 +42,427 @@
         convert_template(){
           console.log('converted')
 
-          this.id = 9
+          this.id = 8
 
           // this.object = 
 
-
+ this.object = {
+    title: {
+        program_name: "",
+        notes: "",
+    },
+    author: {
+        name: "",
+        email: ""
+    },
+    tags: [
+           
+    ],
+    blocks:[
+        {
+            name: "Двигательная активность",
+            notes: "В данном разделе мы описываем необходимую двигательную активность Аватара",
+            locuses: [
+        {
+                    locus_name: "Количество аэробных тренировок в неделю",
+                    locus_notes: "Укажите количество аэробных тренировок в неделю",
+                    locus_category: "цифры",
+                    locus_backimg: "C_COLOR_YELLOW_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Количество силовых тренировок в неделю",
+                    locus_notes: "Укажите количество силовых тренировок в неделю",
+                    locus_category: "цифры",
+                    locus_backimg: "C_COLOR_YELLOW_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+         }
+            ]
+        },
+        {
+            name: "Программа тренировок",
+            notes: "В данном разделе дается описание программы тренировок",
+            locuses: [
+        {
+                    locus_name: "Направление тренировки",
+                    locus_notes: "В данном разделе описываются основные эффекты тренировочного занятия",
+                    locus_category: "детализация направлений мезоцикла",
+                    locus_backimg: "C_SPORT001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Направление тренировки",
+                    locus_notes: "В данном разделе описываются основные эффекты тренировочного занятия",
+                    locus_category: "детализация направлений мезоцикла",
+                    locus_backimg: "C_SPORT001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Направление тренировки",
+                    locus_notes: "В данном разделе описываются основные эффекты тренировочного занятия",
+                    locus_category: "детализация направлений мезоцикла",
+                    locus_backimg: "C_SPORT001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+         }
+            ]
+        },
+        {
+            name: "Тренажеры",
+            notes: "Упражнения, которые выполняются в тренажерах",
+            locuses: [
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Тренажеры",
+                    locus_notes: "Упражнения, выполняемые с применением тренажеров",
+                    locus_category: "тренажеры",
+                    locus_backimg: "C_EX_T001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+         }
+            ]
+        },
+        {
+            name: "Свободные веса",
+            notes: "Упражнения, выполняемые со свободными весами",
+            locuses: [
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+        },
+        {
+                    locus_name: "Свободные веса",
+                    locus_notes: "Упражнения, выполняемые с гантелями и штангами",
+                    locus_category: "свободные веса",
+                    locus_backimg: "C_EX_W001_",
+                    locus_card_code: "C_COLOR_GRAY",
+                    locus_card_name: "(КАРТА СЕРОГО ЦВЕТА)",
+                    locus_card_image1: "C_COLOR_GRAY.jpg",
+                    locus_card_image2: "C_COLOR_GRAY",
+                    locus_points: 0,
+                    locus_type: "",
+                    cards: [
+                    ]
+         }
+            ]
+        }
+    ]
+}
 
           console.log('Blocks Count: ' + Object.keys(this.object.blocks).length)
 

@@ -404,15 +404,7 @@ export default new Router({
     {
       path: '/convert',
       name: 'convert',
-      component: Convert,
-      beforeEnter: (from, to, next) => {
-        // console.log(store.getters.USER_EMAIL)
-        if(store.getters.USER_EMAIL) {
-          next()
-        } else {
-          next('/login')    
-        } 
-      }
+      component: Convert
     },
   ],
   mode: 'history'
