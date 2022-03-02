@@ -99,7 +99,7 @@
 
         <router-link to="/admin-answers" exact>
         <v-list-item
-        v-if="isAdmin"
+        v-if="token"
         >
         <v-list-item-icon>
             <v-icon>mdi-cash</v-icon>
@@ -151,11 +151,11 @@ export default {
                 logouts()
             },
             getEmail(){
-                let str = localStorage.getItem('user_email')
-                let substr = this.$store.getters.adminEmail
+                // let str = localStorage.getItem('user_email')
+                // let substr = this.$store.getters.adminEmail
                 // console.log('substr: ' + substr)
                 // let substr = 'medifit2000@yandex.ru';
-                this.isAdmin = str.includes(substr);
+                // this.isAdmin = str.includes(substr);
                 // console.log('Email: ' + this.email + ' isAdmin: ' + this.isAdmin)
             },
         }

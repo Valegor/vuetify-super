@@ -24,11 +24,21 @@
       <b>Date:</b> {{ game.date }} <br>
       <hr>
         <v-btn
+        v-if="isUser == 1"
         color="success"
         dark
         v-on:click="start"
         >
-        Lets Play
+        Начать игру!
+        </v-btn>
+        
+        <v-btn
+        v-if="isUser == 0"
+        color="success"
+        dark
+        router-link to=/login
+        >
+        Войти в систему!
         </v-btn>
     </v-card-subtitle>
 
@@ -37,7 +47,7 @@
         color="orange lighten-2"
         text
       >
-        Read More!
+        Подробнее об игре
       </v-btn>
 
       <v-spacer></v-spacer>
@@ -112,7 +122,7 @@
 <script>
 
     import axios from '@/axios/axios'
-   
+    // import store from '@/store/index'
 
     export default {
     data: () => ({
@@ -127,11 +137,13 @@
         user_email: '',
         user_score: 0,
         user: {},
+        isUser: 0,
     }),
     methods: {
         async getGame(){
 
             this.game_id = this.$route.params.id
+            // this.user_email = this.$store.getters.USER_EMAIL
     
             await axios
                 .get('/api/game/' + this.game_id)
@@ -161,7 +173,6 @@
 
                 this.serverUrl = this.$store.getters.serverUrl
 
-
         },
         start(){
 
@@ -185,6 +196,11 @@
             this.$router.push({name:'start'})
 
         },
+        getEmail(){
+          this.user_email = this.$store.getters.USER_EMAIL
+          if(this.user_email){this.isUser = 1}
+          console.log('is user: ' + this.isUser )
+        },
         async getUser(){
 
             this.user_email = this.$store.getters.USER_EMAIL
@@ -204,7 +220,7 @@
                 this.$store.commit('SET_USER_EMAIL', this.user.email)
                 this.$store.commit('SET_USER_SCORE', this.user.score)
 
-                // console.log(this.user.name)
+                console.log('Username: ' + this.user.name)
         }
     },
     created() {
@@ -218,6 +234,7 @@
     mounted() {
         this.getGame()
         this.getGameCards()
+        this.getEmail()
     }
 
     }

@@ -254,14 +254,14 @@ export default new Router({
       path: '/start',
       name: 'start',
       component: Start,
-      beforeEnter: (from, to, next) => {
-        // console.log(store.getters.USER_EMAIL)
-        if(store.getters.USER_EMAIL) {
-          next()
-        } else {
-          next('/login')    
-        } 
-      }
+      // beforeEnter: (from, to, next) => {
+      //   // console.log(store.getters.USER_EMAIL)
+      //   if(store.getters.USER_EMAIL) {
+      //     next()
+      //   } else {
+      //     next('/login')    
+      //   } 
+      // }
     },
     {
       path: '/quest',
