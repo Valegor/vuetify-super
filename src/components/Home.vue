@@ -54,7 +54,7 @@
 
 <ul>
   <li>
-    <router-link to="/rules" exact>подробнее ознакомиться с правилами игры</router-link>
+    <router-link to="/rules" exact>подробнее ознакомиться с функциями данной игры</router-link>
   </li>
   <li>
     <router-link to="/cards-categories" exact>ознакомиться с основными картами, участвующими в игре</router-link>
@@ -79,7 +79,6 @@
 
   <li>
     <router-link to="/games-categories" exact>пройти обучающие викторины</router-link>
-   
   </li>
 
   <li>
@@ -90,13 +89,13 @@
     <router-link to="/orders" exact>подать заявку на игру</router-link>
   </li>
 </ul>
-
-
-
-
-
-<hr>
-
+        <hr>
+            <router-link to="/private-policy" exact>
+                <v-btn>
+                  Политика конфиденциальности:
+                </v-btn>
+            </router-link>
+          <hr>
         </v-card-text>
       </div>
     </v-expand-transition>

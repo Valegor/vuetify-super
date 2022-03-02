@@ -1,4 +1,9 @@
 <template>
+
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
 <div>
     <v-form
     ref="form"
@@ -129,6 +134,9 @@
     </v-dialog>
 
 </div>
+
+</v-card>
+
 </template>
 
 <script>
