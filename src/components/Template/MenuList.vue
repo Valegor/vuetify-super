@@ -4,7 +4,7 @@
         nav
     >
 
-        <!-- LOGIN ITEM -->
+     <!-- LOGIN ITEM -->
 
         <v-list-item
         v-if="!token"
@@ -15,7 +15,7 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-            <v-list-item-title>Login</v-list-item-title>
+            <v-list-item-title>Логин</v-list-item-title>
         </v-list-item-content>
         </v-list-item>
 
@@ -31,7 +31,7 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-            <v-list-item-title>Registration</v-list-item-title>
+            <v-list-item-title>Регистрация</v-list-item-title>
         </v-list-item-content>
         </v-list-item>
 
@@ -47,12 +47,9 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-            <v-list-item-title>Logout</v-list-item-title>
+            <v-list-item-title>Выход</v-list-item-title>
         </v-list-item-content>
         </v-list-item>
-
-
-
 
         <v-list-item
         v-for="link in links"
@@ -68,7 +65,54 @@
         </v-list-item-content>
         </v-list-item>
 
+        <router-link to="/myanswers" exact>
+        <v-list-item
+        v-if="token"
+        >
+        <v-list-item-icon>
+            <v-icon>mdi-border-color</v-icon>
+        </v-list-item-icon>
 
+        <v-list-item-content>
+             
+            <v-list-item-title>Мои ответы</v-list-item-title>
+            
+        </v-list-item-content>
+        </v-list-item>
+        </router-link>
+
+        <router-link to="/orders" exact>
+        <v-list-item
+        v-if="token"
+        >
+        <v-list-item-icon>
+            <v-icon>mdi-cat</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+             
+        <v-list-item-title>Заявка на игру</v-list-item-title>
+        
+        </v-list-item-content>
+        </v-list-item>
+        </router-link>
+
+        <router-link to="/admin-answers" exact>
+        <v-list-item
+        v-if="isAdmin"
+        >
+        <v-list-item-icon>
+            <v-icon>mdi-cash</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+             
+        <v-list-item-title>Администрирование</v-list-item-title>
+        
+        </v-list-item-content>
+        </v-list-item>
+        </router-link>
+        
     </v-list>
 </template>
 
@@ -80,23 +124,24 @@ export default {
     data () {
     return {
         links: [
-        {title: 'Games', icon: 'mdi-gamepad-variant', url: '/games-categories'},
-        {title: 'Posts', icon: 'mdi-newspaper', url: '/posts-categories'},
-        {title: 'Cards', icon: 'mdi-cards-playing-outline', url: '/cards-categories'},
-        {title: 'Templates', icon: 'mdi-checkbox-multiple-blank-outline', url: '/template-categories'},
-        {title: 'My Answers', icon: 'mdi-border-color', url: '/myanswers'},
-        {title: 'Create Order', icon: 'mdi-border-color', url: '/orders'},
-        {title: 'Admin', icon: 'mdi-border-color', url: '/admin-answers'},
+        {title: 'Игры', icon: 'mdi-gamepad-variant', url: '/games-categories'},
+        {title: 'Публикации', icon: 'mdi-newspaper', url: '/posts-categories'},
+        {title: 'Карты', icon: 'mdi-cards-playing-outline', url: '/cards-categories'},
+        {title: 'Шаблоны', icon: 'mdi-checkbox-multiple-blank-outline', url: '/template-categories'},
         ],
-        token: null
+        token: null,
+        email: '',
+        isAdmin: 0,
     }
     },
     mounted() {
             this.getToken()
+            this.getEmail()
         },
 
         updated() {
             this.getToken()
+            this.getEmail()
         },
     methods: {
             getToken(){
@@ -104,7 +149,15 @@ export default {
             },
             logout() {
                 logouts()
-            }
+            },
+            getEmail(){
+                let str = localStorage.getItem('user_email')
+                let substr = this.$store.getters.adminEmail
+                // console.log('substr: ' + substr)
+                // let substr = 'medifit2000@yandex.ru';
+                this.isAdmin = str.includes(substr);
+                // console.log('Email: ' + this.email + ' isAdmin: ' + this.isAdmin)
+            },
         }
 }
     

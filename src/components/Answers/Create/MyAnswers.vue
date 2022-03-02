@@ -101,7 +101,6 @@ v-for="answer in answers.data" :key="answer.id"
 		}
     },
     created() {
-
     },
     updated (){
 
