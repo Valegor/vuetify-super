@@ -24,11 +24,20 @@
       <b>Date:</b> {{ game.date }} <br>
       <hr>
         <v-btn
+        v-if="isUser == 1"
         color="success"
         dark
         @click.prevent="$router.push( '/answer-create/' + `${game.id}` )"
         >
-        Create Answer
+        Создать ответ на шаблон
+        </v-btn>
+                <v-btn
+        v-if="isUser == 0"
+        color="success"
+        dark
+        router-link to=/login
+        >
+        Для ответа авторизуйтесь!
         </v-btn>
     </v-card-subtitle>
 
@@ -86,6 +95,7 @@
         user_email: '',
         user_score: 0,
         user: {},
+        isUser: 0,
     }),
     methods: {
         async getGame(){
@@ -105,6 +115,11 @@
 
                 this.imageUrl = this.$store.getters.serverUrl + this.game.img
         },
+        getEmail(){
+          this.user_email = this.$store.getters.USER_EMAIL
+          if(this.user_email){this.isUser = 1}
+          console.log('is user: ' + this.isUser )
+        },
     },
     created() {
         this.getGame()
@@ -116,6 +131,7 @@
     },
     mounted() {
         this.getGame()
+        this.getEmail()
     }
 
     }
