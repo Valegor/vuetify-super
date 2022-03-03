@@ -361,14 +361,14 @@ export default new Router({
       path: '/answer-update-passport/:id',
       name: 'answer-update-passport',
       component: AnswerUpdatePassport,
-      beforeEnter: (from, to, next) => {
-        // console.log(store.getters.USER_EMAIL)
-        if(store.getters.USER_EMAIL) {
-          next()
-        } else {
-          next('/login')    
-        } 
-      }
+      // beforeEnter: (from, to, next) => {
+      //   // console.log(store.getters.USER_EMAIL)
+      //   if(store.getters.USER_EMAIL) {
+      //     next()
+      //   } else {
+      //     next('/login')    
+      //   } 
+      // }
     },
     {
       path: '/answer-update-object/:id',

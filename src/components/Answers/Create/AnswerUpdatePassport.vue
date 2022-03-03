@@ -11,7 +11,7 @@
           filled
           auto-grow
           v-model="title"
-          label="Title"
+          label="Заголовок"
           rows="1"
           row-height="20"
         ></v-textarea>
@@ -23,7 +23,7 @@
           filled
           auto-grow
           v-model="subtitle"
-          label="Subitle"
+          label="Описание краткое"
           rows="1"
           row-height="20"
         ></v-textarea>
@@ -34,7 +34,7 @@
     <v-textarea
       name="input-7-1"
       filled
-      label="Notes"
+      label="Описание полное"
       v-model="notes"
       auto-grow
     ></v-textarea>
@@ -48,11 +48,11 @@
       class="mr-4"
       type="submit"
     >
-      Save
+      СОХРАНИТЬ
     </v-btn>
 
       <v-btn @click="editObject">
-        EDIT CARDS
+        РЕДАКТИРОВАТЬ КАРТЫ
       </v-btn>
 
 </v-container>
@@ -97,15 +97,18 @@
         subtitle: '',
         notes: '',
         dialog: false,
+        user_email: '',
     }),
     methods: {
         start(){
-            console.log('start')
+            // console.log('start')
             this.getAnswer()
         },
         submit(){
             console.log('submit')
             console.log('Title: ' + this.title) 
+
+            this.id = this.$route.params.id
 
             axios.post('/api/answer-update-passport', {  
                 id: this.id,                           
@@ -146,6 +149,17 @@
                     this.error = e;
                 });              
         },
+        // isLogin(){
+        //    console.log('login')
+        //     let user_email = this.$store.getters.USER_EMAIL
+        //     let substr = '@'
+        //     console.log('Lenght = ' + user_email)
+        //     if (user_email.includes(substr)){
+        //       console.log('is email')
+        //     }else{
+        //       console.log('not email')
+        //     }
+        // },
     },    
     created () {
 
@@ -155,7 +169,8 @@
       // this.start()
     },
     mounted() {
-        console.log('mounted')
+        // this.isLogin()
+        // console.log('mounted')
         this.start()
     }
     }

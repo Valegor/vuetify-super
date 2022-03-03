@@ -3,25 +3,68 @@
 
 <div>
 
+<div
+    v-if="isLoading > 0"
+>
+
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+
+    <v-container style="height: 400px;">
+      <v-row
+        class="fill-height"
+        align-content="center"
+        justify="center"
+      >
+        <v-col
+          class="text-subtitle-1 text-center"
+          cols="12"
+        >
+          данные загружаются...
+        </v-col>
+        <v-col cols="8">
+          <v-progress-linear
+            color="primary"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
+</div>
+
+<div
+    v-if="isLoading == 0"
+>
+
 <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
   >
         <v-card-title>
         {{ block_tek_title }}
         </v-card-title>
         <hr>
         <v-card-subtitle>
-        <b>Block subtitle:</b> {{ block_tek_subtitle }} <br>     
+        <b>Описание блока: </b> {{ block_tek_subtitle }} <br>     
         </v-card-subtitle>
  </v-card>
     <br>
     <v-card
         v-for="locus in locuses" :key="(locuses.indexOf(locus) + 1)"
         class="mx-auto mb-4"
-        max-width="344"
+        max-width="400"
         tile
+        color="rgb(181, 181, 177, 0.5)"
     > 
+    <v-list-item>
+        <hr>
+    </v-list-item> 
 
     <v-img
       :src="serverUrl + locus.locus_card_image1"
@@ -29,53 +72,103 @@
       contain
     ></v-img>
 
-    <v-list-item
-    :to="'/card-code/' + locus.locus_card_code"
-    >
+    <v-list-item>
         <v-list-item-content>
-            <v-list-item-title>{{ locus.locus_name }}</v-list-item-title>
+            <v-list-item-title>Локус шаблона: {{ locus.locus_name }}</v-list-item-title>
         </v-list-item-content>
     </v-list-item> 
 
-    <v-btn
-        color="primary"
-        dark
-        @click="loadCardCategory(locus.locus_category, locus.locus_points)"
-        >
-        Select Card
-    </v-btn>
+    <v-list-item>
+        <v-list-item-content>
+            <v-btn
+                color="primary"
+                dark
+                @click="loadCardCategory(locus.locus_category, locus.locus_points)"
+            >
+                УКАЗАТЬ КАРТУ
+            </v-btn>
+        </v-list-item-content>
+    </v-list-item> 
+
+
 
 
 </v-card>
 
 <br>
+
 <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
   >
-        <v-btn
-        v-if="block_tek > 1"
-        color="success"
-        dark
-        v-on:click="stepDown"
+
+      <v-list-item>
+        <v-list-item-content>
+
+        <v-row 
+        no-gutters
         >
-        НАЗАД
-        </v-btn>
+
+        <v-col
+            class="d-flex justify-center mb-6"
+        >
 
         <v-btn
-        v-if="block_tek < blocks_count"
-        color="success"
-        dark
-        v-on:click="stepUp"
+            v-if="block_tek > 1"
+            color="success"
+            dark
+            v-on:click="stepDown"
+            >
+                НАЗАД
+            </v-btn>
+
+        </v-col>
+
+        <v-col
+            md="6"
         >
-        ВПЕРЕД
-        </v-btn>
+
+
+        </v-col>        
+
+         <v-col
+            class="d-flex justify-center mb-6"
+        >
+            <v-btn
+            v-if="block_tek < blocks_count"
+            color="success"
+            dark
+            v-on:click="stepUp"
+            >
+                ВПЕРЕД
+            </v-btn>
+        </v-col>
+
+
+        </v-row>
+
+
+
+        </v-list-item-content>
+
+    </v-list-item> 
 </v-card>
+
+<v-card
+    v-if="block_tek == blocks_count"
+    class="mx-auto"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
+  >
+        <v-card-subtitle>
+        <b>ЭТО ПОСЛЕДНЯЯ СТРАНИЦА ШАБЛОНА</b>     
+        </v-card-subtitle>
+ </v-card>
 
 
 <v-dialog
       v-model="dialog"
-      max-width="290"
+      max-width="320"
     >
       <v-card>
 
@@ -104,6 +197,8 @@
         </v-card-actions>
       </v-card>
 </v-dialog>
+
+</div>
 
  </div> 
 
@@ -143,7 +238,8 @@
         tek_index: 0,
         tek_locus_card_code: '',
         tek_locus_card_name: '',
-        tek_locus_card_image1: '',              
+        tek_locus_card_image1: '', 
+        isLoading: 1,             
     }),
     methods: {
         start(){
@@ -252,14 +348,13 @@
 
                     
                     this.game = JSON.parse(this.object.object)
+                    this.isLoading = 0
                     
-                    console.log('Game ID = ' + this.id)
-
-
+                    // console.log('Game ID = ' + this.id)
 
                     // console.log(this.game) 
                     
-                    console.log(Object.keys(this.game.blocks).length)
+                    // console.log(Object.keys(this.game.blocks).length)
 
                     this.start()
 

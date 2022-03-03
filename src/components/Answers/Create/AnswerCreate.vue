@@ -30,9 +30,9 @@
         author_id: '',
         author_name: '',
         aviable: 0,
-        title: 'title here',
-        subtitle: 'subtitle here',
-        notes: 'notes here',
+        title: 'Заголовок ответа...',
+        subtitle: 'Краткое описание ответа... ',
+        notes: 'Описание ответа...',
         object: {}
     }),
     methods: {
