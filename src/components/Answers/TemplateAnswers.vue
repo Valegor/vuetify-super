@@ -2,28 +2,49 @@
 
 <div>
 
+<div v-if="answerLenght > 0"> 
 
-<v-card
+<div
     v-for="post in posts.data" :key="post.id"
+>
+
+<v-card  
+    class="mx-auto mb-4"
+    max-width="400"
+    tile
+    :to="'/answer/' + post.id"
+    color="rgb(181, 181, 177, 0.5)"
+  >
+
+    <v-list-item>
+        <v-list-item-content>
+            <h5>{{ post.title }}</h5>  
+        </v-list-item-content>
+    </v-list-item> 
+
+ </v-card> 
+
+<v-card   
     class="mx-auto mb-4"
     max-width="400"
     tile
     :to="'/answer/' + post.id"
   >
     <v-list-item>
-        <v-list-item-content>
-            <v-list-item-title>{{ post.title }}</v-list-item-title>
-            <v-list-item-subtitle>
+        <v-list-item-content>          
                 {{ post.subtitle }}
-            </v-list-item-subtitle>
+            <hr>
             <v-list-item-subtitle>
-                <b>Author: </b>{{ post.author_name }}
+                <b>Автор: </b>{{ post.author_name }} <br> 
+                <hr>
+                <b>E-mail: </b>{{ post.author_email }}
             </v-list-item-subtitle>
         </v-list-item-content>
     </v-list-item> 
 
 </v-card>
 
+</div>
 
 <br>
 
@@ -34,6 +55,25 @@
     size="small"
     align="center"
 ></pagination>
+
+</div>
+<div v-else>
+    <v-card  
+    class="mx-auto mb-4"
+    max-width="400"
+    tile
+    color="rgb(181, 181, 177, 0.5)"
+  >
+
+    <v-list-item>
+        <v-list-item-content>
+            <h5>{{ informer }}</h5>  
+        </v-list-item-content>
+    </v-list-item> 
+
+ </v-card> 
+    
+</div>
 
 </div> 
 
@@ -52,6 +92,8 @@
             cat_id: '',
             show: false,
             serverUrl: '',
+            answerLenght: 0,
+            informer: 'Выполняется поиск. Подождите...'
 
         }
     },
@@ -63,9 +105,12 @@
 			axios.get('/api/template-answers/' + this.cat_id + '?page=' + page)
 				.then(response => {
 					this.posts = response.data;
+                    this.answerLenght = Object.keys(this.posts.data).length
+                    if(this.answerLenght == 0) {this.informer = 'Ответов на шаблон не найдено!'}
+                    // console.log(this.answerLenght)
 				});
         
-            // console.log(this.posts)
+            
             
             this.serverUrl = this.$store.getters.serverUrl;
 		}

@@ -25,6 +25,7 @@
     max-width="400"
     tile
     :to="'/template-category/' + category.id"
+    color="rgb(181, 181, 177, 0.5)"
   >
 
     <v-list-item>

@@ -6,10 +6,10 @@
     max-width="500"
     >
         <v-card-title>
-        You Game Score {{ score }}
+        Ваш счет в игре: {{ score }}
         </v-card-title>
         <v-card-subtitle>
-        <b>You Total Score:</b> {{ user_total }} <br>     
+        <b>Ваш общий счет: </b> {{ user_total }} <br>     
         </v-card-subtitle>
     </v-card>
 
@@ -18,11 +18,10 @@
     class="mx-auto"
   >
     <v-toolbar
-      color="indigo"
-      dark
+      color="rgb(181, 181, 177, 0.5)"
     >
 
-      <v-toolbar-title>Records</v-toolbar-title>
+      <v-toolbar-title>РЕКОРДСМЕНЫ</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -43,6 +42,7 @@
         <v-list-item-content>
           <v-list-item-title>{{ top.score }} - {{ top.name }}</v-list-item-title>
         </v-list-item-content>
+        <hr>
       </v-list-item>
     </v-list>
   </v-card>

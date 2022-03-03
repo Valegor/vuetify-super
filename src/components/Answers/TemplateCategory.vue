@@ -8,27 +8,27 @@
     class="mx-auto mb-4"
     max-width="400"
     tile
+    color="rgb(181, 181, 177, 0.5)"
   >
     <v-list-item>
         <v-list-item-content>
-            <v-list-item-title>{{ post.name }}</v-list-item-title>
-            <v-list-item-subtitle>
-                {{ post.subtitle }}
-            </v-list-item-subtitle>
+            <h5>{{ post.name }}</h5>   
+            <hr>
+            {{ post.subtitle }}
         </v-list-item-content>
     </v-list-item> 
-
+    <hr>
     <v-img
       :src="serverUrl + post.img"
       max-height="225"
       contain
     ></v-img>
-
+    <hr>
     <v-list-item
     :to="'/template/' + post.id"
     >
         <v-list-item-content>
-            <v-list-item-title>ПОСМОТРЕТЬ ШАБЛОН</v-list-item-title>
+            <v-list-item-title>ПОДРОБНЕЕ О ШАБЛОНЕ</v-list-item-title>
         </v-list-item-content>
     </v-list-item> 
     <hr>
