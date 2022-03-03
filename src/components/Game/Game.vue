@@ -5,23 +5,24 @@
 
   <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
   >
     <v-img
       :src="this.imageUrl"
       max-height="200"
       contain
     ></v-img>
-
+    <hr>
     <v-card-title>
       {{ game.name }}
     </v-card-title>
-
     <v-card-subtitle>
-      <b>Description:</b> {{ game.subtitle  }} <br>
-      <b>Author:</b> {{ game.author }} <br>
-      <b>Category:</b> {{ game.category }} <br>
-      <b>Date:</b> {{ game.date }} <br>
+      <b>Описание игры:</b> {{ game.subtitle  }} <br>
+      <hr>
+      <b>Автор:</b> {{ game.author }} <br>
+      <hr>
+      <b>Категория:</b> {{ game.category }} <br>
       <hr>
         <v-btn
         v-if="isUser == 1"
@@ -44,7 +45,7 @@
 
     <v-card-actions>
       <v-btn
-        color="orange lighten-2"
+        color="black"
         text
       >
         Подробнее об игре
@@ -77,10 +78,11 @@
   <hr>
 
   <v-card
+    v-if="cardsLenght > 0"
     class="mx-auto mb-4 indigo lighten-4"
     max-width="400"
     tile
->
+  >
     <v-list-item>
     <v-list-item-content>
         <v-list-item-title
@@ -98,11 +100,12 @@
     max-width="400"
     tile
     :to="'/card/' + card.card_id"
+    color="rgb(181, 181, 177, 0.5)"
 >
 
     <v-list-item>
         <v-list-item-content>
-            <v-list-item-title>{{ card.card }}</v-list-item-title>
+            <h5>{{ card.card }}</h5> 
         </v-list-item-content>
     </v-list-item>
 
@@ -111,6 +114,9 @@
       max-height="150"
       contain
     ></v-img>
+    <v-list-item>
+      <hr>
+    </v-list-item>
 
 </v-card>
 
@@ -138,6 +144,7 @@
         user_score: 0,
         user: {},
         isUser: 0,
+        cardsLenght: 0,
     }),
     methods: {
         async getGame(){
@@ -165,6 +172,7 @@
                 .get("/api/game-card/" + this.game_id)
                 .then(response => {
                     this.cards = response.data;
+                    this.cardsLenght = Object.keys(this.cards).length
                 })
                 .catch(function(e){
                     // console.log('error')

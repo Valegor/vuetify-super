@@ -11,7 +11,7 @@
 
     <v-list-item>
         <v-list-item-content>
-            <v-list-item-title><h3>{{ game.name }}</h3></v-list-item-title>
+            <h3>{{ game.name }}</h3>
         </v-list-item-content>
     </v-list-item> 
 

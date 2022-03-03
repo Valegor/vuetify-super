@@ -4,6 +4,7 @@
 <v-card
     class="mx-auto"
     max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
   >
         <v-card-title>
             Блок вопросов {{ block_tek }} из {{ blocks_count }}:
