@@ -1,38 +1,44 @@
 <template>
 <div>
+
 <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
   >
         <v-card-title>
-        BLOCK {{ block_tek }} FROM {{ blocks_count }}: <br>
-        {{ block_tek_title }}
+            Блок вопросов {{ block_tek }} из {{ blocks_count }}:
         </v-card-title>
-        <hr>
-        <v-card-subtitle>
-        <b>Block subtitle:</b> {{ locus_tek_subtitle }} <br>     
-        </v-card-subtitle>
-    <hr>
-        <v-card-title>
-        QUESTION: {{ locus_tek_title }}
-        </v-card-title>
-    <hr>
-        <v-card-subtitle>
-        QESTION {{ locus_tek }} FROM {{ locuses_count }}: <br>
-        {{ locus_tek_title }}    
-        </v-card-subtitle>
- </v-card>
+         <v-card-subtitle>
+             {{ block_tek_title }}
+         </v-card-subtitle>
+</v-card>
 
-      <v-row 
+<v-card
+    class="mx-auto"
+    max-width="400"
+  >
+        <v-card-title>
+        Вопрос: {{ locus_tek }} из {{ locuses_count }}:
+        </v-card-title>
+         <v-card-subtitle>
+            {{ locus_tek_title }}: {{ locus_tek_subtitle }}
+         </v-card-subtitle>
+</v-card>
+
+<v-card
+    class="mx-auto"
+    max-width="400"
+  >
+
+        <v-row 
       justify="center"
-      max-width="344"
       >
          <v-col
           cols="12"
-          sm="6"
-          md="4"
+          sm="10"
+          md="8"
         >
-          <v-subheader>Варианты ответов: </v-subheader>
+          <v-subheader><h4>Варианты ответов:</h4></v-subheader>
             <v-radio-group v-model="ans" class="radio-container d-flex">
                 <v-radio
                     class="radio-item"
@@ -44,19 +50,22 @@
                 ></v-radio>
             </v-radio-group>
         </v-col>
-      </v-row>
+    </v-row>
+    <v-row justify="center">
+            <v-btn
+            color="primary"
+            dark
+            @click="answer"
+            >
+            Ответить
+            </v-btn>
+    </v-row>
+    <v-row>
+        <hr>
+    </v-row>
+</v-card>
 
-    <hr>
    
- <v-row justify="center">
-    <v-btn
-      color="primary"
-      dark
-      @click="answer"
-    >
-      Ответить
-    </v-btn>
-
 <v-dialog
       v-model="dialog"
       max-width="290"
@@ -82,9 +91,7 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-dialog>
-  </v-row>
- 
+</v-dialog>
   </div>
 
 </template>
