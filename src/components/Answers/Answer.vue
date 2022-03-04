@@ -39,29 +39,40 @@
 <div
     v-if="isLoading == 0"
 >
+  
+  <v-card
+    class="mx-auto"
+    max-width="400"
+    color="blue lighten-2"
+  >
+
+    <v-card-subtitle>
+        <h3>{{ object.title }}</h3> 
+    </v-card-subtitle>
+
+  </v-card>
 
   <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
   >
 
-    <v-card-title>
-      {{ object.title }}
-    </v-card-title>
-
     <v-card-subtitle>
-      <b>Description:</b> {{ object.subtitle  }} <br>
-      <b>Author:</b> {{ object.author }} <br>
-      <b>Category:</b> {{ object.template_name }} <br>
-      <b>Date:</b> {{ object.date }} <br>
+      <b>Описание:</b> {{ object.subtitle  }} <br>
+      <hr>
+      <b>Автор:</b> {{ object.author }} <br>
+      <hr>
+      <b>Название шаблона:</b> {{ object.template_name }} <br>
+      <hr>
+      <b>Дата публикации:</b> {{ object.date }} <br>
+      <hr>
     </v-card-subtitle>
 
     <v-card-actions>
       <v-btn
-        color="orange lighten-2"
         text
       >
-        Read More!
+        Подробное описание ответа:
       </v-btn>
 
       <v-spacer></v-spacer>
@@ -86,48 +97,71 @@
 
       </div>
     </v-expand-transition>
+  </v-card>
 
   <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
     tile
-    :to="'/show-answer-cards/' + object.id"
+    color="rgb(181, 181, 177, 0.5)"
   >
-    <v-list-item>
-        <v-list-item-content>
-            <v-list-item-subtitle>
-                SHOW CARDS
-            </v-list-item-subtitle>
-        </v-list-item-content>
-    </v-list-item>      
-  </v-card>
+    <v-card-actions>
+      <v-btn
+        text
+        :to="'/show-answer-cards/' + object.id"
+      >
+        ПОСМОТРЕТЬ КАРТЫ ОТВЕТА:
+      </v-btn>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        icon
+        :to="'/show-answer-cards/' + object.id"
+      >
+        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+      </v-btn>
+    </v-card-actions>  
+
 
   </v-card>
 
       <hr>
 
-    <hr>
+    <v-card
+    class="mx-auto"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
+  >
+
+    <v-card-subtitle>
         <v-btn
-        color="success"
-        dark
+        color="grey lighten-5"
         @click.prevent="$router.push( '/comment-create/' + `${object.id}` )"
         >
-        Create Comment
-    </v-btn>
+          СОЗДАТЬ КОММЕНТАРИЙ
+        </v-btn>
+    </v-card-subtitle>
+
+  </v-card>
+
+
 
  <v-card
     v-for="comment in comments" :key="comment.id"
     class="mx-auto mb-4"
     max-width="400"
   >
+    <hr>
     <v-list-item>
         <v-list-item-content>
             <v-list-item-title>{{ comment.text }}</v-list-item-title>
+            <hr>
             <v-list-item-subtitle>
-                <b>Author: </b>{{ comment.author_name }}
+                <b>Автор: </b>{{ comment.author_name }}
             </v-list-item-subtitle>
             <v-list-item-subtitle>
-                <b>Author-Email: </b>{{ comment.author_email }}
+                <b>Email: </b>{{ comment.author_email }}
             </v-list-item-subtitle>
         </v-list-item-content>
     </v-list-item> 

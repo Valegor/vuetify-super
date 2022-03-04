@@ -42,27 +42,32 @@
 
   <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
   >
+    <v-card-subtitle>
+      <h3>{{ game.name }}</h3>
+    </v-card-subtitle>
+    <v-spacer>
+      <hr>
+    </v-spacer>
     <v-img
       :src="this.imageUrl"
-      max-height="200"
+      max-height="270"
       contain
     ></v-img>
-
-    <v-card-title>
-      {{ game.name }}
-    </v-card-title>
+    <v-spacer>
+      <hr>
+    </v-spacer>
 
     <v-card-subtitle>
-      <b>Description:</b> {{ game.subtitle  }} <br>
-      <b>Author:</b> {{ game.author }} <br>
-      <b>Category:</b> {{ game.category }} <br>
-      <b>Date:</b> {{ game.date }} <br>
+      <b>Описание:</b> {{ game.subtitle  }} <br>
+      <b>Автор:</b> {{ game.author }} <br>
+      <b>Категория:</b> {{ game.category }} <br>
       <hr>
         <v-btn
         v-if="isUser == 1"
-        color="success"
+        color="primary"
         dark
         @click.prevent="$router.push( '/answer-create/' + `${game.id}` )"
         >
@@ -80,10 +85,9 @@
 
     <v-card-actions>
       <v-btn
-        color="orange lighten-2"
         text
       >
-        Read More!
+        Подробное описание шаблона:
       </v-btn>
 
       <v-spacer></v-spacer>
