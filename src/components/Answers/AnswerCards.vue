@@ -41,21 +41,27 @@
     v-if="isLoading == 0"
 >
 
+ <v-card
+    class="mx-auto"
+    max-width="400"
+    color="blue lighten-2"
+  >
+         <v-card-subtitle>
+            <h3>{{ block_tek_title }}</h3>  
+         </v-card-subtitle>
+ </v-card>
+
 <v-card
     class="mx-auto"
     max-width="400"
     color="rgb(181, 181, 177, 0.5)"
   >
-        <v-card-title>
-        {{ block_tek_title }}
-        </v-card-title>
-        <hr>
         <v-card-subtitle>
         <b>Описание блока: </b> {{ block_tek_subtitle }} <br>     
         </v-card-subtitle>
  </v-card>
-    <br>
-    <v-card
+ 
+<v-card
         v-for="locus in locuses" :key="(locuses.indexOf(locus) + 1)"
         class="mx-auto mb-4"
         max-width="400"
@@ -89,9 +95,6 @@
             </v-btn>
         </v-list-item-content>
     </v-list-item> 
-
-
-
 
 </v-card>
 
@@ -212,7 +215,7 @@
             depressed
             @click="answer"
           >
-            ВЫБЕРИТЕ КАРТУ ИЗ СПИСКА
+            ВЫБРАТЬ КАРТУ
           </v-btn>
         </v-card-actions>
         </v-list-item-content>
@@ -241,7 +244,7 @@
         game: {},
         game2: '',
         cards: {},
-        ans: '',
+        ans: 1,
         show: false,
         imageUrl: '',
         serverUrl: '',
@@ -335,6 +338,7 @@
             if (this.block_tek < this.blocks_count){
                 this.block_tek = this.block_tek + 1
                 this.getBlock(this.block_tek)
+                window.scrollTo(0,0);
             }
         },
         stepDown(){
@@ -342,6 +346,7 @@
             if (this.block_tek > 1){
             this.block_tek = this.block_tek - 1
             this.getBlock(this.block_tek)
+            window.scrollTo(0,0);
             }
         },
         getBlock(block_id){

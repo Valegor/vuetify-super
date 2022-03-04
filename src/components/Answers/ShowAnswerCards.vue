@@ -2,71 +2,164 @@
 
 <div>
 
+<div
+    v-if="isLoading > 0"
+>
+
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+
+    <v-container style="height: 400px;">
+      <v-row
+        class="fill-height"
+        align-content="center"
+        justify="center"
+      >
+        <v-col
+          class="text-subtitle-1 text-center"
+          cols="12"
+        >
+          данные загружаются...
+        </v-col>
+        <v-col cols="8">
+          <v-progress-linear
+            color="primary"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
+</div>
+
+<div
+    v-if="isLoading == 0"
+>
+    <br>
+
+ <v-card
+    class="mx-auto"
+    max-width="400"
+    color="blue lighten-2"
+  >
+         <v-card-subtitle>
+            <h3>{{ block_tek_title }}</h3>  
+         </v-card-subtitle>
+ </v-card>
+
 <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
   >
-        <v-card-title>
-        {{ block_tek_title }}
-        </v-card-title>
-        <hr>
         <v-card-subtitle>
-        <b>Block subtitle:</b> {{ block_tek_subtitle }} <br>     
+        <b>Описание блока: </b> {{ block_tek_subtitle }} <br>     
         </v-card-subtitle>
  </v-card>
-    <br>
-    <v-card
+ 
+
+<v-card
         v-for="locus in locuses" :key="(locuses.indexOf(locus) + 1)"
         class="mx-auto mb-4"
-        max-width="344"
+        max-width="400"
         tile
+        color="rgb(181, 181, 177, 0.5)"
     > 
     <div v-if="!locus.locus_card_image1.includes(gray)">
+
+    <v-list-item>
+        <hr>
+    </v-list-item> 
+
     <v-img
       :src="serverUrl + locus.locus_card_image1"
       max-height="225"
       contain
     ></v-img>
-    
 
-    <v-list-item
-    :to="'/card-code/' + locus.locus_card_code"
-    >
+    <v-list-item>
         <v-list-item-content>
-            <v-list-item-title>{{ locus.locus_name }}</v-list-item-title>
+            <v-list-item-title>Локус шаблона: {{ locus.locus_name }}</v-list-item-title>
         </v-list-item-content>
     </v-list-item> 
-
     </div>
+</v-card>  
 
-</v-card>
 
-<br>
 <v-card
     class="mx-auto"
-    max-width="500"
+    max-width="400"
   >
+
+      <v-list-item>
+        <v-list-item-content>
+
+        <v-row 
+        no-gutters
+        >
+
+        <v-col
+            class="d-flex justify-center mb-6"
+        >
+
         <v-btn
             v-if="block_tek > 1"
             color="success"
             dark
             v-on:click="stepDown"
             >
-            НАЗАД
-        </v-btn>
+                НАЗАД
+            </v-btn>
 
-        <v-btn
+        </v-col>
+
+        <v-col
+            md="6"
+        >
+
+
+        </v-col>        
+
+         <v-col
+            class="d-flex justify-center mb-6"
+        >
+            <v-btn
             v-if="block_tek < blocks_count"
             color="success"
             dark
             v-on:click="stepUp"
             >
-            ВПЕРЕД
-        </v-btn>
+                ВПЕРЕД
+            </v-btn>
+        </v-col>
 
+
+        </v-row>
+
+
+
+        </v-list-item-content>
+
+    </v-list-item> 
 </v-card>
 
+<v-card
+    v-if="block_tek == blocks_count"
+    class="mx-auto"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
+  >
+        <v-card-subtitle>
+        <b>ЭТО ПОСЛЕДНЯЯ СТРАНИЦА ШАБЛОНА</b>     
+        </v-card-subtitle>
+ </v-card>
+
  </div> 
+</div> 
 
 </template>
 
@@ -104,7 +197,8 @@
         tek_index: 0,
         tek_locus_card_code: '',
         tek_locus_card_name: '',
-        tek_locus_card_image1: '',              
+        tek_locus_card_image1: '', 
+        isLoading: 1,              
     }),
     methods: {
         start(){
@@ -116,6 +210,7 @@
             if (this.block_tek < this.blocks_count){
                 this.block_tek = this.block_tek + 1
                 this.getBlock(this.block_tek)
+                window.scrollTo(0,0);
             }
         },
         stepDown(){
@@ -123,6 +218,7 @@
             if (this.block_tek > 1){
             this.block_tek = this.block_tek - 1
             this.getBlock(this.block_tek)
+            window.scrollTo(0,0);
             }
         },
         getBlock(block_id){
@@ -148,7 +244,8 @@
 
                     this.id = this.object.id
                     this.game = JSON.parse(this.object.object)
-                    console.log('Game ID' + this.id)
+                    this.isLoading = 0
+                    // console.log('Game ID' + this.id)
                     this.start()
                 })
                 .catch(function(e){
