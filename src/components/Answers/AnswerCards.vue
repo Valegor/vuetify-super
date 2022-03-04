@@ -168,10 +168,24 @@
 
 <v-dialog
       v-model="dialog"
-      max-width="320"
+      max-width="380"
     >
-      <v-card>
 
+    <v-card  
+    class="mx-auto mb-4"
+    tile
+    color="rgb(181, 181, 177, 1.0)"
+  >
+
+    <v-list-item>
+        <v-list-item-content>
+            <h5>Выберите карту из списка</h5>  
+        </v-list-item-content>
+    </v-list-item> 
+
+ </v-card>   
+
+      <v-card>
 
             <v-radio-group v-model="ans" class="radio-container d-flex">
                 <v-radio
@@ -184,17 +198,27 @@
                 ></v-radio>
             </v-radio-group>
 
-        <v-card-actions>
-          <v-spacer></v-spacer>
+   </v-card>       
 
-          <v-btn
-            color="green darken-1"
-            text
+<v-card  
+    class="mx-auto mb-4"
+    tile
+  >
+
+    <v-list-item>
+        <v-list-item-content>
+            <v-card-actions>
+            <v-btn
+            depressed
             @click="answer"
           >
-            OK
+            ВЫБЕРИТЕ КАРТУ ИЗ СПИСКА
           </v-btn>
         </v-card-actions>
+        </v-list-item-content>
+    </v-list-item> 
+
+
       </v-card>
 </v-dialog>
 

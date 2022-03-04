@@ -2,6 +2,43 @@
 <template v-slot:game.notes="{{game.notes}}">
 
 <div>
+  <div
+    v-if="isLoading > 0"
+>
+
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+
+    <v-container style="height: 400px;">
+      <v-row
+        class="fill-height"
+        align-content="center"
+        justify="center"
+      >
+        <v-col
+          class="text-subtitle-1 text-center"
+          cols="12"
+        >
+          данные загружаются...
+        </v-col>
+        <v-col cols="8">
+          <v-progress-linear
+            color="primary"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
+</div>
+
+<div
+    v-if="isLoading == 0"
+>
 
   <v-card
     class="mx-auto"
@@ -74,6 +111,7 @@
   </v-card>
 
  </div> 
+</div> 
 
 </template>
 
@@ -96,6 +134,7 @@
         user_score: 0,
         user: {},
         isUser: 0,
+        isLoading: 1, 
     }),
     methods: {
         async getGame(){
@@ -106,6 +145,7 @@
                 .get('/api/template/' + this.game_id)
                 .then(response => {
                     this.game = response.data[0];
+                    this.isLoading = 0
                     // console.log(this.game)
                 })
                 .catch(function(e){

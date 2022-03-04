@@ -1,6 +1,22 @@
 <template>
 <div>
-    <v-form
+
+  <v-card
+    class="mx-auto"
+    max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
+  >
+        <v-card-title>
+         НАПИШИТЕ КОММЕНТАРИЙ
+        </v-card-title>
+ </v-card>
+
+   <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+
+      <v-form
     ref="form"
     @submit.prevent="submit"
   >
@@ -11,7 +27,7 @@
           filled
           auto-grow
           v-model="text"
-          label="Text"
+          label="Текст комментария"
           rows="7"
           row-height="20"
         ></v-textarea>
@@ -23,7 +39,7 @@
           filled
           auto-grow
           v-model="author_name"
-          label="Author Name"
+          label="Автор комментария"
           rows="1"
           row-height="20"
         ></v-textarea>
@@ -36,16 +52,22 @@
       class="mr-4"
       type="submit"
     >
-      Save
+      ОТПРАВИТЬ КОММЕНТАРИЙ
     </v-btn>
 
 </v-container>
 
   </v-form>
 
+ </v-card>
+
+
+
+
 <v-card
     class="mx-auto mb-4"
     max-width="400"
+    color="rgb(181, 181, 177, 0.5)"
     tile
   >
     <v-list-item>
@@ -68,7 +90,8 @@
     >
       <v-card>
         <v-card-title class="text-h6">
-            Спасибо<br>
+            Спасибо за Ваш <br>
+            комментарий<br>
         </v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -143,7 +166,7 @@
                     .then( response => {
                         console.log(response)
                         this.dialog = true
-                        setTimeout(() => { this.$router.push('/template-categories')}, 3000)
+                        // setTimeout(() => { this.$router.push('/template-categories')}, 3000)
                         
                         // console.log('Updated Answer ID: ' + this.id)
 
