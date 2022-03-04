@@ -99,7 +99,7 @@
 				.then(response => {
 					this.categories = response.data;
                     this.isLoading = 0
-                    window.scrollTo(0,0);
+                    window.scrollTo(0,0)
 				});
 
             this.serverUrl = this.$store.getters.serverUrl;    

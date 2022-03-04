@@ -3,11 +3,50 @@
 
 <div>
 
+  <div
+    v-if="isLoading > 0"
+    >
+
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+
+    <v-container style="height: 400px;">
+      <v-row
+        class="fill-height"
+        align-content="center"
+        justify="center"
+      >
+        <v-col
+          class="text-subtitle-1 text-center"
+          cols="12"
+        >
+          данные загружаются...
+        </v-col>
+        <v-col cols="8">
+          <v-progress-linear
+            color="primary"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
+</div>
+
+<div
+    v-if="isLoading == 0"
+>
+
   <v-card
     class="mx-auto"
     max-width="400"
     color="rgb(181, 181, 177, 0.5)"
   >
+    <hr>
     <v-img
       :src="this.imageUrl"
       max-height="200"
@@ -120,7 +159,7 @@
 
 </v-card>
 
-
+ </div> 
  </div> 
 
 </template>
@@ -145,6 +184,7 @@
         user: {},
         isUser: 0,
         cardsLenght: 0,
+        isLoading: 1,
     }),
     methods: {
         async getGame(){
@@ -156,6 +196,7 @@
                 .get('/api/game/' + this.game_id)
                 .then(response => {
                     this.game = response.data[0];
+                    this.isLoading = 0
                 })
                 .catch(function(e){
                     // console.log('error')

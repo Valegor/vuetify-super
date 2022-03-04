@@ -3,6 +3,44 @@
 
 <div>
 
+    <div
+    v-if="isLoading > 0"
+    >
+
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+
+    <v-container style="height: 400px;">
+      <v-row
+        class="fill-height"
+        align-content="center"
+        justify="center"
+      >
+        <v-col
+          class="text-subtitle-1 text-center"
+          cols="12"
+        >
+          данные загружаются...
+        </v-col>
+        <v-col cols="8">
+          <v-progress-linear
+            color="primary"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
+</div>
+
+<div
+    v-if="isLoading == 0"
+>
+
 <v-card
     class="mx-auto mb-4 indigo lighten-4"
     max-width="400"
@@ -21,6 +59,7 @@
 
    <v-card
     v-for="category in categories" :key="category.id"
+    color="rgb(181, 181, 177, 0.5)"
     class="mx-auto mb-4"
     max-width="400"
     tile
@@ -50,7 +89,8 @@
 
 
  </div> 
-
+ </div> 
+ 
 </template>
 
 <script>
@@ -61,7 +101,8 @@
         name: 'GameCategories',
         categories: '',
         show: false,
-        serverUrl: ''
+        serverUrl: '',
+        isLoading: 1,
     }),
     methods: {
         async getGameCategory(){
@@ -72,6 +113,8 @@
                 .get("/api/game-categories/")
                 .then(response => {
                     this.categories = response.data.data;
+                    this.isLoading = 0
+                    window.scrollTo(0,0)
                 })
                 .catch(function(e){
                     // console.log('error')
